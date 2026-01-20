@@ -55,13 +55,13 @@ LocalStorage was chosen to provide lightweight persistence without backend compl
 
 Live Demo
 
-[GitHub Pages Deployment — insert link here]
+biochemistry.grantculbertson.dev
 
 Motivation
 
 This project was created to combine scientific domain knowledge with interactive software development, demonstrating how visualization and thoughtful UI design can enhance learning in technically complex subjects.
 
-Future Improvements (Optional)
+Future Improvements 
 
 Data-driven rendering of course content from JSON
 
@@ -73,4 +73,4 @@ Optional backend for user accounts and cloud-synced views
 
 Author
 
-Developed independently as a personal portfolio project.
+Grant Culbertson
