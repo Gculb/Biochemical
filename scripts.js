@@ -219,6 +219,106 @@
             g.add(bond(s.position, coa[0].position));
             return g;
         }
+        function makeTrytophan() {
+            const molecule = new THREE.Group();
+            const SCALE = 1.6;
+
+            function createAtom(x, y, z, element) {
+                const styles = {
+                    C: [0x404040, 0.4],
+                    N: [0x3050f8, 0.45],
+                    O: [0xff3030, 0.45],
+                    H: [0xffffff, 0.25]
+                };
+                const [color, radius] = styles[element];
+                const atomMesh = atom(x * SCALE, y * SCALE, z * SCALE, color, radius);
+                molecule.add(atomMesh);
+                return atomMesh;
+            }
+
+            function connectAtoms(atomA, atomB) {
+                molecule.add(bond(atomA.position, atomB.position));
+            }
+
+            // ---------------------------
+            // Amino Acid Backbone
+            // ---------------------------
+
+            const alphaCarbon = createAtom(0, 0, 0, "C");
+
+            const amineNitrogen = createAtom(-1.2, 0.8, 0, "N");
+            const amineHydrogen1 = createAtom(-2.0, 1.3, 0, "H");
+            const amineHydrogen2 = createAtom(-1.2, 1.8, 0, "H");
+
+            const carboxylCarbon = createAtom(1.4, 0, 0, "C");
+            const carboxylOxygen1 = createAtom(2.4, 0.8, 0, "O");
+            const carboxylOxygen2 = createAtom(2.4, -0.8, 0, "O");
+
+            connectAtoms(alphaCarbon, amineNitrogen);
+            connectAtoms(amineNitrogen, amineHydrogen1);
+            connectAtoms(amineNitrogen, amineHydrogen2);
+
+            connectAtoms(alphaCarbon, carboxylCarbon);
+            connectAtoms(carboxylCarbon, carboxylOxygen1);
+            connectAtoms(carboxylCarbon, carboxylOxygen2);
+
+            // ---------------------------
+            // Side Chain: CH2 linker
+            // ---------------------------
+
+            const betaCarbon = createAtom(0, -1.5, 0, "C");
+            connectAtoms(alphaCarbon, betaCarbon);
+
+            // ---------------------------
+            // Side Chain: Indole Ring
+            // ---------------------------
+
+            const indoleCarbons = [
+                createAtom(0.8, -3.0, 0, "C"),
+                createAtom(2.2, -3.0, 0, "C"),
+                createAtom(3.0, -4.2, 0, "C"),
+                createAtom(2.2, -5.4, 0, "C"),
+                createAtom(0.8, -5.4, 0, "C"),
+                createAtom(0.0, -4.2, 0, "C"),
+                createAtom(1.5, -6.8, 0, "C"),
+                createAtom(2.8, -6.2, 0, "C")
+            ];
+
+            const indoleNitrogen = createAtom(1.0, -7.8, 0, "N");
+
+            connectAtoms(betaCarbon, indoleCarbons[0]);
+
+            [
+                [0,1],[1,2],[2,3],[3,4],[4,5],[5,0],
+                [4,6],[6,7],[7,3]
+            ].forEach(([i, j]) =>
+                connectAtoms(indoleCarbons[i], indoleCarbons[j])
+            );
+
+            connectAtoms(indoleCarbons[6], indoleNitrogen);
+
+            return molecule;
+}
+        function makeSiliconPolymer() {
+            const g = new THREE.Group();
+            const len = 5;
+            const spacing = 2;
+            const atoms = [];
+            for (let i = 0; i < len; i++) {
+                const si = atom(i * spacing, 0, 0, 0xffa500, 0.7);
+                atoms.push(si);
+                g.add(si);
+                const o1 = atom(i * spacing - 0.7, 1, 0, 0xff0000, 0.5);
+                const o2 = atom(i * spacing + 0.7, -1, 0, 0xff0000, 0.5);
+                g.add(o1, o2);
+                g.add(bond(si.position, o1.position));
+                g.add(bond(si.position, o2.position));
+                if (i > 0) g.add(bond(atoms[i - 1].position, si.position));
+            }
+            return g;
+        }
+
+        
 
         function makeCholesterol() {
             const g = new THREE.Group();
@@ -253,6 +353,8 @@
                 dna: {mol: makeDNA(), title: 'DNA Base Pair (A-T)', type: 'Nucleic acid', role: 'Genetic storage', struct: '2 H-bonds', feat: 'Watson-Crick pairing'},
                 dnacg: {mol: makeDNACG(), title: 'DNA Base Pair (C-G)', type: 'Nucleic acid', role: 'Genetic storage', struct: '3 H-bonds', feat: 'Watson-Crick pairing'},
                 acetylcoa: {mol: makeAcetylCoA(), title: 'Acetyl-CoA', type: 'Coenzyme', role: 'Metabolic intermediate', struct: '2-carbon acetyl', feat: 'TCA entry'},
+                tryptophan: {mol: makeTrytophan(), title: 'Tryptophan (C₁₁H₁₂N₂O₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Aromatic side chain', feat: 'Precursor to serotonin'},
+                siliconpolymer: {mol: makeSiliconPolymer(), title: 'Silicon Polymer (SiO)n', type: 'Inorganic polymer', role: 'Sealants and adhesives', struct: 'Si-O backbone', feat: 'Thermal stability'},
                 cholesterol: {mol: makeCholesterol(), title: 'Cholesterol (C₂₇H₄₆O)', type: 'Steroid', role: 'Membrane component', struct: 'Four rings', feat: 'Hormone precursor'}
             };
             const d = info[name];

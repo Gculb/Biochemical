@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🧬 Biochemistry Degree Guide</h1>
+            <h1>🧬 Biochemistry Guide</h1>
             <p class="subtitle">Your comprehensive roadmap from Gen Chem to Advanced Biochemistry</p>
         </header>
 
@@ -40,6 +40,8 @@
                         <button class="mol-btn" onclick="loadMol('dna')">DNA Base Pair (A-T)</button>
                         <button class="mol-btn" onclick="loadMol('dnacg')">DNA Base Pair (C-G)</button>
                         <button class="mol-btn" onclick="loadMol('acetylcoa')">Acetyl-CoA</button>
+                        <button class="mol-btn" onclick="loadMol('tryptophan')">Tryptophan</button>
+                        <button class="mol-btn" onclick="loadMol('siliconpolymer')">Silicon Polymer</button>
                         <button class="mol-btn" onclick="loadMol('cholesterol')">Cholesterol</button>
                     </div>
 
@@ -444,6 +446,22 @@
                             <li><strong>UV-Vis Spectroscopy:</strong> Analyzing electronic transitions in molecules</li>
                             <li><strong>Beer-Lambert Law:</strong> A = εbc for quantifying concentration using absorbance</li>
                             <li><strong>Sample Preparation:</strong> Proper techniques for preparing samples for spectroscopic analysis</li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Electron Orbitals</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Exploring the arrangement and behavior of electrons in atoms and molecules.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Orbital Types:</strong> s, p, d, f orbitals and their shapes</li>
+                            <li><strong>Energy Levels:</strong> Understanding the energy hierarchy of orbitals (Aufbau principle)</li>
+                            <li><strong>Electron Configuration:</strong> Writing configurations using the Pauli exclusion principle and Hund's rule</li>
+                            <li><strong>Quantum Numbers:</strong> n, l, m_l, m_s and their significance in defining electron positions</li>
+                            <li><strong>Orbital Hybridization:</strong> sp, sp², sp³ hybridization and its role in molecular geometry</li>
                         </ul>
                     </div>
             </div>
@@ -1509,7 +1527,7 @@
                 <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                         <h4>Problem 12: R/S configuration</h4>
-                        <span style="background: #fff3cd; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
                     </div>
                     <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
                         Determine the R/S configuration of the chiral center in the molecule below:
@@ -1540,7 +1558,7 @@
                 <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                         <h4>Problem 12: DNA replication</h4>
-                        <span style="background: #fff3cd; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
                     </div>
                     <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
                         During DNA replication, which enzyme is responsible for synthesizing the new DNA strand by adding nucleotides to the 3' end?
@@ -1561,7 +1579,7 @@
                 <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                         <h4>Problem 13: Metabolic Pathways</h4>
-                        <span style="background: #fff3cd; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
                     </div>
                     <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
                         Which metabolic pathway is primarily responsible for generating NADPH and ribose-5-phosphate in cells?                    
@@ -1581,7 +1599,7 @@
                 <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                         <h4>Problem 14: Metabolic Pathways</h4>
-                        <span style="background: #fff3cd; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
                     </div>
                     <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
                           Which enzyme is the key regulatory step in glycolysis?                  
@@ -1598,6 +1616,127 @@
                         </div>
                     </details>
                 </div>
+                    <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 15: DNA replication</h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                        During DNA replication, which enzyme is responsible for synthesizing the new DNA strand by adding nucleotides to the 3' end?                
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: DNA polymerase</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>DNA polymerase is the enzyme responsible for synthesizing the new DNA strand by adding nucleotides to the 3' end during DNA replication. It ensures accurate copying of the genetic material.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+                <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 16: DNA vs RNA </h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                        Which of the following nucleotides is found in RNA but not in DNA?              
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: Uracil</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>Uracil is the nucleotide found in RNA but not in DNA. In DNA, thymine is present instead of uracil.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+                <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 17: Cell Organelles </h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                      What is the role of the Smooth Endoplasmic Reticulum (SER) in cells?  
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: Lipids synthesis and detoxification</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>The Smooth Endoplasmic Reticulum (SER) is involved in the synthesis of lipids, metabolism of carbohydrates, and detoxification of drugs and poisons in the cell.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+                <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 18: Cell Organelles </h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                      What is the role of the Golgi apparatus in cells?  
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: Protein modification and sorting</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>The Golgi apparatus modifies, sorts, and packages proteins and lipids for secretion or delivery to other organelles.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+                <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 19: Enzyme Kinetics </h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                        Which type of inhibition can be overcome by increasing substrate concentration? 
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: Competitive inhibition</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>Competitive inhibition can be overcome by increasing substrate concentration because the inhibitor competes with the substrate for the active site of the enzyme.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+                <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 20: Enzyme Kinetics </h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                        Given an enzyme that follows Michaelis-Menten kinetics, which type of inhibition decreases the Vmax but does not affect the Km?
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: Non-competitive inhibition</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>Non-competitive inhibition decreases the Vmax because the inhibitor binds to an allosteric site, not the active site, and this binding reduces the overall number of active enzyme molecules. However, it does not affect the Km because the affinity of the enzyme for the substrate remains unchanged.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
                 
                 
 
