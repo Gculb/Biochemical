@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script src="LabEngine.Js" defer></script>
     <script src="scripts.js" defer></script>
 
 </head>
@@ -67,6 +69,11 @@
             <button class="tab" onclick="show('problems')">
                 <i class="fa-solid fa-pen-to-square"></i> Practice Problems
             </button>
+
+             <button class="tab" onclick="show('lab')">
+                <i class="fa-solid fa-laptop-code"></i> Virtual Lab
+            </button>
+            
 
             <button class="tab" onclick="show('about')">
                 <i class="fa-solid fa-circle-info"></i> About
@@ -2387,6 +2394,45 @@
                     </ul>
                 </div>
                 </div>
+                <div id="lab" class="section">
+                <h3>Michaelis–Menten Virtual Enzyme Lab</h3>
+                    <p>This virtual lab system is powered by a shared simulation engine (LabEngine.js) that supports multiple experimental models.</p>
+                <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                    <div style="min-width:260px; flex:1;">
+                    <label>Enzyme concentration [E]₀ (µM)</label>
+                    <input id="mm_E" type="number" value="1" step="0.1">
+
+                    <label>kcat (s⁻¹)</label>
+                    <input id="mm_kcat" type="number" value="100" step="1">
+
+                    <label>Kₘ (µM)</label>
+                    <input id="mm_Km" type="number" value="50" step="1">
+
+                    <label>Max substrate concentration (µM)</label>
+                    <input id="mm_Smax" type="number" value="300">
+
+                    <label>Step size (µM)</label>
+                    <input id="mm_step" type="number" value="10">
+                    <br>
+                    <label>
+                        
+                        <input id="mm_noise" type="checkbox"> Add experimental noise
+                    </label>
+
+                    <div style="margin-top:10px;">
+                        <button id="mm_run">Run Experiment</button>
+                        <button id="mm_fit">Fit Km & Vmax</button>
+                    </div>
+                    </div>
+
+                    <div style="flex:2; min-width:360px;">
+                    <canvas id="mm_chart" height="240"></canvas>
+                    <div id="mm_info" style="margin-top:8px; font-size:0.95em;"></div>
+                    </div>
+                </div>
+                </div>
+                
+
             <div id="about" class="section">
                 <h2 class="title">About</h2>
                     <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 3px solid #667eea; box-shadow: 0 10px 25px rgba(0,0,0,0.08);">
