@@ -47,6 +47,7 @@
                         <button class="mol-btn" onclick="loadMol('tryptophan')">Tryptophan</button>
                         <button class="mol-btn" onclick="loadMol('siliconpolymer')">Silicon Polymer</button>
                         <button class="mol-btn" onclick="loadMol('cholesterol')">Cholesterol</button>
+                        <button class="mol-btn" onclick="loadMol('alphahelix')">Alpha Helix</button>
                     </div>
 
                     <canvas id="canvas3d"></canvas>
@@ -2138,53 +2139,55 @@
 
                 <p style="margin: 20px 0; color: #666; font-style: italic;">More practice problems available covering enzyme kinetics, stereochemistry, DNA replication, and metabolic pathways...</p>
             </div>
-        </div>
             <div id="about" class="section">
-            <h2 class="title">About This Project</h2>
+                <h2 class="title">About</h2>
+                    <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 3px solid #667eea; box-shadow: 0 10px 25px rgba(0,0,0,0.08);">
+                        <p>
+                        This project is an interactive, web-based biochemistry platform designed to visualize molecular
+                        structures and reinforce core chemistry and biochemistry concepts through hands-on exploration.
+                        </p>
 
-            <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 30px; line-height: 1.7;margin-bottom: auto;">
-                
-                <p style="font-size: 1.1em; color: #333;">
-                This project is an interactive, web-based biochemistry platform designed to visualize molecular
-                structures and reinforce core chemistry and biochemistry concepts through hands-on exploration.
-                </p>
+                        <p style="margin-top: 12px;">
+                        The goal of this project was to build a technically non-trivial frontend application that
+                        demonstrates strong JavaScript fundamentals, interactive graphics, and thoughtful UI state
+                        management while leveraging my academic background in biochemistry.
+                        </p>
+                    </div>
 
-                <p style="margin-top: 15px; color: #444;">
-                The goal of this project was to build a technically non-trivial frontend application that
-                demonstrates strong JavaScript fundamentals, interactive graphics, and thoughtful UI state
-                management while leveraging my academic background in biochemistry.
-                </p>
+                    <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border: 3px solid #667eea;">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">My Role & Contributions</h3>
+                        <ul>
+                        <li>Designed and implemented the entire frontend architecture as a solo developer</li>
+                        <li>Built an interactive 3D molecular viewer using <strong>Three.js</strong></li>
+                        <li>Implemented dynamic UI components, tab-based navigation, and expandable content cards</li>
+                        <li>Added persistent client-side state using <strong>LocalStorage</strong> for saved molecular views</li>
+                        <li>Integrated <strong>MathJax</strong> to render chemical equations and mathematical expressions</li>
+                        <li>Ensured responsive layout and accessible UI patterns across screen sizes</li>
+                        </ul>
+                    </div>
 
-                <h3 style="margin-top: 25px; color: #667eea;">My Role & Contributions</h3>
-                <ul style="margin-top: 10px; padding-left: 20px; color: #333;">
-                <li>Designed and implemented the entire frontend architecture as a solo developer</li>
-                <li>Built an interactive 3D molecular viewer using <strong>Three.js</strong></li>
-                <li>Implemented dynamic UI components, tab-based navigation, and expandable content cards</li>
-                <li>Added persistent client-side state using <strong>LocalStorage</strong> for saved molecular views</li>
-                <li>Integrated <strong>MathJax</strong> to render chemical equations and mathematical expressions</li>
-                <li>Ensured responsive layout and accessible UI patterns across screen sizes</li>
-                </ul>
+                    <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border: 3px solid #667eea;">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">Technical Focus</h3>
+                        <ul>
+                        <li>Vanilla JavaScript (ES6+), HTML5, CSS3</li>
+                        <li>3D scene setup, camera controls, and animation loops</li>
+                        <li>DOM-driven state management without external frameworks</li>
+                        <li>Separation of concerns between rendering logic, UI, and data</li>
+                        </ul>
+                    </div>
 
-                <h3 style="margin-top: 25px; color: #667eea;">Technical Focus</h3>
-                <ul style="margin-top: 10px; padding-left: 20px; color: #333;">
-                <li>Vanilla JavaScript (ES6+), HTML5, CSS3</li>
-                <li>3D scene setup, camera controls, and animation loops</li>
-                <li>DOM-driven state management without external frameworks</li>
-                <li>Separation of concerns between rendering logic, UI, and data</li>
-                </ul>
-
-                <h3 style="margin-top: 25px; color: #667eea;">Why This Project</h3>
-                <p style="margin-top: 10px; color: #444;">
-                This project highlights my ability to translate complex scientific concepts into usable software
-                products. It demonstrates problem-solving, self-directed learning, and end-to-end ownership of
-                a client-side application — from design and architecture to implementation and polish.
-                </p>
-
-                <p style="margin-top: 20px; font-style: italic; color: #666;">
-                Created by Grant Culbertson — Biochemistry graduate, frontend-focused software developer.
-                </p>
-
+                    <div style="background: #f8f9fa; padding: 25px; border-radius: 15px; margin-bottom: 20px; border: 3px solid #667eea;">
+                        <h3 style="color: #667eea; margin-bottom: 15px;">Why This Project</h3>
+                        <p>
+                        This project highlights my ability to translate complex scientific concepts into usable software
+                        products. It demonstrates problem-solving, self-directed learning, and end-to-end ownership of
+                        a client-side application, from design and architecture to implementation and polish.
+                        </p>
+                        <p style="margin-top: 15px; font-style: italic; color: #666;">
+                        Created by Grant Culbertson — Biochemistry graduate, frontend-focused software developer.
+                        </p>
+                    </div>
             </div>
-            </div>
+
 </body>
 </html>

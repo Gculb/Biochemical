@@ -61,6 +61,77 @@
             b.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());
             return b;
         }
+                function dashedBond(p1, p2, segments = 6) {
+        const g = new THREE.Group();
+        const dir = new THREE.Vector3().subVectors(p2, p1);
+        const step = dir.clone().divideScalar(segments);
+
+        for (let i = 0; i < segments; i += 2) {
+            const start = p1.clone().add(step.clone().multiplyScalar(i));
+            const end = p1.clone().add(step.clone().multiplyScalar(i + 1));
+            g.add(bond(start, end, 0x00ffff)); // cyan for H-bond
+        }
+        return g;
+}
+        function makeAlphaHelix() {
+            const g = new THREE.Group();
+
+            const residues = 12;
+            const radius = 1.2;
+            const rise = 0.5;
+            const turn = (2 * Math.PI) / 3.6;
+
+            const backbone = [];
+
+            for (let i = 0; i < residues; i++) {
+                const angle = i * turn;
+
+                // Backbone positions
+                const caPos = new THREE.Vector3(
+                    Math.cos(angle) * radius,
+                    i * rise,
+                    Math.sin(angle) * radius
+                );
+
+                const nPos = caPos.clone().add(new THREE.Vector3(
+                    Math.cos(angle - 0.3) * 0.6,
+                    -0.3,
+                    Math.sin(angle - 0.3) * 0.6
+                ));
+
+                const cPos = caPos.clone().add(new THREE.Vector3(
+                    Math.cos(angle + 0.3) * 0.6,
+                    0.3,
+                    Math.sin(angle + 0.3) * 0.6
+                ));
+
+                // Atoms
+                const n = atom(nPos.x, nPos.y, nPos.z, 0x0000ff, 0.35); // N
+                const ca = atom(caPos.x, caPos.y, caPos.z, 0xaaaaaa, 0.4); // Cα
+                const c = atom(cPos.x, cPos.y, cPos.z, 0x333333, 0.35); // C
+
+                g.add(n, ca, c);
+
+                // Backbone bonds
+                g.add(bond(nPos, caPos));
+                g.add(bond(caPos, cPos));
+
+                if (i > 0) {
+                    g.add(bond(backbone[i - 1].cPos, nPos));
+                }
+
+                backbone.push({ nPos, cPos });
+            }
+
+            // Hydrogen bonds (i → i+4)
+            for (let i = 0; i < residues - 4; i++) {
+                const donor = backbone[i + 4].nPos;
+                const acceptor = backbone[i].cPos;
+                g.add(dashedBond(acceptor, donor));
+            }
+
+            return g;
+        }
 
         function makeGlucose() {
             const g = new THREE.Group();
@@ -301,20 +372,75 @@
 }
         function makeSiliconPolymer() {
             const g = new THREE.Group();
-            const len = 5;
-            const spacing = 2;
-            const atoms = [];
-            for (let i = 0; i < len; i++) {
-                const si = atom(i * spacing, 0, 0, 0xffa500, 0.7);
-                atoms.push(si);
+
+            const units = 6;
+            const siO = 1.6;
+            const siC = 1.85;
+            const zigzag = 1.4;
+
+            let prevO = null;
+            let direction = 1;
+
+            for (let i = 0; i < units; i++) {
+
+                // Silicon position
+                const siPos = new THREE.Vector3(
+                    i * 2.2,
+                    0,
+                    direction * zigzag
+                );
+
+                const si = atom(siPos.x, siPos.y, siPos.z, 0xffa500, 0.7);
                 g.add(si);
-                const o1 = atom(i * spacing - 0.7, 1, 0, 0xff0000, 0.5);
-                const o2 = atom(i * spacing + 0.7, -1, 0, 0xff0000, 0.5);
-                g.add(o1, o2);
-                g.add(bond(si.position, o1.position));
-                g.add(bond(si.position, o2.position));
-                if (i > 0) g.add(bond(atoms[i - 1].position, si.position));
+
+                // Oxygen to next unit
+                if (i < units - 1) {
+                    const oPos = new THREE.Vector3(
+                        siPos.x + 1.1,
+                        0.5 * direction,
+                        siPos.z + zigzag
+                    );
+
+                    const o = atom(oPos.x, oPos.y, oPos.z, 0xff0000, 0.5);
+                    g.add(o);
+                    g.add(bond(siPos, oPos));
+
+                    if (prevO) {
+                        g.add(bond(prevO.position, siPos));
+                    }
+                    prevO = o;
+                }
+
+                // Two methyl groups (CH3)
+                const offsets = [
+                    new THREE.Vector3(0, 1.2, 0.8),
+                    new THREE.Vector3(0, -1.2, -0.8)
+                ];
+
+                offsets.forEach(off => {
+                    const cPos = siPos.clone().add(off);
+                    const c = atom(cPos.x, cPos.y, cPos.z, 0x333333, 0.45);
+                    g.add(c);
+                    g.add(bond(siPos, cPos));
+
+                    // Hydrogens
+                    for (let h = 0; h < 3; h++) {
+                        const hPos = cPos.clone().add(
+                            new THREE.Vector3(
+                                Math.cos(h * 2 * Math.PI / 3) * 0.6,
+                                Math.sin(h * 2 * Math.PI / 3) * 0.6,
+                                0.4
+                            )
+                        );
+                        const hydrogen = atom(hPos.x, hPos.y, hPos.z, 0xffffff, 0.25);
+                        g.add(hydrogen);
+                        g.add(bond(cPos, hPos));
+                    }
+                });
+
+                direction *= -1;
             }
+
             return g;
         }
 
@@ -354,8 +480,9 @@
                 dnacg: {mol: makeDNACG(), title: 'DNA Base Pair (C-G)', type: 'Nucleic acid', role: 'Genetic storage', struct: '3 H-bonds', feat: 'Watson-Crick pairing'},
                 acetylcoa: {mol: makeAcetylCoA(), title: 'Acetyl-CoA', type: 'Coenzyme', role: 'Metabolic intermediate', struct: '2-carbon acetyl', feat: 'TCA entry'},
                 tryptophan: {mol: makeTrytophan(), title: 'Tryptophan (C₁₁H₁₂N₂O₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Aromatic side chain', feat: 'Precursor to serotonin'},
-                siliconpolymer: {mol: makeSiliconPolymer(), title: 'Silicon Polymer (SiO)n', type: 'Inorganic polymer', role: 'Sealants and adhesives', struct: 'Si-O backbone', feat: 'Thermal stability'},
-                cholesterol: {mol: makeCholesterol(), title: 'Cholesterol (C₂₇H₄₆O)', type: 'Steroid', role: 'Membrane component', struct: 'Four rings', feat: 'Hormone precursor'}
+                siliconpolymer: {mol: makeSiliconPolymer(),title: 'Polydimethylsiloxane (PDMS)',type: 'Organosilicon polymer',role: 'Sealants, elastomers, biomedical materials',struct: '–[Si(CH₃)₂–O]ₙ–',feat: 'Low Tg, high flexibility, thermal stability'},
+                cholesterol: {mol: makeCholesterol(), title: 'Cholesterol (C₂₇H₄₆O)', type: 'Steroid', role: 'Membrane component', struct: 'Four rings', feat: 'Hormone precursor'},
+                alphahelix: {mol: makeAlphaHelix(), title: 'Alpha Helix', type: 'Protein secondary structure', role: 'Structural motif', struct: 'Right-handed coil', feat: 'Stabilized by H-bonds'}
             };
             const d = info[name];
             mol = d.mol;

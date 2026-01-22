@@ -33,7 +33,7 @@
         .section { display: none; }
         .section.active { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .title { color: #667eea; font-size: 2em; margin-bottom: 30px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .title {  opacity: 1 !important;transform: none !important; filter: none !important; color: #667eea; font-size: 2em; margin-bottom: 30px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
         
         /* 3D Viewer Styles */
         .viewer-box { background: #1a1a2e; border-radius: 15px; padding: 30px; margin-bottom: 30px; }
@@ -262,3 +262,4 @@
             margin-top: 5px;
             font-size: 0.9em;
         }
+
