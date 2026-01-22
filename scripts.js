@@ -370,22 +370,55 @@
 
             return molecule;
 }
+        function addTrimethylEnd(group, anchor) {
+
+            const siPos = anchor.clone();
+            const si = atom(siPos.x, siPos.y, siPos.z, 0xffa500, 0.7);
+            group.add(si);
+
+            const offsets = [
+                new THREE.Vector3(0,  1.2,  0),
+                new THREE.Vector3(0, -1.2,  0),
+                new THREE.Vector3(0,  0,  1.2)
+            ];
+
+            offsets.forEach(off => {
+                const cPos = siPos.clone().add(off);
+                const c = atom(cPos.x, cPos.y, cPos.z, 0x333333, 0.45);
+                group.add(c);
+                group.add(bond(siPos, cPos));
+
+                for (let h = 0; h < 3; h++) {
+                    const hPos = cPos.clone().add(
+                        new THREE.Vector3(
+                            Math.cos(h * 2 * Math.PI / 3) * 0.6,
+                            Math.sin(h * 2 * Math.PI / 3) * 0.6,
+                            0.4
+                        )
+                    );
+                    const hydrogen = atom(hPos.x, hPos.y, hPos.z, 0xffffff, 0.25);
+                    group.add(hydrogen);
+                    group.add(bond(cPos, hPos));
+                }
+            });
+        }
+
         function makeSiliconPolymer() {
             const g = new THREE.Group();
 
-            const units = 6;
-            const siO = 1.6;
+            const units = 15;        // chain length
+            const siO = 1.65;
             const siC = 1.85;
-            const zigzag = 1.4;
+            const zigzag = 1.2;
 
-            let prevO = null;
+            let prevSiPos = null;
             let direction = 1;
 
             for (let i = 0; i < units; i++) {
 
                 // Silicon position
                 const siPos = new THREE.Vector3(
-                    i * 2.2,
+                    i * 2.4,
                     0,
                     direction * zigzag
                 );
@@ -393,28 +426,24 @@
                 const si = atom(siPos.x, siPos.y, siPos.z, 0xffa500, 0.7);
                 g.add(si);
 
-                // Oxygen to next unit
-                if (i < units - 1) {
-                    const oPos = new THREE.Vector3(
-                        siPos.x + 1.1,
-                        0.5 * direction,
-                        siPos.z + zigzag
-                    );
+                // Oxygen bridge (Si–O–Si)
+                if (prevSiPos) {
+                    const oPos = prevSiPos.clone()
+                        .add(siPos)
+                        .multiplyScalar(0.5)
+                        .add(new THREE.Vector3(0, 0.6 * direction, 0));
 
                     const o = atom(oPos.x, oPos.y, oPos.z, 0xff0000, 0.5);
                     g.add(o);
-                    g.add(bond(siPos, oPos));
 
-                    if (prevO) {
-                        g.add(bond(prevO.position, siPos));
-                    }
-                    prevO = o;
+                    g.add(bond(prevSiPos, oPos));
+                    g.add(bond(oPos, siPos));
                 }
 
-                // Two methyl groups (CH3)
+                // Two methyl groups (CH3) on silicon
                 const offsets = [
-                    new THREE.Vector3(0, 1.2, 0.8),
-                    new THREE.Vector3(0, -1.2, -0.8)
+                    new THREE.Vector3(0,  1.1,  0.9),
+                    new THREE.Vector3(0, -1.1, -0.9)
                 ];
 
                 offsets.forEach(off => {
@@ -432,17 +461,27 @@
                                 0.4
                             )
                         );
-                        const hydrogen = atom(hPos.x, hPos.y, hPos.z, 0xffffff, 0.25);
+
+                        const hydrogen = atom(
+                            hPos.x, hPos.y, hPos.z,
+                            0xffffff, 0.25
+                        );
                         g.add(hydrogen);
                         g.add(bond(cPos, hPos));
                     }
                 });
 
+                prevSiPos = siPos;
                 direction *= -1;
             }
 
+            // === End groups (–Si(CH3)3) ===
+            addTrimethylEnd(g, new THREE.Vector3(-2.4, 0, 0));
+            addTrimethylEnd(g, new THREE.Vector3(units * 2.4, 0, 0));
+
             return g;
         }
+
 
         
 
@@ -480,7 +519,7 @@
                 dnacg: {mol: makeDNACG(), title: 'DNA Base Pair (C-G)', type: 'Nucleic acid', role: 'Genetic storage', struct: '3 H-bonds', feat: 'Watson-Crick pairing'},
                 acetylcoa: {mol: makeAcetylCoA(), title: 'Acetyl-CoA', type: 'Coenzyme', role: 'Metabolic intermediate', struct: '2-carbon acetyl', feat: 'TCA entry'},
                 tryptophan: {mol: makeTrytophan(), title: 'Tryptophan (C₁₁H₁₂N₂O₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Aromatic side chain', feat: 'Precursor to serotonin'},
-                siliconpolymer: {mol: makeSiliconPolymer(),title: 'Polydimethylsiloxane (PDMS)',type: 'Organosilicon polymer',role: 'Sealants, elastomers, biomedical materials',struct: '–[Si(CH₃)₂–O]ₙ–',feat: 'Low Tg, high flexibility, thermal stability'},
+                siliconpolymer: {mol: makeSiliconPolymer(),title: 'Polydimethylsiloxane (PDMS)',type: 'Organosilicon polymer',role: 'Sealants, elastomers, biomedical materials',struct: '–[Si(CH₃)₂–O]ₙ–, n = 15',feat: 'Low Tg, high flexibility, thermal stability'},
                 cholesterol: {mol: makeCholesterol(), title: 'Cholesterol (C₂₇H₄₆O)', type: 'Steroid', role: 'Membrane component', struct: 'Four rings', feat: 'Hormone precursor'},
                 alphahelix: {mol: makeAlphaHelix(), title: 'Alpha Helix', type: 'Protein secondary structure', role: 'Structural motif', struct: 'Right-handed coil', feat: 'Stabilized by H-bonds'}
             };
