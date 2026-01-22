@@ -27,14 +27,27 @@
             transition: all 0.3s;
             backdrop-filter: blur(10px);
         }
-        .tab:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
-        .tab.active { background: white; color: #667eea; font-weight: bold; }
+        .tab:hover {
+            background: rgba(255,255,255,0.5);
+            color: #4a5cff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(102,126,234,0.45);
+        }
+
+        .tab.active {
+            background: white;
+            color: #667eea;
+            font-weight: 700;
+            transform: none;
+            box-shadow: inset 0 0 0 3px #667eea, 0 10px 30px rgba(102,126,234,0.6);
+        }
+
         .content { background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
         .section { display: none; }
         .section.active { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .title {  opacity: 1 !important;transform: none !important; filter: none !important; color: #667eea; font-size: 2em; margin-bottom: 30px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
-        
+        .tab i { margin-right: 6px }
         /* 3D Viewer Styles */
         .viewer-box { background: #1a1a2e; border-radius: 15px; padding: 30px; margin-bottom: 30px; }
         canvas { width: 100%; height: 500px; background: #0f0f1e; border-radius: 10px; border: 3px solid #667eea; display: block; cursor: grab; }
@@ -56,8 +69,20 @@
             font-weight: bold;
             transition: all 0.3s;
         }
-        .mol-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); }
-        .mol-btn.active { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); }
+        .mol-btn:hover {
+            background: linear-gradient(135deg, #ff7b7b 0%, #ffb43b 100%);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
+
+            filter: brightness(1.15);
+        }
+
+        .mol-btn.active {
+            background: linear-gradient(135deg, #ff3b3b 0%, #ff7b7b 100%);
+            box-shadow: 0 10px 25px rgba(255, 59, 59, 0.6);
+            transform: scale(1.05);
+        }
+
         .controls {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
@@ -262,4 +287,57 @@
             margin-top: 5px;
             font-size: 0.9em;
         }
+        .disclaimer-box {
+            margin-top: 20px;
+            padding: 12px 16px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid #f4b400;
+            font-size: 0.9rem;
+            color: black;
+        }
+
+        .disclaimer-box p {
+            margin: 6px 0;
+        }
+
+        .disclaimer-box .credit {
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+
+        .disclaimer-box a {
+            color: #8ab4f8;
+            text-decoration: none;
+        }
+
+        .disclaimer-box a:hover {
+            text-decoration: underline;
+        }
+        .concept-card {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid white;
+
+            /* 🔑 overflow fixes */
+            overflow-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+
+            /* 🔑 readability */
+            line-height: 1.5;
+            font-size: 0.95rem;
+
+            /* 🔑 alignment */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .concept-card.light {
+        background: #ffffff;
+        color: #222;
+        border-left: 4px solid #667eea;
+        }
+
 

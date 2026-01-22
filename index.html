@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biochemistry Degree Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="scripts.js" defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -17,19 +19,62 @@
         </header>
 
         <div class="tabs">
-            <button class="tab active" onclick="show('viewer')">3D Molecular Viewer</button>
-            <button class="tab" onclick="show('genchem')">General Chemistry</button>
-            <button class ="tab" onclick ="show('genchemlab')">General Chemistry Lab</button>
-            <button class="tab" onclick="show('ochem')">Organic Chemistry</button>
-            <button class="tab" onclick="show('analytical')">Analytical Chemistry</button>
-            <button class="tab" onclick="show('biochem1')">Biochemistry I</button>
-            <button class="tab" onclick="show('biochem2')">Biochemistry II</button>
-            <button class="tab" onclick="show('physical')">Physical Chemistry</button>
-            <button class="tab" onclick="show('genbio')">General Biology</button>
-            <button class="tab" onclick="show('microbio')">Microbiology</button>
-            <button class="tab" onclick="show('problems')">Practice Problems</button>
-            <button class="tab" onclick="show('about')">About</button>
+            <button class="tab active" onclick="show('viewer')">
+                <i class="fa-solid fa-atom"></i> 3D Molecular Viewer
+            </button>
+
+            <button class="tab" onclick="show('genchem')">
+                <i class="fa-solid fa-flask"></i> General Chemistry
+            </button>
+
+            <button class="tab" onclick="show('genchemlab')">
+                <i class="fa-solid fa-vial"></i> General Chemistry Lab
+            </button>
+
+            <button class="tab" onclick="show('ochem')">
+                <i class="fa-solid fa-dna"></i> Organic Chemistry
+            </button>
+
+            <button class="tab" onclick="show('analytical')">
+                <i class="fa-solid fa-chart-line"></i> Analytical Chemistry
+            </button>
+
+            <button class="tab" onclick="show('biochem1')">
+                <i class="fa-solid fa-microscope"></i> Biochemistry I
+            </button>
+
+            <button class="tab" onclick="show('biochem2')">
+                <i class="fa-solid fa-microscope"></i> Biochemistry II
+            </button>
+
+            <button class="tab" onclick="show('physical')">
+                <i class="fa-solid fa-wave-square"></i> Physical Chemistry
+            </button>
+
+            <button class="tab" onclick="show('calculus')">
+                <i class="fa-solid fa-calculator"></i> Calculus For Chemists
+            </button>
+
+            <button class="tab" onclick="show('genbio')">
+                <i class="fa-solid fa-leaf"></i> General Biology
+            </button>
+
+            <button class="tab" onclick="show('microbio')">
+                <i class="fa-solid fa-bacteria"></i> Microbiology
+            </button>
+
+
+            <button class="tab" onclick="show('problems')">
+                <i class="fa-solid fa-pen-to-square"></i> Practice Problems
+            </button>
+
+            <button class="tab" onclick="show('about')">
+                <i class="fa-solid fa-circle-info"></i> About
+            </button>
+
+
         </div>
+
 
         <div class="content">
             <!-- 3D Viewer -->
@@ -86,6 +131,12 @@
                     <p><strong>Structure:</strong> 6-carbon ring</p>
                     <p><strong>Features:</strong> Glycolysis substrate</p>
                 </div>
+                <div class="disclaimer-box">
+                <p><strong>⚠️ Desktop Only:</strong> This 3D molecular viewer is optimized for desktop browsers and may not function correctly on mobile devices.</p>
+                <p class="credit">
+                    3D rendering powered by <a href="https://threejs.org/" target="_blank" rel="noopener">Three.js</a>
+                </p>
+            </div>
             </div>
 
             <!-- Other Sections -->
@@ -2139,6 +2190,203 @@
 
                 <p style="margin: 20px 0; color: #666; font-style: italic;">More practice problems available covering enzyme kinetics, stereochemistry, DNA replication, and metabolic pathways...</p>
             </div>
+            <div id="calculus" class="section">
+                <h2 class="title">Calculus for Chemist</h2>
+                <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.8em; margin-bottom: 20px;"> ⚡ Critical Concepts to Master </h3>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Partial Derivatives</strong>
+                            (∂/∂T)<sub>P</sub>, (∂/∂V)<sub>T</sub> — describe how thermodynamic variables respond under controlled conditions
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Total Differentials</strong>
+                            dU = TdS − PdV — foundation of thermodynamics and Maxwell relations
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Integrals & Partition Functions</strong>
+                            Z = ∫ e<sup>−βE</sup> dE — connect microscopic energy levels to macroscopic observables
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Differential Equations</strong>
+                            Rate laws, diffusion equation, Schrödinger equation — govern time and space evolution
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Taylor & Stirling Approximations</strong>
+                            Simplify complex expressions when a parameter is small or large (stat mech essential)
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Fourier & Laplace Transforms</strong>
+                            Convert between time/space and frequency domains (spectroscopy & kinetics)
+                        </div>
+
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg,#7ec8ff,#b78cff); color: white; padding:20px; border-radius:12px; margin-bottom:18px;">
+                    <h3>What this section teaches</h3>
+                    <p>
+                    The core calculus skills used across thermodynamics, kinetics, statistical mechanics and quantum chemistry:
+                    limits & series, single-variable derivatives & integrals, multivariable calculus (partials, total diffs),
+                    ODEs/PDEs, transforms (Laplace/Fourier), approximation methods (Taylor, saddle-point, Stirling),
+                    and numerical solvers (Runge–Kutta, Newton–Raphson).
+                    </p>
+                </div>
+
+                <!-- Essentials -->
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-bottom:16px;">
+                    <div style="background:#fff;padding:14px;border-radius:10px;">
+                    <h4>Limits & Series</h4>
+                    <ul>
+                        <li>Definition of limit; continuity</li>
+                        <li>Taylor series: \( f(x)=\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n \)</li>
+                        <li>Useful expansions: \(e^x\), \(\ln(1+x)\), \((1+x)^\alpha\)</li>
+                    </ul>
+                    </div>
+
+                    <div style="background:#fff;padding:14px;border-radius:10px;">
+                    <h4>Derivatives</h4>
+                    <ul>
+                        <li>Chain/product/quotient rules</li>
+                        <li>Implicit differentiation (useful for thermodynamic relations)</li>
+                        <li>Higher derivatives & curvature (series approximations)</li>
+                    </ul>
+                    </div>
+
+                    <div style="background:#fff;padding:14px;border-radius:10px;">
+                    <h4>Integrals</h4>
+                    <ul>
+                        <li>Standard techniques: substitution, integration by parts</li>
+                        <li>Improper integrals & convergence (Boltzmann integrals)</li>
+                        <li>Multiple integrals & change of variables (Jacobian)</li>
+                    </ul>
+                    </div>
+
+                    <div style="background:#fff;padding:14px;border-radius:10px;">
+                    <h4>Multivariable Calculus</h4>
+                    <ul>
+                        <li>Partial derivatives, gradient, divergence, Laplacian \(\nabla^2\)</li>
+                        <li>Total differential and exact differentials (thermodynamics)</li>
+                        <li>Chain rule for multivariable functions, Jacobians</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Differential equations -->
+                <div class="concept-card" style="background:#e6f7ff;padding:20px;border-radius:10px;margin-bottom:16px;">
+                    <h3>Differential Equations (ODE & PDE)</h3>
+                    <p>
+                    Techniques to solve the equations you'll meet most often in physical chemistry:
+                    </p>
+                    <ul>
+                    <li><strong>First-order ODEs:</strong> separation of variables, integrating factor for linear equations.
+                        Example: first-order decay \( \frac{d[A]}{dt} = -k[A] \Rightarrow [A](t) = [A]_0 e^{-kt} \).</li>
+                    <li><strong>Second-order ODEs:</strong> homogeneous/particular solutions (harmonic oscillator).</li>
+                    <li><strong>Systems of ODEs:</strong> matrix form \( \dot{\mathbf{x}} = A\mathbf{x} \) — eigenvalues/eigenvectors.</li>
+                    <li><strong>PDEs:</strong> separation of variables, Fourier methods (diffusion, Schrödinger eqn).</li>
+                    </ul>
+                </div>
+
+                <!-- Transforms & Approx -->
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin-bottom:16px;">
+                    <div style="background:#fff;padding:14px;border-radius:10px;">
+                    <h4>Transforms & Spectroscopy</h4>
+                    <p>
+                        Fourier transforms relate time and frequency domains (useful for interpreting spectra and autocorrelation functions).
+                        Laplace transforms are handy for solving linear ODEs with initial conditions.
+                    </p>
+                    </div>
+
+                    <div style="background:#fff;padding:14px;border-radius:10px;">
+                    <h4>Approximation Methods</h4>
+                    <ul>
+                        <li>Taylor expansions (local approximations)</li>
+                        <li>Stirling's approximation: \( \ln N! \approx N\ln N - N + \tfrac{1}{2}\ln(2\pi N) \) (stat mech)</li>
+                        <li>Saddle-point / steepest-descent (evaluating integrals of large parameters)</li>
+                        <li>Perturbation theory (small parameter expansions)</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Thermodynamics & Stat Mech examples -->
+                <div style="background:#f0fff4;padding:18px;border-radius:10px;margin-bottom:16px;">
+                    <h3>Worked Example — Partition function → mean energy</h3>
+                    <p>
+                    Partition function \( Z(\beta)=\sum_i e^{-\beta E_i} \) (or integral for continuous spectrum). The mean energy:
+                    \[
+                        \langle E\rangle = -\frac{\partial}{\partial \beta}\ln Z(\beta).
+                    \]
+                    <em>Technique used:</em> differentiate log of integral/sum; sometimes evaluate using approximation (saddle point or integral approximation).
+                    </p>
+
+                    <h3>Worked Example — First-order kinetics</h3>
+                    <p>
+                    Rate law: \( \frac{d[A]}{dt} = -k [A] \). Separate variables:
+                    \[
+                        \frac{d[A]}{[A]} = -k\, dt \quad\Rightarrow\quad \ln [A] - \ln [A]_0 = -kt,
+                    \]
+                    so \( [A](t) = [A]_0 e^{-kt} \). Use linearization (\(\ln [A]\) vs \(t\)) to find \(k\).
+                    </p>
+                </div>
+
+                <!-- Thermo calculus -->
+                <div style="background:#fff7f0;padding: 20px;border-radius:10px;margin-bottom:16px;">
+                    <h3>Thermodynamics — Partial derivatives & Maxwell relations</h3>
+                    <p>
+                    Use total differentials and equality of mixed partial derivatives to derive Maxwell relations.
+                    Example (Gibbs): \( dG = V\,dP - S\,dT \) so \( \left(\frac{\partial S}{\partial P}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_P \).
+                    (See your existing Maxwell derivation elsewhere on the site.) :contentReference[oaicite:2]{index=2}
+                    </p>
+                </div>
+
+                <!-- Numerical -->
+                <div style="background:#eef6ff;padding:20px;border-radius:10px;margin-bottom:16px;">
+                    <h3>Numerical Methods (practical)</h3>
+                    <ul>
+                    <li><strong>Root finding:</strong> Newton–Raphson for nonlinear equations (watch initial guess and convergence)</li>
+                    <li><strong>ODE integrators:</strong> Euler (simple), but use 4th-order Runge–Kutta (RK4) for accuracy; stiff solvers (BDF) for stiff kinetics</li>
+                    <li><strong>Numerical integration:</strong> Simpson’s rule, Gaussian quadrature for high-accuracy integrals</li>
+                    <li><strong>Eigenvalue problems:</strong> use library solvers (numpy.linalg.eig) for matrices in quantum problems</li>
+                    </ul>
+                </div>
+
+                <!-- Practice -->
+                <div style="background:#fffbe6;padding:20px;border-radius:10px;">
+                    <h3>Practice problems (try these)</h3>
+                    <ol>
+                    <li>Show the integrated form for a 2nd-order reaction: \( \frac{d[A]}{dt} = -k[A]^2 \).</li>
+                    <li>Use Stirling's approximation to show \( \ln \binom{N}{m} \) ≈ expression for large N (stat mech combinatorics).</li>
+                    <li>Solve the 1D diffusion equation \( \partial_t c = D \partial_{x}^2 c \) with initial δ-function (use Fourier transform).</li>
+                    <li>Derive expression for average energy of a harmonic oscillator using partition function.</li>
+                    </ol>
+                    <details style="margin-top:8px;">
+                    <summary style="cursor:pointer;">Show quick answers / hints</summary>
+                    <div style="margin-top:10px;">
+                        <ul>
+                        <li>2nd-order: separate to get \( \frac{1}{[A]} - \frac{1}{[A]_0} = kt \).</li>
+                        <li>Stirling hint: start with \( \ln N! \) and approximate integral of \( \ln x \).</li>
+                        <li>Diffusion: solution is Gaussian \( c(x,t) = \frac{1}{\sqrt{4\pi D t}} e^{-x^2/(4Dt)} \).</li>
+                        <li>Harmonic oscillator: discrete energies \( E_n = \hbar\omega(n+\tfrac12) \) → geometric series for Z → differentiate ln Z.</li>
+                        </ul>
+                    </div>
+                    </details>
+                </div>
+
+                <div style="margin-top:16px;padding:20px;background:#f8f9fa;border-radius:8px;">
+                    <strong>Study tips:</strong>
+                    <ul>
+                    <li>Work derivations by hand — that builds intuition for which approximation to use.</li>
+                    <li>Link math to measured quantities (e.g., how a partial derivative becomes a measurable coefficient).</li>
+                    <li>Practice numerical solutions in Python (RK4, SciPy solvers) for kinetics problems you can't solve analytically.</li>
+                    </ul>
+                </div>
+                </div>
             <div id="about" class="section">
                 <h2 class="title">About</h2>
                     <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 3px solid #667eea; box-shadow: 0 10px 25px rgba(0,0,0,0.08);">
