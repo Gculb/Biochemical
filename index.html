@@ -6,6 +6,7 @@
     <title>Biochemistry Degree Guide</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -20,11 +21,14 @@
             <button class="tab" onclick="show('genchem')">General Chemistry</button>
             <button class ="tab" onclick ="show('genchemlab')">General Chemistry Lab</button>
             <button class="tab" onclick="show('ochem')">Organic Chemistry</button>
+            <button class="tab" onclick="show('analytical')">Analytical Chemistry</button>
             <button class="tab" onclick="show('biochem1')">Biochemistry I</button>
             <button class="tab" onclick="show('biochem2')">Biochemistry II</button>
+            <button class="tab" onclick="show('physical')">Physical Chemistry</button>
             <button class="tab" onclick="show('genbio')">General Biology</button>
             <button class="tab" onclick="show('microbio')">Microbiology</button>
             <button class="tab" onclick="show('problems')">Practice Problems</button>
+            <button class="tab" onclick="show('about')">About</button>
         </div>
 
         <div class="content">
@@ -682,6 +686,166 @@
                         </div>
                         </div>
                 </div>
+            <div id="analytical" class="section">
+                <h2 class="title">Analytical Chemistry</h2>
+
+                <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);; color: white; padding: 28px; border-radius: 15px; margin-bottom: 22px;">
+                    <h3 style="font-size: 1.6em; margin-bottom: 14px;">⚡ Critical Concepts to Master</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Qualitative vs Quantitative</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Identify components vs measure how much — both need different approaches and controls.</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Calibration & Validation</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Calibration curves, LOD/LOQ, linearity, accuracy, precision, recovery studies.</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Sample Prep & Matrix Effects</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Extraction, cleanup, derivatization and how matrix alters signal and recovery.</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Uncertainty & QC</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Blanks, standards, controls, replicates, and documentation (SOPs).</div>
+                    </div>
+                    </div>
+                </div>
+
+                <p style="margin: 12px 0 18px 0; color: #666;">
+                    <strong>Key topics:</strong> Sampling & sample prep, titrimetry & gravimetry, spectroscopy, chromatography, mass spectrometry,
+                    electrochemical methods, method validation, QA/QC, data processing and reporting.
+                </p>
+
+                <div style="background: #f8f9fa; padding: 18px; border-radius: 12px; margin-bottom: 18px; border: 3px solid #4aa3ff;">
+                    <h4 style="color: #2a6fb7; margin-bottom: 12px; text-align:center;">Quick Reference — Method Validation</h4>
+                    <div style="font-family: 'Courier New', monospace; text-align:center; font-size:0.98em; padding:8px; background:white; border-radius:6px;">
+                    Linearity (R²) • LOD/LOQ • Accuracy (recovery %) • Precision (RSD %) • Selectivity • Robustness • Stability
+                    </div>
+                    <div style="margin-top:12px; color:#555; font-size:0.95em;">
+                    <ul style="padding-left:18px; margin:8px 0;">
+                        <li><strong>LOD/LOQ:</strong> LOD ≈ 3×noise, LOQ ≈ 10×noise (instrument-dependent)</li>
+                        <li><strong>Accuracy:</strong> Compare measured vs known (% recovery)</li>
+                        <li><strong>Precision:</strong> Repeatability (intra-day) and reproducibility (inter-day) — report RSD%</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Techniques grid -->
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-bottom:18px;">
+                    <div style="padding:14px; border-radius:10px; background:white; box-shadow:0 1px 0 rgba(0,0,0,0.05);">
+                    <h4 style="margin:0 0 8px 0;">Titrimetry & Gravimetry</h4>
+                    <ul style="margin:0; padding-left:18px; color:#444;">
+                        <li>Volumetric titrations (acid-base, redox, complexometric)</li>
+                        <li>Automated titrators and endpoint detection (potentiometric, photometric)</li>
+                        <li>Gravimetric analysis — mass-based quantitative methods</li>
+                    </ul>
+                    </div>
+
+                    <div style="padding:14px; border-radius:10px; background:white; box-shadow:0 1px 0 rgba(0,0,0,0.05);">
+                    <h4 style="margin:0 0 8px 0;">Spectroscopy</h4>
+                    <ul style="margin:0; padding-left:18px; color:#444;">
+                        <li>UV-Vis (Beer–Lambert law, ε, path length), Fluorescence (sensitivity)</li>
+                        <li>IR — functional group ID; Raman — vibrational structure in complex matrices</li>
+                        <li>AAS / ICP-MS — trace elemental analysis (ICP-MS for ppt detection)</li>
+                        <li>NMR — structural elucidation and quantitative NMR (qNMR)</li>
+                    </ul>
+                    </div>
+
+                    <div style="padding:14px; border-radius:10px; background:white; box-shadow:0 1px 0 rgba(0,0,0,0.05);">
+                    <h4 style="margin:0 0 8px 0;">Chromatography</h4>
+                    <ul style="margin:0; padding-left:18px; color:#444;">
+                        <li>TLC — quick qualitative checks</li>
+                        <li>GC (volatile analytes) & GC-MS (identification)</li>
+                        <li>HPLC / UHPLC — reversed phase, normal phase; LC-MS for complex mixes</li>
+                        <li>Retention time, selectivity factor, resolution, gradient vs isocratic runs</li>
+                    </ul>
+                    </div>
+
+                    <div style="padding:14px; border-radius:10px; background:white; box-shadow:0 1px 0 rgba(0,0,0,0.05);">
+                    <h4 style="margin:0 0 8px 0;">Mass Spectrometry</h4>
+                    <ul style="margin:0; padding-left:18px; color:#444;">
+                        <li>Ionization methods: EI, CI, ESI, MALDI</li>
+                        <li>Analyzers: Quadrupole, TOF, Orbitrap, FT-ICR (mass accuracy, resolving power)</li>
+                        <li>Quant via SRM/MRM (triple quad) and HRMS for unknown ID</li>
+                    </ul>
+                    </div>
+
+                    <div style="padding:14px; border-radius:10px; background:white; box-shadow:0 1px 0 rgba(0,0,0,0.05);">
+                    <h4 style="margin:0 0 8px 0;">Electrochemistry</h4>
+                    <ul style="margin:0; padding-left:18px; color:#444;">
+                        <li>Potentiometry (pH, ion-selective electrodes)</li>
+                        <li>Voltammetry & amperometry (trace analysis, sensors)</li>
+                        <li>Impedance spectroscopy (surface/interface characterization)</li>
+                    </ul>
+                    </div>
+
+                    <div style="padding:14px; border-radius:10px; background:white; box-shadow:0 1px 0 rgba(0,0,0,0.05);">
+                    <h4 style="margin:0 0 8px 0;">Sample Preparation</h4>
+                    <ul style="margin:0; padding-left:18px; color:#444;">
+                        <li>Filtration, centrifugation, SPE (solid-phase extraction), LLE (liquid–liquid extraction)</li>
+                        <li>Digestion (acid/peroxide), microextraction, derivatization for GC</li>
+                        <li>Preventing contamination (clean lab technique) and controlling matrix effects</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- expanded topic cards -->
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                    <span>Calibration & Quantitation</span>
+                    <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Best practices for turning instrument responses into reliable concentrations.</div>
+                    <div class="key-points">
+                    <ul>
+                        <li><strong>External calibration:</strong> Standard curve (blank → high concentration), check linear dynamic range</li>
+                        <li><strong>Internal standards:</strong> Compensate for sample prep and ionization variability (esp. LC-MS)</li>
+                        <li><strong>Isotope dilution:</strong> Gold standard for quantitation when available</li>
+                        <li><strong>Matrix-matched standards:</strong> Reduce matrix bias in complex samples</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                    <span>Quality Assurance & Controls <span class="important-badge">CRITICAL</span></span>
+                    <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">SOPs, documentation, and routine checks that keep results defensible.</div>
+                    <div class="key-points">
+                    <ul>
+                        <li>Blanks (reagent & method), check standards, spike recoveries</li>
+                        <li>Control charts (Levey-Jennings) and acceptance criteria</li>
+                        <li>Instrument logbook, preventative maintenance, calibration verification</li>
+                        <li>Chain of custody and reporting limits (LOD/LOQ) in final reports</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                    <span>Data Processing & Reporting</span>
+                    <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">From peak integration to uncertainty reporting — how to present analytical results.</div>
+                    <div class="key-points">
+                    <ul>
+                        <li>Signal baseline, peak integration, deconvolution (for co-eluting peaks)</li>
+                        <li>Calculate uncertainty: combine precision, bias, instrument error</li>
+                        <li>Reporting: method, calibration, QC results, LOD/LOQ and units</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 16px; padding: 14px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #ffc107;">
+                    <strong style="color:#856404;">Practical study tips:</strong>
+                    <ul style="margin:8px 0 0 18px; color:#856404;">
+                    <li>Work through example calculations: calibration curves, dilution series, RSD% and recovery.</li>
+                    <li>Practice by designing a method: sample prep → instrument → calibration → QC → report.</li>
+                    <li>Use instrument manuals & vendor application notes for instrument-specific tricks (LC-MS, ICP-MS).</li>
+                    </ul>
+                </div>
+                </div>
             <div id="biochem1" class="section">
                 <h2 class="title">Biochemistry I</h2>
                 
@@ -988,6 +1152,237 @@
                     </div>
                 </div>
             </div>
+            <div id="physical" class="section">
+                <h2 class="title">Physical Chemistry</h2>
+
+
+                <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);; color: white; padding: 28px; border-radius: 15px; margin-bottom: 22px;">
+                    <h3 style="font-size: 1.6em; margin-bottom: 14px;">⚡ Critical Concepts to Master</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Thermodynamics</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Know the fundamental laws, entropy, enthalpy, and free energy concepts.</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Nuclear Chemistry</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Understand radioactive decay, half-life, and nuclear reactions.</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Quantitative Analysis</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Understand how to quantify chemical species in samples.</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.12); padding: 12px; border-radius: 10px;">
+                        <strong>Quality Control</strong>
+                        <div style="margin-top:8px; font-size:0.95em;">Blanks, standards, controls, replicates, and documentation (SOPs).</div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Overview -->
+                <div style="background:linear-gradient(135deg,#ff8c6b,#ffd76b); padding:28px; border-radius:15px; margin-bottom:22px;">
+                    <h3>⚙️ Scope of Physical Chemistry</h3>
+                    <p style="font-size:1.05em;">
+                    Physical chemistry applies <strong>calculus, differential equations, linear algebra, and probability theory</strong>
+                    to describe how matter behaves at the molecular and atomic scale. It provides the mathematical foundation
+                    underlying thermodynamics, kinetics, quantum chemistry, and spectroscopy.
+                    </p>
+                </div>
+
+                <!-- Core Areas -->
+                <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-bottom:20px;">
+                    <div class="topic-box">
+                    <h4>Thermodynamics</h4>
+                    <ul>
+                        <li>Total differentials and exactness conditions</li>
+                        <li>Partial derivatives and Maxwell relations</li>
+                        <li>Free energy minimization and equilibrium</li>
+                        <li>Phase equilibria and response functions</li>
+                    </ul>
+                    </div>
+
+                    <div class="topic-box">
+                    <h4>Chemical Kinetics</h4>
+                    <ul>
+                        <li>Rate laws as ordinary differential equations</li>
+                        <li>Integrated rate laws via separation of variables</li>
+                        <li>Arrhenius and Eyring equations</li>
+                        <li>Coupled reaction systems</li>
+                    </ul>
+                    </div>
+
+                    <div class="topic-box">
+                    <h4>Quantum Chemistry</h4>
+                    <ul>
+                        <li>Eigenvalue problems of linear operators</li>
+                        <li>Boundary-value problems</li>
+                        <li>Basis expansions and variational methods</li>
+                        <li>MO theory and approximation techniques</li>
+                    </ul>
+                    </div>
+
+                    <div class="topic-box">
+                    <h4>Statistical Mechanics</h4>
+                    <ul>
+                        <li>Probability distributions and normalization</li>
+                        <li>Partition functions as generating functions</li>
+                        <li>Derivatives of ln(Z) → thermodynamic observables</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Math Toolkit -->
+                <div style="background:#f4f6ff; padding:18px; border-radius:12px; margin-bottom:20px;">
+                    <h3>📐 Mathematical Toolkit Used</h3>
+                    <ul>
+                    <li><strong>Multivariable calculus:</strong> total vs partial derivatives, Jacobians</li>
+                    <li><strong>Differential equations:</strong> reaction kinetics, diffusion</li>
+                    <li><strong>Linear algebra:</strong> eigenvalues, diagonalization, basis transformations</li>
+                    <li><strong>Integral calculus:</strong> partition functions, expectation values</li>
+                    <li><strong>Optimization:</strong> equilibrium from energy minimization</li>
+                    </ul>
+                </div>
+
+                <!-- FULL DERIVATION -->
+                <div style="background:#ffffff; padding:22px; border-radius:12px; border-left:5px solid #ff8c6b;">
+                    <h3>📘 Full Derivation: Maxwell Relation from the Gibbs Free Energy</h3>
+
+                    <p>
+                        We derive a Maxwell relation using <strong>exact differentials</strong> and the
+                        <strong>equality of mixed partial derivatives</strong>. This connects entropy and
+                        volume — two experimentally measurable quantities.
+                    </p>
+
+                    <h4>Step 1: Definition of Gibbs Free Energy</h4>
+
+                    $$ G = U + PV - TS $$
+
+                    Take the total differential:
+
+                    $$ dG = dU + P\,dV + V\,dP - T\,dS - S\,dT $$
+
+                    Using the first law for a closed system:
+
+                    $$ dU = T\,dS - P\,dV $$
+
+                    Substitute into \( dG \):
+
+                    $$ dG = (T\,dS - P\,dV) + P\,dV + V\,dP - T\,dS - S\,dT $$
+
+                    Simplify:
+
+                    $$ dG = V\,dP - S\,dT $$
+
+                    <h4>Step 2: Identify Natural Variables</h4>
+
+                    Since \( G = G(T,P) \):
+
+                    $$ dG =
+                    \left(\frac{\partial G}{\partial T}\right)_P dT +
+                    \left(\frac{\partial G}{\partial P}\right)_T dP $$
+
+                    Comparing coefficients:
+
+                    $$ \left(\frac{\partial G}{\partial T}\right)_P = -S
+                    \quad\text{and}\quad
+                    \left(\frac{\partial G}{\partial P}\right)_T = V $$
+
+                    <h4>Step 3: Equality of Mixed Partial Derivatives</h4>
+
+                    Because \( G \) is a state function:
+
+                    $$ \frac{\partial}{\partial P}
+                    \left(\frac{\partial G}{\partial T}\right)_P
+                    =
+                    \frac{\partial}{\partial T}
+                    \left(\frac{\partial G}{\partial P}\right)_T $$
+
+                    Substitute the expressions for entropy and volume:
+
+                    $$ \left(\frac{\partial (-S)}{\partial P}\right)_T
+                    =
+                    \left(\frac{\partial V}{\partial T}\right)_P $$
+
+                    <strong>Final Maxwell Relation:</strong>
+
+                    $$ \boxed{
+                    \left(\frac{\partial S}{\partial P}\right)_T
+                    =
+                    -\left(\frac{\partial V}{\partial T}\right)_P
+                    } $$
+
+                    <h4>Physical Meaning</h4>
+                    <ul>
+                        <li>Relates entropy changes to measurable thermal expansion</li>
+                        <li>Avoids direct entropy measurement</li>
+                        <li>Used in response functions and real-gas corrections</li>
+                    </ul>
+                    </div>
+                    <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Order of Reactions <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">
+                        Understanding zero, first, and second order reaction kinetics.
+                    </div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Zero order:</strong> Rate = k; [A] decreases linearly over time.</li>
+                            <li><strong>First order:</strong> Rate = k[A]; ln[A] vs time is linear.</li>
+                            <li><strong>Second order:</strong> Rate = k[A]²; 1/[A] vs time is linear.</li>
+                            <li><strong>Half-life:</strong> t₁/₂ = 0.693/k (first order), t₁/₂ = [A]₀/2k (second order)</li>
+                            <li><strong>Integrated rate laws:</strong> Used to determine reaction order experimentally.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Half-life<span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">The time it takes for a reaction to reach half of its initial concentration.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>First-order reactions:</strong> t₁/₂ = 0.693/k (independent of [A]₀)</li>
+                            <li><strong>Second-order reactions:</strong> t₁/₂ = 1/(k[A]₀) (depends on [A]₀)</li>
+                            <li><strong>Zero-order reactions:</strong> t₁/₂ = [A]₀/(2k) (depends on [A]₀)</li>
+                            <li><strong>Exponential decay:</strong> Characteristic of first-order kinetics</li>
+                            <li><strong>Applications:</strong> Radioactive decay, pharmacokinetics</li>
+                        </ul>
+                    </div>
+                </div>
+             <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Nuclear Chemistry <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Nuclear reactions, radioactive decay, and nuclear energy.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Types of decay:</strong> Alpha (α), Beta (β⁻/β⁺), Gamma (γ)</li>
+                            <li><strong>Half-life:</strong> Time for half the nuclei to decay; exponential decay law</li>
+                            <li><strong>Nuclear reactions:</strong> Fission (splitting) and fusion (combining)</li>
+                            <li><strong>Binding energy:</strong> Mass defect converted to energy (E=mc²)</li>
+                            <li><strong>Applications:</strong> Radiometric dating, medical imaging, nuclear power</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>MO theory <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Molecular orbital theory and bonding.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Bonding MOs:</strong> Lower energy, constructive interference of atomic orbitals</li>
+                            <li><strong>Antibonding MOs:</strong> Higher energy, destructive interference</li>
+                            <li><strong>Bond order:</strong> (Number of bonding electrons - Number of antibonding electrons) / 2</li>
+                            <li><strong>Homonuclear diatomics:</strong> e.g., H₂, O₂, N₂; symmetrical MOs</li>
+                            <li><strong>Heteronuclear diatomics:</strong> e.g., CO, NO; asymmetrical MOs due to differing electronegativities</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
             <div id="genbio" class ="section">
                 <h2 class="title">General Biology</h2>
                 
@@ -1221,6 +1616,7 @@
                     </div>
             </div>
             </div>
+            
 
 
             <div id="problems" class="section">
@@ -1743,7 +2139,52 @@
                 <p style="margin: 20px 0; color: #666; font-style: italic;">More practice problems available covering enzyme kinetics, stereochemistry, DNA replication, and metabolic pathways...</p>
             </div>
         </div>
-    </div>
+            <div id="about" class="section">
+            <h2 class="title">About This Project</h2>
 
+            <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 30px; line-height: 1.7;margin-bottom: auto;">
+                
+                <p style="font-size: 1.1em; color: #333;">
+                This project is an interactive, web-based biochemistry platform designed to visualize molecular
+                structures and reinforce core chemistry and biochemistry concepts through hands-on exploration.
+                </p>
+
+                <p style="margin-top: 15px; color: #444;">
+                The goal of this project was to build a technically non-trivial frontend application that
+                demonstrates strong JavaScript fundamentals, interactive graphics, and thoughtful UI state
+                management while leveraging my academic background in biochemistry.
+                </p>
+
+                <h3 style="margin-top: 25px; color: #667eea;">My Role & Contributions</h3>
+                <ul style="margin-top: 10px; padding-left: 20px; color: #333;">
+                <li>Designed and implemented the entire frontend architecture as a solo developer</li>
+                <li>Built an interactive 3D molecular viewer using <strong>Three.js</strong></li>
+                <li>Implemented dynamic UI components, tab-based navigation, and expandable content cards</li>
+                <li>Added persistent client-side state using <strong>LocalStorage</strong> for saved molecular views</li>
+                <li>Integrated <strong>MathJax</strong> to render chemical equations and mathematical expressions</li>
+                <li>Ensured responsive layout and accessible UI patterns across screen sizes</li>
+                </ul>
+
+                <h3 style="margin-top: 25px; color: #667eea;">Technical Focus</h3>
+                <ul style="margin-top: 10px; padding-left: 20px; color: #333;">
+                <li>Vanilla JavaScript (ES6+), HTML5, CSS3</li>
+                <li>3D scene setup, camera controls, and animation loops</li>
+                <li>DOM-driven state management without external frameworks</li>
+                <li>Separation of concerns between rendering logic, UI, and data</li>
+                </ul>
+
+                <h3 style="margin-top: 25px; color: #667eea;">Why This Project</h3>
+                <p style="margin-top: 10px; color: #444;">
+                This project highlights my ability to translate complex scientific concepts into usable software
+                products. It demonstrates problem-solving, self-directed learning, and end-to-end ownership of
+                a client-side application — from design and architecture to implementation and polish.
+                </p>
+
+                <p style="margin-top: 20px; font-style: italic; color: #666;">
+                Created by Grant Culbertson — Biochemistry graduate, frontend-focused software developer.
+                </p>
+
+            </div>
+            </div>
 </body>
 </html>
