@@ -2191,6 +2191,186 @@
                         </div>
                     </details>
                 </div>
+<div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h4>Problem 21: Physical Chemistry</h4>
+        <span style="background: #f8d7da; color: #721c24; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Hard</span>
+    </div>
+
+    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+        A first-order reaction A → products follows the differential rate law:
+        <br><br>
+        <strong>−d[A]/dt = k[A]</strong>
+        <br><br>
+        where <em>k = 0.693 min<sup>−1</sup></em>.  
+        <br><br>
+        <strong>(a)</strong> Derive the integrated rate law for this reaction using separation of variables.  
+        <br>
+        <strong>(b)</strong> Using your result, determine the time required for the concentration of A to decrease to 25% of its initial value.  
+        <br>
+        <strong>(c)</strong> Show mathematically why the half-life of a first-order reaction is independent of the initial concentration.
+    </div>
+
+    <details style="margin-top: 20px;">
+        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+            Show Answer
+        </summary>
+
+        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+
+            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">
+                Answer Summary:
+            </div>
+
+            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+
+                <p>
+                    <strong>(a)</strong> Starting from the differential rate law:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    −d[A]/[A] = k dt
+                </p>
+
+                <p>
+                    Integrating both sides:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    ∫<sub>[A]<sub>0</sub></sub><sup>[A]</sup> −d[A]/[A] = ∫<sub>0</sub><sup>t</sup> k dt
+                </p>
+
+                <p style="margin-left: 20px;">
+                    ln([A]<sub>0</sub>/[A]) = kt
+                </p>
+
+                <p>
+                    <strong>(b)</strong> When [A] = 0.25[A]<sub>0</sub>:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    ln([A]<sub>0</sub> / 0.25[A]<sub>0</sub>) = kt
+                </p>
+
+                <p style="margin-left: 20px;">
+                    ln(4) = kt
+                </p>
+
+                <p style="margin-left: 20px;">
+                    t = ln(4) / 0.693 ≈ 2.00 minutes
+                </p>
+
+                <p>
+                    <strong>(c)</strong> The half-life is obtained by setting [A] = 0.5[A]<sub>0</sub>:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    ln(2) = kt<sub>1/2</sub>
+                </p>
+
+                <p style="margin-left: 20px;">
+                    t<sub>1/2</sub> = ln(2) / k
+                </p>
+
+                <p>
+                    Since [A]<sub>0</sub> cancels during integration, the half-life is independent of the initial concentration — a defining feature of first-order kinetics.
+                </p>
+            </div>
+        </div>
+    </details>
+</div>
+    <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h4>Problem 22: Physical Chemistry</h4>
+        <span style="background: #f8d7da; color: #721c24; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Hard</span>
+    </div>
+
+    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+        For a real gas, the Helmholtz free energy is given by:
+        <br><br>
+        <strong>
+            A(T,V) = −nRT ln(V − nb) − a(n²/V)
+        </strong>
+        <br><br>
+        where <em>a</em> and <em>b</em> are positive constants.
+        <br><br>
+        <strong>(a)</strong> Derive an expression for the pressure as a function of volume and temperature using an appropriate thermodynamic derivative.  
+        <br>
+        <strong>(b)</strong> Show explicitly that your result reduces to the van der Waals equation of state.  
+        <br>
+        <strong>(c)</strong> Determine the condition for mechanical instability by evaluating (∂P/∂V)<sub>T</sub>.
+    </div>
+
+    <details style="margin-top: 20px;">
+        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+            Show Answer
+        </summary>
+
+        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+
+            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">
+                Answer Summary:
+            </div>
+
+            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+
+                <p>
+                    <strong>(a)</strong> Pressure is obtained from the Helmholtz free energy via:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    P = −(∂A/∂V)<sub>T</sub>
+                </p>
+
+                <p>
+                    Taking the derivative:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    ∂A/∂V = −nRT /(V − nb) + a n² / V²
+                </p>
+
+                <p style="margin-left: 20px;">
+                    P = nRT /(V − nb) − a n² / V²
+                </p>
+
+                <p>
+                    <strong>(b)</strong> Rearranging:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    (P + a n² / V²)(V − nb) = nRT
+                </p>
+
+                <p>
+                    which is the van der Waals equation of state.
+                </p>
+
+                <p>
+                    <strong>(c)</strong> Mechanical stability requires:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    (∂P/∂V)<sub>T</sub> &lt; 0
+                </p>
+
+                <p>
+                    Differentiating:
+                </p>
+
+                <p style="margin-left: 20px;">
+                    (∂P/∂V)<sub>T</sub> = −nRT /(V − nb)² + 2a n² / V³
+                </p>
+
+                <p>
+                    Mechanical instability occurs when this derivative equals zero, defining the spinodal curve of the real gas.
+                </p>
+            </div>
+        </div>
+    </details>
+</div>
 
                 
                 
@@ -2397,40 +2577,126 @@
                 <div id="lab" class="section">
                 <h3>Michaelis–Menten Virtual Enzyme Lab</h3>
                     <p>This virtual lab system is powered by a shared simulation engine (LabEngine.js) that supports multiple experimental models.</p>
-                <div style="display:flex; gap:16px; flex-wrap:wrap;">
-                    <div style="min-width:260px; flex:1;">
-                    <label>Enzyme concentration [E]₀ (µM)</label>
-                    <input id="mm_E" type="number" value="1" step="0.1">
+                     <div class="diagram-box">
+                    <details class="diagram-box" open>
+                    <summary class="diagram-title">
+                        What You Control in the Michaelis–Menten Lab
+                        <span style="font-size:0.8em; color:#777;">(click to collapse)</span>
+                    </summary>
 
-                    <label>kcat (s⁻¹)</label>
-                    <input id="mm_kcat" type="number" value="100" step="1">
+                        <div class="structure-diagram">
 
-                    <label>Kₘ (µM)</label>
-                    <input id="mm_Km" type="number" value="50" step="1">
+                            <!-- Enzyme concentration -->
+                            <div class="structure-card">
+                            <div class="structure-name">[E]₀ (Enzyme)</div>
+                            <div style="font-size:1.2em; margin:10px 0;">
+                                V<sub>max</sub> ∝ [E]<sub>0</sub>
+                            </div>
+                            <div style="font-size:0.9em; color:#666;">
+                                Increasing enzyme raises the maximum rate
+                                
+                            </div>
+                            </div>
 
-                    <label>Max substrate concentration (µM)</label>
-                    <input id="mm_Smax" type="number" value="300">
+                            <!-- kcat -->
+                            <div class="structure-card">
+                            <div class="structure-name">k<sub>cat</sub></div>
+                            <div style="font-size:1.2em; margin:10px 0;">
+                                Turnover speed
+                            </div>
+                            <div style="font-size:0.9em; color:#666;">
+                                Faster catalysis → steeper saturation curve
+                            </div>
+                            </div>
 
-                    <label>Step size (µM)</label>
-                    <input id="mm_step" type="number" value="10">
-                    <br>
-                    <label>
-                        
-                        <input id="mm_noise" type="checkbox"> Add experimental noise
-                    </label>
+                            <!-- Vmax result -->
+                            <div class="structure-card">
+                            <div class="structure-name">V<sub>max</sub></div>
+                            <div style="font-size:1.2em; margin:10px 0;">
+                                k<sub>cat</sub>[E]<sub>0</sub>
+                            </div>
+                            <div style="font-size:0.9em; color:#666;">
+                                Direct result of your enzyme settings
+                            </div>
+                            </div>
 
-                    <div style="margin-top:10px;">
-                        <button id="mm_run">Run Experiment</button>
-                        <button id="mm_fit">Fit Km & Vmax</button>
+                            <!-- Km -->
+                            <div class="structure-card">
+                            <div class="structure-name">K<sub>m</sub></div>
+                            <div style="font-size:1.2em; margin:10px 0;">
+                                Curve position
+                            </div>
+                            <div style="font-size:0.9em; color:#666;">
+                                Lower K<sub>m</sub> → left-shifted curve
+                            </div>
+                            </div>
+
+                            <!-- Substrate -->
+                            <div class="structure-card">
+                            <div class="structure-name">[S]</div>
+                            <div style="font-size:1.2em; margin:10px 0;">
+                                Experimental axis
+                            </div>
+                            <div style="font-size:0.9em; color:#666;">
+                                You sweep substrate to probe kinetics
+                            </div>
+                            </div>
+
+                            <!-- Observed rate -->
+                            <div class="structure-card">
+                            <div class="structure-name">Measured v</div>
+                            <div style="font-size:1.2em; margin:10px 0;">
+                                v = (V<sub>max</sub>[S]) / (K<sub>m</sub> + [S])
+                            </div>
+                            <div style="font-size:0.9em; color:#666;">
+                                What the plot shows
+                            </div>
+                            </div>
+
+                        </div>
+                        </div>
+
+                <div class = "diagram-box" style="margin-top:20px;">>
+                    <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                        <div style="min-width:260px; flex:1;">
+                        <label>Enzyme concentration [E]₀ (µM)</label>
+                        <input id="mm_E" type="number" value="1" step="0.1">
+                        <p>Recommended Range: 0.1–10 µM</p>
+                        <br>
+                        <label>kcat (s⁻¹)</label>
+                        <input id="mm_kcat" type="number" value="100" step="1">
+                        <p>Recommended range: 10–1000 s⁻¹</p>
+                        <br>
+                        <label>Kₘ (µM)</label>
+                        <input id="mm_Km" type="number" value="50" step="1">
+                        <p>Recommended range: 1–500 µM</p>
+                        <br>
+                        <label>Max substrate concentration (µM)</label>
+                        <input id="mm_Smax" type="number" value="300">
+                        <p>Recommended Range: 10–1000 µM</p>
+                        <br>
+                        <label>Step size (µM)</label>
+                        <input id="mm_step" type="number" value="10">
+                        <p>Recommended range: 1–100 µM</p>
+                        <br>
+                        <label>
+                            
+                            <input id="mm_noise" type="checkbox"> Add experimental noise
+                        </label>
+
+                        <div style="margin-top:10px;">
+                            <button id="mm_run">Run Experiment</button>
+                            <button id="mm_fit">Fit Km & Vmax</button>
+                        </div>
+                        </div>
+
+                        <div style="flex:2; min-width:360px;">
+                        <canvas id="mm_chart" height="240"></canvas>
+                        <div id="mm_info" style="margin-top:8px; font-size:0.95em;"></div>
+                        </div>
                     </div>
                     </div>
-
-                    <div style="flex:2; min-width:360px;">
-                    <canvas id="mm_chart" height="240"></canvas>
-                    <div id="mm_info" style="margin-top:8px; font-size:0.95em;"></div>
                     </div>
-                </div>
-                </div>
                 
 
             <div id="about" class="section">
@@ -2457,6 +2723,7 @@
                         <li>Added persistent client-side state using <strong>LocalStorage</strong> for saved molecular views</li>
                         <li>Integrated <strong>MathJax</strong> to render chemical equations and mathematical expressions</li>
                         <li>Ensured responsive layout and accessible UI patterns across screen sizes</li>
+                        <li>Virtual Lab that uses a custom made engine to simulate enzyme kinetics and molecular interactions</li>
                         </ul>
                     </div>
 

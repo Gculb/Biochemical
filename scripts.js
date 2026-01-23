@@ -165,61 +165,258 @@
 
 
         function makeAlanine() {
-            const g = new THREE.Group();
-            const c = atom(0, 0, 0, 0x404040, 0.5);
-            g.add(c);
-            const n = atom(0, 2, 0, 0x0000ff, 0.6);
-            g.add(n);
-            g.add(bond(c.position, n.position));
-            const h1 = atom(-0.8, 2.8, 0, 0xffffff, 0.35);
-            const h2 = atom(0.8, 2.8, 0, 0xffffff, 0.35);
-            g.add(h1, h2);
-            g.add(bond(n.position, h1.position));
-            g.add(bond(n.position, h2.position));
-            const cc = atom(2, 0, 0, 0x404040, 0.5);
-            g.add(cc);
-            g.add(bond(c.position, cc.position));
-            const o1 = atom(3, 0.8, 0, 0xff0000, 0.6);
-            const o2 = atom(3, -0.8, 0, 0xff0000, 0.6);
-            g.add(o1, o2);
-            g.add(bond(cc.position, o1.position));
-            g.add(bond(cc.position, o2.position));
-            const m = atom(-2, 0, 0, 0x404040, 0.5);
-            g.add(m);
-            g.add(bond(c.position, m.position));
-            return g;
+            const molecule = new THREE.Group();
+            const SCALE = 1.6;
+
+            function createAtom(x, y, z, element) {
+                const styles = {
+                    C: [0x404040, 0.4],
+                    N: [0x3050f8, 0.45],
+                    O: [0xff3030, 0.45],
+                    H: [0xffffff, 0.25]
+                };
+                const [color, radius] = styles[element];
+                const atomMesh = atom(x * SCALE, y * SCALE, z * SCALE, color, radius);
+                molecule.add(atomMesh);
+                return atomMesh;
+            }
+
+            function connectAtoms(atomA, atomB) {
+                molecule.add(bond(atomA.position, atomB.position));
+            }
+
+            // ---------------------------
+            // Amino Acid Backbone
+            // ---------------------------
+
+            const alphaCarbon = createAtom(0, 0, 0, "C");
+
+            const amineNitrogen = createAtom(-1.2, 0.8, 0, "N");
+            const amineHydrogen1 = createAtom(-2.0, 1.3, 0, "H");
+            const amineHydrogen2 = createAtom(-1.2, 1.8, 0, "H");
+
+            connectAtoms(alphaCarbon, amineNitrogen);
+            connectAtoms(amineNitrogen, amineHydrogen1);
+            connectAtoms(amineNitrogen, amineHydrogen2);
+
+            const carboxylCarbon = createAtom(1.4, 0, 0, "C");
+            const carboxylOxygen1 = createAtom(2.4, 0.8, 0, "O");
+            const carboxylOxygen2 = createAtom(2.4, -0.8, 0, "O");
+
+            connectAtoms(alphaCarbon, carboxylCarbon);
+            connectAtoms(carboxylCarbon, carboxylOxygen1);
+            connectAtoms(carboxylCarbon, carboxylOxygen2);
+
+            // ---------------------------
+            // Side Chain: Methyl (CH₃)
+            // ---------------------------
+
+            const betaCarbon = createAtom(0, -1.4, 0, "C");
+            connectAtoms(alphaCarbon, betaCarbon);
+
+            const methylH1 = createAtom(-0.8, -2.2, 0, "H");
+            const methylH2 = createAtom(0.8, -2.2, 0, "H");
+            const methylH3 = createAtom(0, -1.4, 1.0, "H");
+
+            connectAtoms(betaCarbon, methylH1);
+            connectAtoms(betaCarbon, methylH2);
+            connectAtoms(betaCarbon, methylH3);
+
+            return molecule;
         }
 
+
+       
         function makeATP() {
-            const g = new THREE.Group();
-            const ring = [];
-            for (let i = 0; i < 5; i++) {
-                const a = (i * Math.PI * 2) / 5 - Math.PI / 2;
-                const x = -5 + 1.2 * Math.cos(a);
-                const y = 1.2 * Math.sin(a);
-                const at = atom(x, y, 0, i < 2 ? 0x0000ff : 0x404040, 0.45);
-                ring.push(at);
-                g.add(at);
+            const molecule = new THREE.Group();
+            const SCALE = 1.25;
+
+            // shared style / small helper used inside subbuilders
+            function stylesFor(el) {
+                return {
+                    C: [0x404040, 0.4],
+                    N: [0x3050f8, 0.45],
+                    O: [0xff3030, 0.45],
+                    P: [0xffa500, 0.6],
+                    H: [0xffffff, 0.25]
+                }[el];
             }
-            for (let i = 0; i < 5; i++) g.add(bond(ring[i].position, ring[(i + 1) % 5].position));
-            const rib = atom(-2.5, 0, 0, 0x404040, 0.5);
-            g.add(rib);
-            g.add(bond(ring[2].position, rib.position));
-            const phos = [];
-            for (let i = 0; i < 3; i++) {
-                const p = atom(i * 2.5, 0, 0, 0xffa500, 0.6);
-                phos.push(p);
-                g.add(p);
-                const o1 = atom(i * 2.5, 1.2, 0, 0xff0000, 0.5);
-                const o2 = atom(i * 2.5, -1.2, 0, 0xff0000, 0.5);
-                g.add(o1, o2);
-                g.add(bond(p.position, o1.position));
-                g.add(bond(p.position, o2.position));
-                if (i > 0) g.add(bond(phos[i - 1].position, p.position));
+
+            // world-space connector helper: create a bond using each atom's world position
+            function connectWorld(aAtom, bAtom) {
+                const pa = new THREE.Vector3();
+                const pb = new THREE.Vector3();
+                aAtom.getWorldPosition(pa);
+                bAtom.getWorldPosition(pb);
+                molecule.add(bond(pa, pb));
             }
-            g.add(bond(rib.position, phos[0].position));
-            return g;
+
+            // Adenine builder -> returns { group, attachN9 }
+            function buildAdenine() {
+                const g = new THREE.Group();
+
+                function a(x, y, z, el) {
+                    const [c, r] = stylesFor(el);
+                    const m = atom(x * SCALE, y * SCALE, z * SCALE, c, r);
+                    g.add(m);
+                    return m;
+                }
+
+                // =====================
+                // 6-membered ring
+                // =====================
+                const N1 = a(-4.6,  1.2, 0, "N");
+                const C2 = a(-3.6,  1.8, 0, "C");
+                const N3 = a(-2.6,  1.2, 0, "N");
+                const C4 = a(-2.6,  0.0, 0, "C");
+                const C5 = a(-3.6, -0.6, 0, "C");
+                const C6 = a(-4.6,  0.0, 0, "C");
+
+                // =====================
+                // 5-membered ring
+                // =====================
+                const N7 = a(-3.6, -1.8, 0, "N");
+                const C8 = a(-2.4, -1.2, 0, "C");   // ← raised & separated
+                const N9 = a(-1.8, -0.2, 0, "N");   // glycosidic attachment
+
+                // =====================
+                // Bonds: 6-ring
+                // =====================
+                [
+                    [N1, C2], [C2, N3], [N3, C4],
+                    [C4, C5], [C5, C6], [C6, N1]
+                ].forEach(([x, y]) => g.add(bond(x.position, y.position)));
+
+                // =====================
+                // Bonds: 5-ring (correct fusion)
+                // =====================
+                [
+                    [C4, C5],   // shared fusion edge
+                    [C5, N7],
+                    [N7, C8],
+                    [C8, N9],
+                    [N9, C4]
+                ].forEach(([x, y]) => g.add(bond(x.position, y.position)));
+
+                return {
+                    group: g,
+                    attachN9: N9
+                };
+            }
+
+
+            // ----------------------
+            // Ribose builder -> returns { group, attachC1p, attachO5p }
+            // ----------------------
+            function buildRibose() {
+                const g = new THREE.Group();
+
+                function a(x,y,z,el){ const [c,r]=stylesFor(el); const m = atom(x*SCALE,y*SCALE,z*SCALE,c,r); g.add(m); return m; }
+
+                // ring: C1' C2' C3' C4' O4'
+                const C1p = a(-2.0,  0.0,  0.25, "C");
+                const C2p = a(-1.0,  0.8, -0.18, "C");
+                const C3p = a( 0.0,  0.1,  0.22, "C");
+                const C4p = a(-0.7, -1.2, -0.15, "C");
+                const O4p = a(-1.8, -1.0,  0.05, "O");
+
+                [[C1p,C2p],[C2p,C3p],[C3p,C4p],[C4p,O4p],[O4p,C1p]]
+                    .forEach(([x,y]) => g.add(bond(x.position, y.position)));
+
+                // 2' and 3' OH
+                const O2p = a(-0.8, 1.6, -0.28, "O");
+                const O3p = a(0.4,  0.9,  0.38, "O");
+                g.add(bond(C2p.position, O2p.position));
+                g.add(bond(C3p.position, O3p.position));
+
+                // C5' and O5' (attach to phosphate)
+                const C5p = a(0.8, -1.0, -0.65, "C");
+                g.add(bond(C4p.position, C5p.position));
+                const O5p = a(1.7, -0.6, -0.25, "O");
+                g.add(bond(C5p.position, O5p.position));
+
+                return { group: g, attachC1p: C1p, attachO5p: O5p };
+            }
+
+            // ----------------------
+            // Triphosphate builder -> returns { group, attachP1, attachObridge12, attachObridge23 }
+            // ----------------------
+            function buildTriphosphate() {
+                const g = new THREE.Group();
+
+                function a(x,y,z,el){ const [c,r]=stylesFor(el); const m = atom(x*SCALE,y*SCALE,z*SCALE,c,r); g.add(m); return m; }
+
+                // P positions (local coords)
+                const P1 = a(0.0, 0.0, 0.0, "P");             // alpha (we'll position the whole group later)
+                const P2 = a(1.6, 0.9, -0.6, "P");           // beta
+                const P3 = a(3.2, 0.3,  0.4, "P");           // gamma
+
+                // bridging oxygens (explicit)
+                const O12 = a(0.95, 0.45, -0.12, "O");
+                const O23 = a(2.4, 0.6, 0.0, "O");
+
+                // P<->Obridges
+                g.add(bond(P1.position, O12.position));
+                g.add(bond(O12.position, P2.position));
+                g.add(bond(P2.position, O23.position));
+                g.add(bond(O23.position, P3.position));
+
+                // terminal oxygens (so each P has correct O count)
+                function addTerminals(p, baseX, baseY, baseZ, offsets) {
+                    offsets.forEach(off => {
+                        const o = a(baseX + off[0], baseY + off[1], baseZ + off[2], "O");
+                        g.add(bond(p.position, o.position));
+                    });
+                }
+
+                addTerminals(P1, 0.0, 0.0, 0.0, [
+                    [-0.6,  0.9,  0.2],
+                    [-0.9, -0.2, -0.4]
+                ]);
+
+                addTerminals(P2, 1.6, 0.9, -0.6, [
+                    [0.6,  0.5,  0.5],
+                    [0.5, -0.7, -0.3]
+                ]);
+
+                addTerminals(P3, 3.2, 0.3,  0.4, [
+                    [ 0.6,  0.9,  0.0],
+                    [ 1.0, -0.2, -0.4],
+                    [-0.4, -0.6,  0.3]
+                ]);
+
+                return { group: g, attachP1: P1, attachO12: O12, attachO23: O23 };
+            }
+
+            // build parts
+            const adeninePart = buildAdenine();
+            const ribosePart  = buildRibose();
+            const phosPart    = buildTriphosphate();
+
+            // position parts with clear spacing so they don't overlap
+            // feel free to tweak these offsets:
+            adeninePart.group.position.set(-5.8,  0.0,  0.0);
+            ribosePart.group.position.set(-1.5,  0.0,  0.0);
+            phosPart.group.position.set( 3.2,  0.0,  0.6); // slight z to avoid coplanar overlap
+
+            // add groups to the top-level molecule
+            molecule.add(adeninePart.group);
+            molecule.add(ribosePart.group);
+            molecule.add(phosPart.group);
+
+            // connect adenine N9 -> ribose C1' (glycosidic bond)
+            connectWorld(adeninePart.attachN9, ribosePart.attachC1p);
+
+            // connect ribose O5' -> triphosphate P1 (alpha phosphate)
+            connectWorld(ribosePart.attachO5p, phosPart.attachP1);
+
+
+
+
+            return molecule;
         }
+
+
 
         function makeDNA() {
             const g = new THREE.Group();

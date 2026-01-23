@@ -409,5 +409,44 @@
         color: #222;
         border-left: 4px solid #667eea;
         }
+        #mm_run {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        #mm_run:hover {
+            background: #d35555;
+            transform: translateY(-2px);
+        }
+        #mm_run:active {
+            transform: translateY(0);
+        }
+        #mm_fit {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #28a745;
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        #mm_fit:hover {
+            background: #782188;
+            transform: translateY(-2px);
+        }
+        #mm_fit:active {
+            transform: translateY(0);
+        }
+
 
 
