@@ -1,3 +1,11 @@
+/**
+ * LabEngine Documentation Module: Kinetics
+ * Description: Implements Michaelis–Menten kinetics lab functionalities.
+ * Author: Grant Culbertson 
+ * This code had been developed to simulate enzyme kinetics experiments,
+ * allowing users to generate data, visualize it, and fit parameters.
+ * AI was used to assist in code generation and optimization.
+ */
 window.LabEngine = {
   utils: {},
   titration: {},

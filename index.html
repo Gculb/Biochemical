@@ -65,6 +65,10 @@
                 <i class="fa-solid fa-bacteria"></i> Microbiology
             </button>
 
+            <button class="tab" onclick="show('genetics')">
+                <i class="fa-solid fa-dna"></i> Genetics
+            </button>
+
 
             <button class="tab" onclick="show('problems')">
                 <i class="fa-solid fa-pen-to-square"></i> Practice Problems
@@ -1675,6 +1679,157 @@
                     </div>
             </div>
             </div>
+            <div id="genetics" class="section">
+                <h2 class="title">Genetics</h2>
+
+                <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                    <h3 style="font-size: 1.8em; margin-bottom: 20px;">⚡ Critical Concepts to Master</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                        <div style="background: rgba(255,255,255,0.18); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">DNA Structure & Replication</strong>
+                            Double helix, antiparallel strands, origins, replication forks, polymerases.
+                        </div>
+                        <div style="background: rgba(255,255,255,0.18); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Transcription & Translation</strong>
+                            Promoters, RNA polymerase, mRNA processing, codons, ribosome, tRNA.
+                        </div>
+                        <div style="background: rgba(255,255,255,0.18); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Mendelian & Non-Mendelian Inheritance</strong>
+                            Segregation, independent assortment, dominance, incomplete dominance, codominance.
+                        </div>
+                        <div style="background: rgba(255,255,255,0.18); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                            <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Gene Regulation & Epigenetics</strong>
+                            Operons, enhancers, repressors, DNA methylation, histone modifications.
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin: 20px 0; color: #666;"><strong>Key Topics:</strong> DNA/RNA structure, replication, transcription, translation, mutation types, gene mapping, linkage & recombination, population genetics (Hardy–Weinberg), molecular methods (PCR, gel electrophoresis, sequencing, CRISPR), epigenetics, genetic disease modes.</p>
+
+                <div class="diagram-box" style="margin-bottom:20px;">
+                    <div class="diagram-title">Quick Visuals</div>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+                        <div style="flex:1; min-width:260px; background:white; padding:12px; border-radius:10px; border:2px solid #667eea;">
+                            <h4 style="margin:6px 0 8px 0; color:#667eea; text-align:center;">Central Dogma</h4>
+                            <img src="images/dogma_complete.jpg" alt="Central Dogma" style="max-width:100%; border-radius:8px;">
+                            <div style="font-size:0.95em; margin-top:8px; color:#444;">DNA → Transcription → mRNA → Translation → Protein. Know the players: polymerases, ribosomes, tRNA, and processing events (splicing, 5' cap, poly-A).</div>
+                        </div>
+
+                        <div style="flex:1; min-width:260px; background:white; padding:12px; border-radius:10px; border:2px solid #667eea;">
+                            <h4 style="margin:6px 0 8px 0; color:#667eea; text-align:center;">Population Genetics Snapshot</h4>
+                            <div style="font-family: 'Courier New', monospace; text-align:center; font-size:1.02em; padding:6px; background:#f8f9fa; border-radius:6px;">
+                                p + q = 1<br>p² + 2pq + q² = 1
+                            </div>
+                            <div style="margin-top:8px; color:#444; font-size:0.95em;">Hardy–Weinberg assumptions and how selection, drift, migration, mutation break equilibrium.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic cards -->
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>DNA Structure & Replication <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Know nucleotide chemistry, antiparallel strands, replication machinery and directionality.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Nucleotides:</strong> Base pairing A·T (2 H-bonds), G·C (3 H-bonds), deoxyribose sugar, phosphate backbone.</li>
+                            <li><strong>Replication:</strong> Leading vs lagging strands, Okazaki fragments, DNA polymerase proofreading, ligase.</li>
+                            <li><strong>Enzymes:</strong> Helicase, primase, DNA polymerase I/III (prokaryotes), topoisomerase.</li>
+                            <li><strong>Repair:</strong> Mismatch repair, base excision repair, nucleotide excision repair.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Transcription & Translation <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">From promoter recognition to protein folding — map each step and know regulation points.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Transcription:</strong> Promoter, initiation, elongation, termination; RNA processing in eukaryotes (splicing, cap, poly-A).</li>
+                            <li><strong>Genetic code:</strong> 64 codons, start (AUG), stop codons (UAA/UAG/UGA), wobble at 3rd position.</li>
+                            <li><strong>Translation:</strong> Initiation, elongation, termination; roles of A, P, E ribosomal sites.</li>
+                            <li><strong>Post-translational:</strong> Folding, cleavage, modifications (phosphorylation, glycosylation).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Genetic Variation & Mutation Types</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Understand how variation arises and the functional consequences of different mutation classes.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Mutation types:</strong> Point (silent, missense, nonsense), frameshift, insertions/deletions, copy-number variants.</li>
+                            <li><strong>Causes:</strong> Replication errors, mutagens, transposons, recombination errors.</li>
+                            <li><strong>Consequences:</strong> Loss-of-function, gain-of-function, dominant-negative effects.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Linkage, Recombination & Mapping</span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">How recombination frequency relates to genetic distance and mapping strategies.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Linkage:</strong> Genes closer on a chromosome are less likely to recombine.</li>
+                            <li><strong>Recombination frequency:</strong> Use percent recombination → map units (centimorgans).</li>
+                            <li><strong>Mapping:</strong> Pedigree analysis, linkage maps, SNP markers, LOD scores.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Molecular Techniques & Applications <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Key lab methods you will see repeatedly in coursework and modern literature.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>PCR:</strong> Denaturation, annealing, extension; quantitative PCR basics.</li>
+                            <li><strong>Sequencing:</strong> Sanger vs NGS principles and read characteristics.</li>
+                            <li><strong>Cloning & Editing:</strong> Restriction enzymes, plasmids, CRISPR-Cas9 overview.</li>
+                            <li><strong>Genotyping:</strong> Gel electrophoresis, Southern blot, microarrays, SNP genotyping.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Epigenetics <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">How gene expression is regulated without changes to DNA sequence.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Chromatin remodeling:</strong> Histone modifications, nucleosome positioning.</li>
+                            <li><strong>DNA methylation:</strong> CpG islands, gene silencing mechanisms.</li>
+                            <li><strong>Non-coding RNAs:</strong> miRNA, siRNA, lncRNA roles in gene regulation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border-radius: 10px; border-left: 4px solid #ffc107;">
+                    <strong style="color: #856404;">Study tips:</strong>
+                    <ul style="margin:8px 0 0 18px; color:#856404;">
+                        <li>Draw replication forks, transcriptional units and the ribosomal cycle by hand to lock steps into memory.</li>
+                        <li>Practice pedigree and Hardy–Weinberg problems until you can translate a text problem into symbolic equations quickly.</li>
+                        <li>Use real data examples (PCR gels, sequencing reads) to connect conceptual knowledge with experimental outputs.</li>
+                    </ul>
+                </div>
+            </div>
+
+
             
 
 
