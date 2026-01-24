@@ -16,8 +16,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>🧬 Biochemistry Guide</h1>
-            <p class="subtitle">Your comprehensive roadmap from Gen Chem to Advanced Biochemistry</p>
+            <h1>🧬 Interactive Biochemistry Guide</h1>
+            <p class="subtitle">A comprehensive guide to mastering biochemistry concepts through interactive learning tools.</p>
         </header>
 
         <div class="tabs">
@@ -81,6 +81,10 @@
 
             <button class="tab" onclick="show('about')">
                 <i class="fa-solid fa-circle-info"></i> About
+            </button>
+
+            <button class="tab" onclick="show('resources')">
+                <i class="fa-solid fa-book"></i> Resources & Links
             </button>
 
 
@@ -2525,6 +2529,26 @@
             </div>
         </div>
     </details>
+    <div style="background: white; border: 3px solid #667eea; border-radius: 15px; padding: 25px; margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h4>Problem 23: Genetics </h4>
+                        <span style="background: #d4edda; color: #155724; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold;">Easy</span>
+                    </div>
+                    <div style="font-size: 1.1em; margin-bottom: 20px; line-height: 1.6; color: #333;">
+                        In a certain species, the allele for tall plants (T) is dominant over the allele for short plants (t). If two heterozygous tall plants are crossed, what is the probability that their offspring will be short?
+                    </div>
+                    <details style="margin-top: 20px;">
+                        <summary style="cursor: pointer; color: #667eea; font-weight: bold; padding: 10px; background: #f8f9fa; border-radius: 5px;">Show Answer</summary>
+                        <div style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #28a745;">
+                            <div style="font-weight: bold; color: #28a745; margin-bottom: 10px; font-size: 1.1em;">Answer: 1/4</div>
+                            <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                                <h5 style="color: #667eea; margin-bottom: 10px;">Explanation:</h5>
+                                <p>When two heterozygous tall plants (Tt) are crossed, the possible genotypes of offspring are TT, Tt, tT, and tt. Only the tt genotype results in short plants. Since there are 4 equally likely outcomes and only 1 is short (tt), the probability is 1/4.</p>
+                            
+                            </div>
+                        </div>
+                    </details>
+                </div>
 </div>
 
                 
@@ -2904,6 +2928,87 @@
                         </p>
                     </div>
             </div>
+            <div id="resources" class="section">
+                <h2 class="title">Resources &amp; Links</h2>
+
+                <div style="background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%); color: white; padding: 26px; border-radius: 14px; margin-bottom: 26px;">
+                    <h3 style="font-size: 1.6em; margin-bottom: 12px;">Central repositories, tools, and learning platforms</h3>
+                    <p style="margin:0; color: #eef3ff;">Authoritative references, databases, visualization tools, protocols, and practice resources aligned with the subjects on this site.</p>
+                </div>
+
+                <div style="display:grid; gap:14px;">
+                    <div style="background:#ffffff; padding:20px; border-radius:10px; border-left:4px solid #4b6cb7;">
+                        <h4>Databases & Molecular References</h4>
+                        <ul>
+                            <li><a href="https://pubchem.ncbi.nlm.nih.gov" target="_blank" rel="noreferrer">PubChem</a> — chemical properties, structures, identifiers</li>
+                            <li><a href="https://www.rcsb.org" target="_blank" rel="noreferrer">RCSB Protein Data Bank</a> — 3D macromolecular structures</li>
+                            <li><a href="https://www.uniprot.org" target="_blank" rel="noreferrer">UniProt</a> — curated protein sequences and function</li>
+                            <li><a href="https://www.ncbi.nlm.nih.gov" target="_blank" rel="noreferrer">NCBI</a> — genes, proteins, BLAST, PubMed</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#ffffff; padding:20px; border-radius:10px; border-left:4px solid #9b59b6;">
+                        <h4>3D Molecular Visualization</h4>
+                        <ul>
+                            <li><a href="https://molstar.org" target="_blank" rel="noreferrer">Mol*</a> — web-based molecular visualization</li>
+                            <li><a href="https://nglviewer.org" target="_blank" rel="noreferrer">NGL Viewer</a> — lightweight WebGL viewer</li>
+                            <li><a href="https://pymol.org" target="_blank" rel="noreferrer">PyMOL</a> — publication-quality molecular graphics</li>
+                            <li><a href="https://www.cgl.ucsf.edu/chimerax" target="_blank" rel="noreferrer">UCSF ChimeraX</a> — advanced structure analysis</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#ffffff; padding:20px; border-radius:10px; border-left:4px solid #20a39e;">
+                        <h4>Learning Platforms & Textbooks</h4>
+                        <ul>
+                            <li><a href="https://openstax.org/subjects/science" target="_blank" rel="noreferrer">OpenStax</a> — free textbooks (Chemistry, Biology)</li>
+                            <li><a href="https://ocw.mit.edu" target="_blank" rel="noreferrer">MIT OpenCourseWare</a> — lectures, notes, exams</li>
+                            <li><a href="https://www.khanacademy.org/science" target="_blank" rel="noreferrer">Khan Academy</a> — fundamentals & practice</li>
+                            <li>Lehninger Principles of Biochemistry (recommended reference) - By Nelson & Cox</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#ffffff; padding:20px; border-radius:10px; border-left:4px solid #f39c12;">
+                        <h4>Organic & Analytical Chemistry Tools</h4>
+                        <ul>
+                            <li><a href="https://webbook.nist.gov" target="_blank" rel="noreferrer">NIST Chemistry WebBook</a> — spectra & thermochemistry</li>
+                            <li><a href="https://www.chemspider.com" target="_blank" rel="noreferrer">ChemSpider</a> — structure search</li>
+                            <li><a href="https://sdbs.db.aist.go.jp" target="_blank" rel="noreferrer">SDBS</a> — IR, NMR, MS spectra</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#ffffff; padding:20px; border-radius:10px; border-left:4px solid #d9534f;">
+                        <h4>Genetics, Genomics & Molecular Biology</h4>
+                        <ul>
+                            <li><a href="https://www.ensembl.org" target="_blank" rel="noreferrer">Ensembl</a> — genome browser</li>
+                            <li><a href="https://www.genecards.org" target="_blank" rel="noreferrer">GeneCards</a> — gene summaries</li>
+                            <li><a href="https://omim.org" target="_blank" rel="noreferrer">OMIM</a> — genetic disorders</li>
+                            <li><a href="https://www.addgene.org" target="_blank" rel="noreferrer">Addgene</a> — plasmids and protocols</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#ffffff; padding:20px; border-radius:10px; border-left:4px solid #2ecc71;">
+                        <h4>Virtual Labs & Simulations</h4>
+                        <ul>
+                            <li><a href="https://chemcollective.org" target="_blank" rel="noreferrer">ChemCollective</a> — virtual labs & problems</li>
+                            <li><a href="https://phet.colorado.edu" target="_blank" rel="noreferrer">PhET Simulations</a></li>
+                            <li><a href="https://www.labxchange.org" target="_blank" rel="noreferrer">LabXchange</a> — interactive lab modules</li>
+                            <li><a href="https://www.jove.com" target="_blank" rel="noreferrer">JoVE</a> — video lab techniques</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#eef6ff; padding:20px; border-radius:10px; border-left:4px solid #4b6cb7;">
+                        <h4>Quick Mapping by Tab</h4>
+                        <ul>
+                            <li><strong>3D Viewer:</strong> RCSB PDB, Mol*, PyMOL</li>
+                            <li><strong>General / Organic / Analytical:</strong> OpenStax, NIST, ChemSpider</li>
+                            <li><strong>Biochemistry I & II:</strong> UniProt, PDB, Lehninger</li>
+                            <li><strong>Genetics / Bio / Microbiology:</strong> NCBI, Ensembl, OMIM</li>
+                            <li><strong>Practice Problems & Labs:</strong> ChemCollective, MIT OCW, PhET</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
 
 </body>
 </html>
