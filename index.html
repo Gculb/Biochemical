@@ -15,13 +15,12 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header role = "Banner">
             <h1>🧬 Interactive Biochemistry Guide</h1>
             <p class="subtitle">A comprehensive guide to mastering biochemistry concepts through interactive learning tools.</p>
         </header>
 
-        <div class="tabs">
-
+        <nav class="tabs" role="navigation" aria-label="Main Navigation">
         <button class="tab active" onclick="show('home')" id="tab-home">
             <i class="fa-solid fa-house"></i> Home
         </button>
@@ -38,7 +37,7 @@
             </button>
 
             <button class="tab" onclick="show('ochem')">
-                <i class="fa-solid fa-dna"></i> Organic Chemistry
+               <i class="fa-solid fa-circle-nodes"></i> Organic Chemistry
             </button>
 
             <button class="tab" onclick="show('analytical')">
@@ -92,11 +91,11 @@
             </button>
 
 
-        </div>
+        </nav>
 
 
-        <div class="content">
-             <div id="home" class="section active">
+        <main class="content">
+             <section id="home" class="section active">
                     <div class="home-hero" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:28px;background:linear-gradient(135deg,#f7fbff,#eef6ff);border-radius:12px;margin-bottom:18px;">
                         <div style="flex:1;min-width:260px;">
                         <h2 style="font-size:1.8rem;margin:0 0 8px;">Welcome to the Interactive Biochemistry Guide</h2>
@@ -133,8 +132,9 @@
                         <p style="margin:6px 0;color:#555;">Problems aligned to each course module.</p>
                         </div>
                     </div>
-                    </div>
-            <div id="viewer" class="section">
+            </section>
+                   
+            <section id="viewer" class="section">
                 <h2 class="title">3D Molecular Viewer</h2>
                 
                 <div class="viewer-box">
@@ -193,10 +193,10 @@
                     3D rendering powered by <a href="https://threejs.org/" target="_blank" rel="noopener">Three.js</a>
                 </p>
             </div>
-            </div>
+            </section>
 
             <!-- Other Sections -->
-            <div id="genchem" class="section">
+            <section id="genchem" class="section">
                 <h2 class="title">General Chemistry</h2>
                 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -503,8 +503,8 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div id="genchemlab" class = "section">
+            </section>
+            <section id="genchemlab" class = "section">
                 <h2 class ="title">General Chemistry Lab</h2>
                     <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
                     <h3 style="font-size: 1.8em; margin-bottom: 20px;">⚡ Critical Concepts to Master</h3>
@@ -593,8 +593,8 @@
                         </ul>
                         </div>
                     </div>
-            </div>
-            <div id="ochem" class="section">
+            </section>
+            <section id="ochem" class="section">
                 <h2 class="title">Organic Chemistry</h2>
                 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -744,6 +744,7 @@
                     </div>
                 </div>
             
+            
 
             <div class="topic-card" onclick="toggleCard(this)">
                     <div class="topic-title">
@@ -793,8 +794,8 @@
                         </ul>
                         </div>
                         </div>
-                </div>
-            <div id="analytical" class="section">
+            </section>
+            <section id="analytical" class="section">
                 <h2 class="title">Analytical Chemistry</h2>
 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);; color: white; padding: 28px; border-radius: 15px; margin-bottom: 22px;">
@@ -953,8 +954,8 @@
                     <li>Use instrument manuals & vendor application notes for instrument-specific tricks (LC-MS, ICP-MS).</li>
                     </ul>
                 </div>
-                </div>
-            <div id="biochem1" class="section">
+                </section>
+            <section id="biochem1" class="section">
                 <h2 class="title">Biochemistry I</h2>
                 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -1120,9 +1121,9 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="biochem2" class="section">
+            <section id="biochem2" class="section">
                 <h2 class="title">Biochemistry II</h2>
                 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -1259,8 +1260,8 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div id="physical" class="section">
+            </section>
+            <section id="physical" class="section">
                 <h2 class="title">Physical Chemistry</h2>
 
 
@@ -1490,8 +1491,8 @@
                         </ul>
                     </div>
                 </div>
-                </div>
-            <div id="genbio" class ="section">
+            </section>
+            <section id="genbio" class ="section">
                 <h2 class="title">General Biology</h2>
                 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -1618,8 +1619,8 @@
                     </ul>
                     </div>
                 </div>
-            </div>
-            <div id="microbio" class="section">
+            </section>
+            <section id="microbio" class="section">
                 <h2 class="title">Microbiology</h2>
 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -1722,9 +1723,9 @@
                         <li><strong>Resistance mechanisms:</strong> Enzyme production, target modification</li>
                     </ul>
                     </div>
-            </div>
-            </div>
-            <div id="genetics" class="section">
+                </div>
+        </section>
+            <section id="genetics" class="section">
                 <h2 class="title">Genetics</h2>
 
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
@@ -1872,13 +1873,13 @@
                         <li>Use real data examples (PCR gels, sequencing reads) to connect conceptual knowledge with experimental outputs.</li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
 
             
 
 
-            <div id="problems" class="section">
+            <section id="problems" class="section">
                 <h2 class="title">Practice Problems</h2>
                 
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
@@ -2596,8 +2597,8 @@
                 
 
                 <p style="margin: 20px 0; color: #666; font-style: italic;">More practice problems available covering enzyme kinetics, stereochemistry, DNA replication, and metabolic pathways...</p>
-            </div>
-            <div id="calculus" class="section">
+</section>
+            <section id="calculus" class="section">
                 <h2 class="title">Calculus for Chemist</h2>
                 <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
                     <h3 style="font-size: 1.8em; margin-bottom: 20px;"> ⚡ Critical Concepts to Master </h3>
@@ -2793,8 +2794,8 @@
                     <li>Practice numerical solutions in Python (RK4, SciPy solvers) for kinetics problems you can't solve analytically.</li>
                     </ul>
                 </div>
-                </div>
-                <div id="lab" class="section">
+            </section>
+            <section id="lab" class="section">
                 <h3>Michaelis–Menten Virtual Enzyme Lab</h3>
                     <p>This virtual lab system is powered by a shared simulation engine (LabEngine.js) that supports multiple experimental models.</p>
                      <div class="diagram-box">
@@ -2874,29 +2875,29 @@
                             </div>
 
                         </div>
-                        </div>
+                    </section>
 
                 <div class = "diagram-box" style="margin-top:20px;">>
                     <div style="display:flex; gap:16px; flex-wrap:wrap;">
                         <div style="min-width:260px; flex:1;">
                         <label>Enzyme concentration [E]₀ (µM)</label>
-                        <input id="mm_E" type="number" value="1" step="0.1">
+                        <input id="mm_E" type="number" min="0" value="1" step="0.1" max = "15">
                         <p>Recommended Range: 0.1–10 µM</p>
                         <br>
                         <label>kcat (s⁻¹)</label>
-                        <input id="mm_kcat" type="number" value="100" step="1">
+                        <input id="mm_kcat" type="number" min="0" value="100" step="1" max = "1500">
                         <p>Recommended range: 10–1000 s⁻¹</p>
                         <br>
                         <label>Kₘ (µM)</label>
-                        <input id="mm_Km" type="number" value="50" step="1">
+                        <input id="mm_Km" type="number" min="0" value="50" step="1" max = "750">
                         <p>Recommended range: 1–500 µM</p>
                         <br>
                         <label>Max substrate concentration (µM)</label>
-                        <input id="mm_Smax" type="number" value="300">
+                        <input id="mm_Smax" type="number" min="0" value="300" max = "2500" step="10">
                         <p>Recommended Range: 10–1000 µM</p>
                         <br>
                         <label>Step size (µM)</label>
-                        <input id="mm_step" type="number" value="10">
+                        <input id="mm_step" type="number" min="0" value="10" max = "250" step="1">
                         <p>Recommended range: 1–100 µM</p>
                         <br>
                         <label>
@@ -2919,7 +2920,7 @@
                     </div>
                 
 
-            <div id="about" class="section">
+            <section id="about" class="section">
                 <h2 class="title">About</h2>
                     <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; border: 3px solid #667eea; box-shadow: 0 10px 25px rgba(0,0,0,0.08);">
                         <p>
@@ -2968,8 +2969,8 @@
                         Created by Grant Culbertson — Biochemistry graduate, frontend-focused software developer.
                         </p>
                     </div>
-            </div>
-            <div id="resources" class="section">
+            </section>
+            <section id="resources" class="section">
                 <h2 class="title">Resources &amp; Links</h2>
 
                 <div style="background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%); color: white; padding: 26px; border-radius: 14px; margin-bottom: 26px;">
@@ -3047,8 +3048,8 @@
                             <li><strong>Practice Problems & Labs:</strong> ChemCollective, MIT OCW, PhET</li>
                         </ul>
                     </div>
-                </div>
-            </div>
+                </section>
+            </main>
 
 
 </body>
