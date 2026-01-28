@@ -704,41 +704,89 @@
             return g;
         }
 
-        function loadMolData(name) {
-            if (!init) { startViewer(); return; }
-            if (mol) scene.remove(mol);
-            curMol = name;
-            const info = {
-                glucose: {mol: makeGlucose(), title: 'Glucose (C₆H₁₂O₆)', type: 'Monosaccharide', role: 'Primary energy source', struct: '6-carbon ring', feat: 'Glycolysis substrate'},
-                alanine: {mol: makeAlanine(), title: 'Alanine (C₃H₇NO₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Nonpolar side chain', feat: 'Ala or A'},
-                atp: {mol: makeATP(), title: 'ATP (C₁₀H₁₆N₅O₁₃P₃)', type: 'Nucleotide', role: 'Energy currency', struct: 'Three phosphates', feat: 'ΔG° = -30.5 kJ/mol'},
-                dna: {mol: makeDNA(), title: 'DNA Base Pair (A-T)', type: 'Nucleic acid', role: 'Genetic storage', struct: '2 H-bonds', feat: 'Watson-Crick pairing'},
-                dnacg: {mol: makeDNACG(), title: 'DNA Base Pair (C-G)', type: 'Nucleic acid', role: 'Genetic storage', struct: '3 H-bonds', feat: 'Watson-Crick pairing'},
-                acetylcoa: {mol: makeAcetylCoA(), title: 'Acetyl-CoA', type: 'Coenzyme', role: 'Metabolic intermediate', struct: '2-carbon acetyl', feat: 'TCA entry'},
-                tryptophan: {mol: makeTrytophan(), title: 'Tryptophan (C₁₁H₁₂N₂O₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Aromatic side chain', feat: 'Precursor to serotonin'},
-                siliconpolymer: {mol: makeSiliconPolymer(),title: 'Polydimethylsiloxane (PDMS)',type: 'Organosilicon polymer',role: 'Sealants, elastomers, biomedical materials',struct: '–[Si(CH₃)₂–O]ₙ–, n = 15',feat: 'Low Tg, high flexibility, thermal stability'},
-                cholesterol: {mol: makeCholesterol(), title: 'Cholesterol (C₂₇H₄₆O)', type: 'Steroid', role: 'Membrane component', struct: 'Four rings', feat: 'Hormone precursor'},
-                alphahelix: {mol: makeAlphaHelix(), title: 'Alpha Helix', type: 'Protein secondary structure', role: 'Structural motif', struct: 'Right-handed coil', feat: 'Stabilized by H-bonds'}
+            const molRegistry = {
+                glucose:   { maker: makeGlucose,    title: 'Glucose (C₆H₁₂O₆)', type: 'Monosaccharide', role: 'Primary energy source', struct: '6-carbon ring', feat: 'Glycolysis substrate', mol: null },
+                alanine:   { maker: makeAlanine,    title: 'Alanine (C₃H₇NO₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Nonpolar side chain', feat: 'Ala or A', mol: null },
+                atp:       { maker: makeATP,        title: 'ATP (C₁₀H₁₆N₅O₁₃P₃)', type: 'Nucleotide', role: 'Energy currency', struct: 'Three phosphates', feat: 'ΔG° = -30.5 kJ/mol', mol: null },
+                dna:       { maker: makeDNA,        title: 'DNA Base Pair (A-T)', type: 'Nucleic acid', role: 'Genetic storage', struct: '2 H-bonds', feat: 'Watson-Crick pairing', mol: null },
+                dnacg:     { maker: makeDNACG,      title: 'DNA Base Pair (C-G)', type: 'Nucleic acid', role: 'Genetic storage', struct: '3 H-bonds', feat: 'Watson-Crick pairing', mol: null },
+                acetylcoa: { maker: makeAcetylCoA,  title: 'Acetyl-CoA', type: 'Coenzyme', role: 'Metabolic intermediate', struct: '2-carbon acetyl', feat: 'TCA entry', mol: null },
+                tryptophan:{ maker: makeTrytophan,  title: 'Tryptophan (C₁₁H₁₂N₂O₂)', type: 'Amino acid', role: 'Protein building block', struct: 'Aromatic side chain', feat: 'Precursor to serotonin', mol: null },
+                siliconpolymer:{ maker: makeSiliconPolymer, title:'Polydimethylsiloxane (PDMS)', type:'Organosilicon polymer', role:'Sealants...', struct:'–[Si(CH₃)₂–O]ₙ–, n = 15', feat:'Low Tg...', mol: null },
+                cholesterol:{ maker: makeCholesterol, title: 'Cholesterol (C₂₇H₄₆O)', type: 'Steroid', role: 'Membrane component', struct: 'Four rings', feat: 'Hormone precursor', mol: null },
+                alphahelix: { maker: makeAlphaHelix, title: 'Alpha Helix', type: 'Protein secondary structure', role: 'Structural motif', struct: 'Right-handed coil', feat: 'Stabilized by H-bonds', mol: null }
             };
-            const d = info[name];
-            mol = d.mol;
-            scene.add(mol);
-            document.getElementById('info').innerHTML = `
-                <h3>${d.title}</h3>
-                <p><strong>Type:</strong> ${d.type}</p>
-                <p><strong>Role:</strong> ${d.role}</p>
-                <p><strong>Structure:</strong> ${d.struct}</p>
-                <p><strong>Features:</strong> ${d.feat}</p>
-            `;
-        }
 
-        function loadMol(name) {
-            document.querySelectorAll('.mol-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            loadMolData(name);
-        }
 
-        function animate() {
+            function disposeGroup(group) {
+                if (!group) return;
+                group.traverse(node => {
+                    if (node.isMesh) {
+                        if (node.geometry) {
+                            try { node.geometry.dispose(); } catch (e) { /* ignore */ }
+                        }
+                        if (node.material) {
+                            // material can be an array
+                            if (Array.isArray(node.material)) {
+                                node.material.forEach(m => { try { m.dispose(); } catch (e) {} });
+                            } else {
+                                try { node.material.dispose(); } catch (e) {}
+                            }
+                        }
+                    }
+                });
+            }
+
+            // ---------- Create molecule on demand and cache it ----------
+            function createMolIfNeeded(name) {
+                const entry = molRegistry[name];
+                if (!entry) return null;
+                if (!entry.mol) {
+                
+                    entry.mol = entry.maker();
+           
+                    entry.mol.name = `mol-${name}`;
+                }
+                return entry.mol;
+            }
+
+
+            function loadMolData(name) {
+                if (!init) { startViewer(); return; }
+
+
+                if (mol) {
+                    try {
+                        scene.remove(mol);
+                        disposeGroup(mol);
+                    } catch (e) { console.warn('Error disposing previous molecule', e); }
+                    mol = null;
+                }
+
+                curMol = name;
+                const entry = molRegistry[name];
+                if (!entry) {
+                    console.error('Unknown molecule:', name);
+                    document.getElementById('info').innerHTML = `<p>Unknown molecule: ${name}</p>`;
+                    return;
+                }
+
+                // Create lazily
+                mol = createMolIfNeeded(name);
+                if (mol) scene.add(mol);
+
+                document.getElementById('info').innerHTML = `
+                    <h3>${entry.title}</h3>
+                    <p><strong>Type:</strong> ${entry.type}</p>
+                    <p><strong>Role:</strong> ${entry.role}</p>
+                    <p><strong>Structure:</strong> ${entry.struct}</p>
+                    <p><strong>Features:</strong> ${entry.feat}</p>
+                `;
+                document.querySelectorAll('.mol-btn').forEach(btn => btn.classList.remove('active'));
+            const activeBtn = Array.from(document.querySelectorAll('.mol-btn')).find(btn => btn.getAttribute('onclick')?.includes(`'${name}'`));
+                if (activeBtn) activeBtn.classList.add('active');
+            }
+                    function animate() {
             requestAnimationFrame(animate);
             if (mol && !drag) {
                 mol.rotation.x += rotSpd.x;
