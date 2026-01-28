@@ -9,6 +9,11 @@
         header { text-align: center; color: white; margin-bottom: 40px; }
         h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
         .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .roadmap-grid .roadmap-card h3 { color: #2d3748; font-size:1.05rem; }
+        .roadmap-card ul { line-height:1.45; }
+        @media (max-width:720px) {
+        .roadmap-grid { grid-template-columns: 1fr; }
+        }
         .cta,
         .cta-outline {
             border-radius: 22px;
@@ -500,6 +505,13 @@
         #mm_fit:active {
             transform: translateY(0);
         }
+        .physics-section { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+        .diagram-box { margin-bottom:18px; }
+        .diagram-title { font-weight:700; color:#6b7bdc; margin-bottom:8px; }
+        /* make the svg scale nicely in its container */
+        .physics-svg { width:100%; height:auto; display:block; }
+        /* small visual tune-ups for SVG text */
+        .svg-text { font-size:13px; fill:#2d3748; }
 
 
 

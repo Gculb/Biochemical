@@ -21,54 +21,66 @@
         </header>
 
         <nav class="tabs" role="navigation" aria-label="Main Navigation">
-        <button class="tab active" onclick="show('home')" id="tab-home">
-            <i class="fa-solid fa-house"></i> Home
-        </button>
-            <button class="tab" onclick="show('viewer')">
+            <button class="tab active" onclick="show('home')" id="tab-home">
+                <i class="fa-solid fa-house"></i> Home
+            </button>
+            <button class="tab" onclick="show('degree')" id="tab-degree">
+                <i class="fa-solid fa-road"></i> Degree Roadmap
+            </button>
+
+            <button class="tab" onclick="show('viewer')" id ="tab-viewer">
                 <i class="fa-solid fa-atom"></i> 3D Molecular Viewer
             </button>
 
-            <button class="tab" onclick="show('genchem')">
+            <button class="tab" onclick="show('genchem')" id="tab-genchem">
                 <i class="fa-solid fa-flask"></i> General Chemistry
             </button>
 
-            <button class="tab" onclick="show('genchemlab')">
+            <button class="tab" onclick="show('physics')" id="tab-physics">
+                <i class="fa-solid fa-wave-square"></i> Physics
+            </button>
+
+            <button class="tab" onclick="show('genchemlab')" id="tab-genchemlab">
                 <i class="fa-solid fa-vial"></i> General Chemistry Lab
             </button>
 
-            <button class="tab" onclick="show('ochem')">
+            <button class="tab" onclick="show('ochem')" id="tab-ochem">
                <i class="fa-solid fa-circle-nodes"></i> Organic Chemistry
             </button>
 
-            <button class="tab" onclick="show('analytical')">
+            <button class="tab" onclick="show('analytical')" id = "tab-analytical">
                 <i class="fa-solid fa-chart-line"></i> Analytical Chemistry
             </button>
 
-            <button class="tab" onclick="show('biochem1')">
+            <button class="tab" onclick="show('biochem1')" id ="tab-biochem1">
                 <i class="fa-solid fa-microscope"></i> Biochemistry I
             </button>
 
-            <button class="tab" onclick="show('biochem2')">
+            <button class="tab" onclick="show('biochem2')" id ="tab-biochem2">
                 <i class="fa-solid fa-microscope"></i> Biochemistry II
             </button>
 
-            <button class="tab" onclick="show('physical')">
-                <i class="fa-solid fa-wave-square"></i> Physical Chemistry
-            </button>
 
-            <button class="tab" onclick="show('calculus')">
+            
+            <button class="tab" onclick="show('calculus')" id = "tab-calculus">
                 <i class="fa-solid fa-calculator"></i> Calculus For Chemists
             </button>
 
-            <button class="tab" onclick="show('genbio')">
+            <button class="tab" onclick="show('physical')" id = "tab-physical">
+                <i class="fa-solid fa-wave-square"></i> Physical Chemistry
+            </button>
+
+            
+
+            <button class="tab" onclick="show('genbio')" id = "tab-genbio">
                 <i class="fa-solid fa-leaf"></i> General Biology
             </button>
 
-            <button class="tab" onclick="show('microbio')">
+            <button class="tab" onclick="show('microbio')" id = "tab-microbio">
                 <i class="fa-solid fa-bacteria"></i> Microbiology
             </button>
 
-            <button class="tab" onclick="show('genetics')">
+            <button class="tab" onclick="show('genetics')" id = "tab-genetics">
                 <i class="fa-solid fa-dna"></i> Genetics
             </button>
 
@@ -133,7 +145,107 @@
                         </div>
                     </div>
             </section>
-                   
+            <section id="degree" class="section">
+                  <h2 class="title">Degree Roadmap</h2>
+
+                    <p style="color:#555; margin-bottom:18px;">
+                        A suggested 4-year roadmap for a Biochemistry degree — organized by semesters, key milestones,
+                        and the technical & conceptual skills you'll build. Use this as a guideline and adapt it to your
+                        calendar, transfer credits, or accelerated plans.
+                    </p>
+
+                    <!-- Timeline grid -->
+                    <div class="roadmap-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:20px;">
+                        <!-- Year 1 -->
+                        <div class="roadmap-card" style="background:white;padding:18px;border-radius:12px;border-left:5px solid #667eea;">
+                        <h3 style="margin-top:0">Year 1 — Foundations</h3>
+                        <ul style="margin:8px 0 0 18px;color:#444;">
+                            <li><strong>Sem 1:</strong> General Chemistry I, Calculus, Intro Biology, Academic skills</li>
+                            <li><strong>Sem 2:</strong> General Chemistry II (lab), Calculus II or Statistics, Intro Biochem topics</li>
+                        </ul>
+                        <p style="margin-top:10px;color:#666;font-size:0.95em;">
+                            Focus: math & general chemistry fluency, laboratory safety, basic stoichiometry and thermodynamics.
+                        </p>
+                        </div>
+
+                        <!-- Year 2 -->
+                        <div class="roadmap-card" style="background:white;padding:18px;border-radius:12px;border-left:5px solid #2ecc71;">
+                        <h3 style="margin-top:0">Year 2 — Core Chemical Principles</h3>
+                        <ul style="margin:8px 0 0 18px;color:#444;">
+                            <li><strong>Sem 3:</strong> Organic Chemistry I (lecture + lab), Physical Chemistry intro</li>
+                            <li><strong>Sem 4:</strong> Organic Chemistry II, Analytical methods, Biochemistry I (intro)</li>
+                        </ul>
+                        <p style="margin-top:10px;color:#666;font-size:0.95em;">
+                            Focus: functional group chemistry, reaction mechanisms, basic spectroscopy and quantitative lab techniques.
+                        </p>
+                        </div>
+
+                        <!-- Year 3 -->
+                        <div class="roadmap-card" style="background:white;padding:18px;border-radius:12px;border-left:5px solid #f39c12;">
+                        <h3 style="margin-top:0">Year 3 — Biochemistry & Techniques</h3>
+                        <ul style="margin:8px 0 0 18px;color:#444;">
+                            <li><strong>Sem 5:</strong> Biochemistry I (metabolism, enzyme kinetics), Molecular Biology</li>
+                            <li><strong>Sem 6:</strong> Biochemistry II (regulation & pathways), Lab techniques (PCR, gel electrophoresis)</li>
+                        </ul>
+                        <p style="margin-top:10px;color:#666;font-size:0.95em;">
+                            Focus: enzyme mechanisms, metabolic maps, hands-on molecular techniques and data analysis.
+                        </p>
+                        </div>
+
+                        <!-- Year 4 -->
+                        <div class="roadmap-card" style="background:white;padding:18px;border-radius:12px;border-left:5px solid #9b59b6;">
+                        <h3 style="margin-top:0">Year 4 — Synthesis & Capstone</h3>
+                        <ul style="margin:8px 0 0 18px;color:#444;">
+                            <li><strong>Sem 7:</strong> Advanced electives (structural biology, enzymology), research prep</li>
+                            <li><strong>Sem 8:</strong> Capstone/research project, bioinformatics or advanced techniques</li>
+                        </ul>
+                        <p style="margin-top:10px;color:#666;font-size:0.95em;">
+                            Focus: independent project, integrating wet-lab and computational skills, communication & presentation.
+                        </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestones -->
+                    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px;">
+                        <div style="flex:1;min-width:220px;background:#eef6ff;padding:14px;border-radius:10px;border-left:4px solid #4b6cb7;">
+                        <strong>Milestones</strong>
+                        <ul style="margin:8px 0 0 18px;color:#444;font-size:0.95em;">
+                            <li>Complete 2 semesters of organic chemistry with lab</li>
+                            <li>Hands-on experience: PCR, gel electrophoresis, spectrophotometry</li>
+                            <li>Perform & present a small independent project or literature review</li>
+                        </ul>
+                        </div>
+
+                        <div style="flex:1;min-width:220px;background:#fff7e6;padding:14px;border-radius:10px;border-left:4px solid #f39c12;">
+                        <strong>Skills & Outcomes</strong>
+                        <ul style="margin:8px 0 0 18px;color:#444;font-size:0.95em;">
+                            <li>Write balanced reaction mechanisms and interpret NMR/IR/UV-Vis</li>
+                            <li>Fit enzyme kinetics and interpret Km / Vmax</li>
+                            <li>Design simple experiments and analyze uncertainty (RSD, recovery)</li>
+                        </ul>
+                        </div>
+
+                        <div style="flex:1;min-width:220px;background:#f0fff4;padding:14px;border-radius:10px;border-left:4px solid #2ecc71;">
+                        <strong>Elective Suggestions</strong>
+                        <ul style="margin:8px 0 0 18px;color:#444;font-size:0.95em;">
+                            <li>Structural Biology / Crystallography</li>
+                            <li>Computational Biochemistry / Bioinformatics</li>
+                            <li>Advanced Analytical Methods (LC-MS, NMR)</li>
+                        </ul>
+                        </div>
+                    </div>
+
+                    <!-- How to use + links to site -->
+                    <div style="padding:14px;background:white;border-radius:10px;border:2px solid #e9eefb;">
+                        <h4 style="margin:0 0 8px 0;color:#667eea;">How to use this roadmap</h4>
+                        <ol style="color:#444;margin:8px 0 0 18px;">
+                        <li>Map this template to your university catalog and swap semesters for transfer credits.</li>
+                        <li>Use the <a href="#genchem" onclick="show('genchem')">General Chemistry</a>, <a href="#ochem" onclick="show('ochem')">Organic Chemistry</a>, and <a href="#lab" onclick="show('lab')">Virtual Lab</a> pages for refresher content tied to each milestone.</li>
+                        <li>Track saved views & experiment results locally as you complete lab assignments.</li>
+                        </ol>
+                    </div>
+
+            </section>
             <section id="viewer" class="section">
                 <h2 class="title">3D Molecular Viewer</h2>
                 
@@ -504,6 +616,132 @@
                     </div>
                 </div>
             </section>
+            <!-- Physics section — paste before </main> -->
+            <section id="physics" class="section">
+                <h2 class="title">Physics Essentials</h2>
+
+                <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 24px; border-radius: 14px; margin-bottom: 22px;">
+                    <h3 style="font-size:1.4rem; margin:0 0 8px 0;">⚡ Critical Concepts to Master</h3>
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; margin-top:12px;">
+                        <div style="background: rgba(255,255,255,0.06); padding:14px; border-radius:10px; border-left:4px solid white;">
+                            <strong style="display:block; margin-bottom:8px;">Classical Mechanics</strong>
+                            Newton's laws, conservation of energy & momentum, rotational dynamics, simple harmonic motion.
+                        </div>
+                        <div style="background: rgba(255,255,255,0.06); padding:14px; border-radius:10px; border-left:4px solid white;">
+                            <strong style="display:block; margin-bottom:8px;">Waves & Oscillations</strong>
+                            Wave equation, interference, standing waves, Fourier basics and normal modes.
+                        </div>
+                        <div style="background: rgba(255,255,255,0.06); padding:14px; border-radius:10px; border-left:4px solid white;">
+                            <strong style="display:block; margin-bottom:8px;">Thermal Physics</strong>
+                            Temperature, heat capacity, ideal gases, Boltzmann distributions and basics of statistical ideas.
+                        </div>
+                        <div style="background: rgba(255,255,255,0.06); padding:14px; border-radius:10px; border-left:4px solid white;">
+                            <strong style="display:block; margin-bottom:8px;">Electromagnetism (Intro)</strong>
+                            Coulomb's law, fields, simple circuits, Gauss' law and Faraday induction at an introductory level.
+                        </div>
+                    </div>
+                </div>
+                <p style="margin: 20px 0; color: #666;"><strong>Key Topics:</strong> Classical Mechanics, Waves & Oscillations, Thermal Physics, Electromagnetism Basics, Fluid Dynamics, Optics</p>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Classical Mechanics <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Mastering classical mechanics is essential for understanding motion, forces, and energy conservation.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Newton's Laws:</strong> Understand the three laws of motion and their applications</li>
+                            <li><strong>Conservation Laws:</strong> Grasp conservation of energy and momentum in closed systems</li>
+                            <li><strong>Rotational Dynamics:</strong> Comprehend torque, angular momentum, and moment of inertia</li>
+                            <li><strong>Simple Harmonic Motion:</strong> Analyze oscillatory motion and related equations</li>
+                            <li><strong>Kinematics Equations:</strong> Apply equations of motion for constant acceleration scenarios</li>
+                        </ul>
+                        </div>
+                </div>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Circuits  <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Mastering circuits is essential for understanding electrical behavior in systems.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Ohm's Law:</strong> V = IR, relationship between voltage, current, and resistance</li>
+                            <li><strong>Series & Parallel Circuits:</strong> Calculate equivalent resistance and voltage/current distribution</li>
+                            <li><strong>Kirchhoff's Laws:</strong> Apply junction and loop rules for complex circuit analysis</li>
+                            <li><strong>Capacitors & Inductors:</strong> Understand charging/discharging behavior and energy storage</li>
+                            <li><strong>Power in Circuits:</strong> P = IV, calculating power dissipation in resistive elements</li>
+                        </ul>
+                        </div>
+                </div>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Diagrams <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Mastering diagrams is essential for visualizing and interpreting scientific data effectively.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Free Body Diagrams:</strong> Represent forces acting on an object to analyze motion</li>
+                            <li><strong>Energy Diagrams:</strong> Visualize potential and kinetic energy changes in systems</li>
+                            <li><strong>Wave Diagrams:</strong> Illustrate wave properties such as amplitude, wavelength, and frequency</li>
+                            <li><strong>Circuit Diagrams:</strong> Depict electrical components and their connections in a circuit</li>
+                            <li><strong>Graph Interpretation:</strong> Analyze and extract information from various scientific graphs</li>
+                        </ul>
+                        </div>
+                </div>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Waves and oscillations <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Mastering waves and oscillations is essential for understanding periodic motion and wave behavior.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Wave Properties:</strong> Understand amplitude, wavelength, frequency, and speed</li>
+                            <li><strong>Wave Equation:</strong> v = fλ, relationship between wave speed, frequency, and wavelength</li>
+                            <li><strong>Interference:</strong> Constructive and destructive interference patterns</li>
+                            <li><strong>Standing Waves:</strong> Formation and characteristics of standing wave patterns</li>
+                            <li><strong>Simple Harmonic Motion:</strong> Analyze oscillatory motion and related equations</li>
+                        </ul>
+                        </div>
+                </div>
+                <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Thermodynamics <span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Mastering thermodynamics is essential for understanding heat, work, and energy transfer in systems.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>First Law of Thermodynamics:</strong> ΔU = Q - W, conservation of energy in thermodynamic processes</li>
+                            <li><strong>Second Law of Thermodynamics:</strong> Entropy of an isolated system always increases</li>
+                            <li><strong>Thermodynamic Processes:</strong> Understand isothermal, adiabatic, isobaric, and isochoric processes</li>
+                            <li><strong>Heat Transfer:</strong> Conduction, convection, and radiation mechanisms</li>
+                            <li><strong>State Functions:</strong> Identify properties like enthalpy, entropy, and Gibbs free energy</li>
+                        </ul>
+                        </div>
+                </div>
+                    <div class="topic-card" onclick="toggleCard(this)">
+                    <div class="topic-title">
+                        <span>Lenses<span class="important-badge">CRITICAL</span></span>
+                        <span class="expand-icon">▼</span>
+                    </div>
+                    <div class="topic-description">Mastering lenses is essential for understanding how light behaves in optical systems.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><strong>Lens Types:</strong> Differentiate between converging (convex) and diverging (concave) lenses</li>
+                            <li><strong>Lens Formula:</strong> 1/f = 1/do + 1/di, relating focal length, object distance, and image distance</li>
+                            <li><strong>Magnification:</strong> M = -di/do, calculate image size relative to object size</li>
+                            <li><strong>Ray Diagrams:</strong> Construct ray diagrams to locate images formed by lenses</li>
+                            <li><strong>Optical Instruments:</strong> Understand the function of microscopes and telescopes using lenses</li>
+                        </ul>
+                        </div>
+                </div>
+
+                
+            </section>
+
             <section id="genchemlab" class = "section">
                 <h2 class ="title">General Chemistry Lab</h2>
                     <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
