@@ -21,7 +21,11 @@
         </header>
 
         <div class="tabs">
-            <button class="tab active" onclick="show('viewer')">
+
+        <button class="tab active" onclick="show('home')" id="tab-home">
+            <i class="fa-solid fa-house"></i> Home
+        </button>
+            <button class="tab" onclick="show('viewer')">
                 <i class="fa-solid fa-atom"></i> 3D Molecular Viewer
             </button>
 
@@ -92,8 +96,45 @@
 
 
         <div class="content">
-            <!-- 3D Viewer -->
-            <div id="viewer" class="section active">
+             <div id="home" class="section active">
+                    <div class="home-hero" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:28px;background:linear-gradient(135deg,#f7fbff,#eef6ff);border-radius:12px;margin-bottom:18px;">
+                        <div style="flex:1;min-width:260px;">
+                        <h2 style="font-size:1.8rem;margin:0 0 8px;">Welcome to the Interactive Biochemistry Guide</h2>
+                        <p style="color:#444;margin-bottom:16px;">
+                            Explore 3D molecules, run virtual labs, and practice core concepts with interactive modules.
+                            Start by opening the 3D viewer or launching a virtual lab.
+                        </p>
+
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                            <button class="cta" onclick="show('viewer');" aria-label="Open 3D viewer">LAUNCH 3D VIEWER</button>
+                            <button class="cta-outline" onclick="show('lab');" aria-label="Open virtual lab">Try Virtual Lab</button>
+                            <a href="javascript:void(0)" class="cta-link" onclick="show('resources')">Resources </a>
+                        </div>
+                        </div>
+
+                        <div style="flex:0 0 220px;text-align:center;">
+                        <!-- optional image — replace with one you have or remove -->
+                        <img src="images/hero_molecule.jpg" alt="Molecule illustration" style="max-width:200px;border-radius:8px;">
+                        <p style="font-size:0.9rem;color:#666;margin-top:10px;">Tip: click & drag molecules to rotate — use controls on the viewer to zoom & change speed.</p>
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                        <div style="background:white;padding:14px;border-radius:10px;border-left:4px solid #667eea;">
+                        <strong>Quick-start</strong>
+                        <p style="margin:6px 0;color:#555;">Open the 3D viewer to load example molecules and save views.</p>
+                        </div>
+                        <div style="background:white;padding:14px;border-radius:10px;border-left:4px solid #2ecc71;">
+                        <strong>Virtual Lab</strong>
+                        <p style="margin:6px 0;color:#555;">Run enzyme kinetics experiments and fit Km & Vmax.</p>
+                        </div>
+                        <div style="background:white;padding:14px;border-radius:10px;border-left:4px solid #f39c12;">
+                        <strong>Practice Problems</strong>
+                        <p style="margin:6px 0;color:#555;">Drill problems aligned to each course module.</p>
+                        </div>
+                    </div>
+                    </div>
+            <div id="viewer" class="section">
                 <h2 class="title">3D Molecular Viewer</h2>
                 
                 <div class="viewer-box">

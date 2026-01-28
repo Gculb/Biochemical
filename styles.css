@@ -9,7 +9,60 @@
         header { text-align: center; color: white; margin-bottom: 40px; }
         h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
         .subtitle { font-size: 1.2em; opacity: 0.9; }
+        .cta,
+        .cta-outline {
+            border-radius: 22px;
+            font-weight: 800;
+            cursor: pointer;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.25s ease;
+        }
 
+        /* PRIMARY CTA — BIG */
+        .cta {
+            padding: 16px 32px;              
+            font-size: 1.05rem;             
+            letter-spacing: 0.4px;
+
+            border: none;
+            background: #667eea;
+            color: white;
+
+            box-shadow:
+                0 14px 30px rgba(102,126,234,0.35),
+                inset 0 1px 0 rgba(255,255,255,0.35);
+        }
+
+        .cta:hover {
+            background: #ea6f66;
+            box-shadow:
+                0 22px 44px rgba(234,111,102,0.45);
+            transform: translateY(-4px) scale(1.03);
+            border: 2px solid #667eea
+        }
+
+        /* SECONDARY CTA — smaller but related */
+        .cta-outline {
+            padding: 12px 22px;
+            font-size: 0.9rem;
+
+            background: transparent;
+            color: #667eea;
+
+            border: 2px solid #667eea; 
+            box-sizing: border-box;  
+        }
+
+        .cta-outline:hover {
+            background: #4CAF50; 
+            border-color: #4CAF50;
+            color: rgb(255, 255, 255);
+            transition: all 0.3s;
+      
+        }
         .tabs {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(160px, max-content));
