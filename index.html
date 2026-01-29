@@ -40,6 +40,10 @@
                 <i class="fa-solid fa-wave-square"></i> Physics
             </button>
 
+            <button class="tab" onclick="show('stats')" id="tab-stats">
+                <i class="fa-solid fa-chart-pie"></i> Statistics
+            </button>
+
             <button class="tab" onclick="show('genchemlab')" id="tab-genchemlab">
                 <i class="fa-solid fa-vial"></i> General Chemistry Lab
             </button>
@@ -741,6 +745,210 @@
 
                 
             </section>
+            <section id="stats" class="section">
+            <h2 class="title">Statistics (Biochemical Data Analysis)</h2>
+
+            <div style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                <h3 style="font-size: 1.8em; margin-bottom: 20px;">⚡ Critical Concepts to Master</h3>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin-top: 15px;">
+                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                    <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Descriptive Statistics</strong>
+                    Mean, median, SD, variance, standard error — applied to biological replicates.
+                </div>
+
+                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                    <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Biological vs Technical Variability</strong>
+                    How to design replicates and separate sources of variance.
+                </div>
+
+                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                    <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Error Propagation</strong>
+                    Propagating uncertainty through calculations and reporting error bars.
+                </div>
+
+                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                    <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Hypothesis Testing</strong>
+                    t-tests, χ², ANOVA, multiple comparisons, and when to use each.
+                </div>
+
+                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                    <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Regression & Kinetics</strong>
+                    Curve-fitting, linearization, non-linear least-squares, and interpreting R².
+                </div>
+
+                <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 10px; border-left: 4px solid white;">
+                    <strong style="display: block; margin-bottom: 8px; font-size: 1.1em;">Sampling & Power</strong>
+                    Sample size, statistical power, and planning experiments to detect real effects.
+                </div>
+                </div>
+            </div>
+
+            <p style="margin: 20px 0; color: #666;">
+                <strong>Key Topics:</strong> Replicates, Variability, Probability Distributions, Error Analysis, Hypothesis Testing, Regression, Enzyme Kinetics, Experimental Design
+            </p>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>Distributions <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                Probability distributions describe how experimental data is expected to behave in biochemical and laboratory measurements.
+                Choosing the correct distribution is essential for proper statistical testing and interpretation.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Normal (Gaussian) Distribution:</strong> Most biochemical measurements (enzyme rates, absorbance values) approximate normality due to random error.</li>
+
+                    <li><strong>Binomial Distribution:</strong> Used for discrete outcomes such as success/failure events (e.g., binding vs non-binding, mutated vs non-mutated).</li>
+
+                    <li><strong>Poisson Distribution:</strong> Models rare molecular events such as photon counts, mutation frequency, or low-copy-number reactions.</li>
+
+                    <li><strong>Assumption Checking:</strong> Many statistical tests assume normality; always inspect histograms or residual plots.</li>
+
+                    <li><strong>Central Limit Theorem:</strong> Even non-normal biological data approaches normality as sample size increases.</li>
+
+                    <li><strong>Practical Insight:</strong> When distributions deviate strongly from normality, consider transformations or nonparametric tests.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>Descriptive Statistics <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                Descriptive statistics summarize experimental data and communicate biological variability clearly and accurately.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Mean:</strong> Average value; sensitive to outliers and skewed data.</li>
+                    <li><strong>Standard Deviation (SD):</strong> Measures spread of biological data.</li>
+                    <li><strong>Standard Error of the Mean (SEM):</strong> Estimates precision of the sample mean.</li>
+                    <li><strong>Reporting Format:</strong> Always report mean ± SD (or SEM), sample size (n), and units.</li>
+                    <li><strong>Best Practice:</strong> Plot individual data points whenever possible.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>Biological vs Technical Replicates <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                Correct use of replicates determines whether results reflect true biology or measurement noise.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Biological Replicates:</strong> Independent biological samples capturing real biological variation.</li>
+                    <li><strong>Technical Replicates:</strong> Repeated measurements of the same sample to assess instrument error.</li>
+                    <li><strong>Key Rule:</strong> Statistical tests should be performed on biological replicates, not technical replicates.</li>
+                    <li><strong>Common Mistake:</strong> Treating technical replicates as independent data points.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>Hypothesis Testing <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                Hypothesis testing determines whether observed differences are statistically meaningful or due to random chance.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Null Hypothesis (H₀):</strong> Assumes no difference or effect.</li>
+                    <li><strong>Alternative Hypothesis (H₁):</strong> Represents the expected biological effect.</li>
+                    <li><strong>p-value:</strong> Probability of observing the data if H₀ is true.</li>
+                    <li><strong>Significance Level (α):</strong> Commonly set at 0.05.</li>
+                    <li><strong>Interpretation:</strong> Statistical significance does not always imply biological significance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>t-Tests & ANOVA <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                These tests compare group means to determine whether experimental conditions differ significantly.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Unpaired t-test:</strong> Compares two independent groups.</li>
+                    <li><strong>Paired t-test:</strong> Compares matched or repeated measurements.</li>
+                    <li><strong>ANOVA:</strong> Compares three or more groups simultaneously.</li>
+                    <li><strong>Post-hoc Tests:</strong> Required after significant ANOVA results.</li>
+                    <li><strong>Assumptions:</strong> Normality and similar variances across groups.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>Regression & Enzyme Kinetics <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                Regression analysis is essential for interpreting calibration curves and enzyme kinetic data.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Linear Regression:</strong> Used for standard curves and calibration plots.</li>
+                    <li><strong>R² Value:</strong> Indicates goodness of fit, not model correctness.</li>
+                    <li><strong>Michaelis–Menten:</strong> Nonlinear regression is preferred over linearized plots.</li>
+                    <li><strong>Parameters:</strong> Report V<sub>max</sub>, K<sub>m</sub>, and confidence intervals.</li>
+                    <li><strong>Residuals:</strong> Inspect residual plots to assess fit quality.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-card" onclick="toggleCard(this)">
+            <div class="topic-title">
+                <span>Error Analysis & Confidence Intervals <span class="important-badge">CRITICAL</span></span>
+                <span class="expand-icon">▼</span>
+            </div>
+
+            <div class="topic-description">
+                Error analysis quantifies uncertainty and strengthens the reliability of experimental conclusions.
+            </div>
+
+            <div class="key-points">
+                <ul>
+                    <li><strong>Random Error:</strong> Causes spread in repeated measurements.</li>
+                    <li><strong>Systematic Error:</strong> Produces consistent bias in results.</li>
+                    <li><strong>Error Propagation:</strong> Combines uncertainty through calculations.</li>
+                    <li><strong>Confidence Intervals:</strong> Provide a range of plausible values for parameters.</li>
+                    <li><strong>Best Practice:</strong> Always report uncertainty alongside measurements.</li>
+                </ul>
+            </div>
+        </div>
+            </section>
+
+
+
+
+
+
+
+
 
             <section id="genchemlab" class = "section">
                 <h2 class ="title">General Chemistry Lab</h2>
