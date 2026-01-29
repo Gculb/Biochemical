@@ -46,6 +46,20 @@ window.LabEngine = {
 
     return { data, Vmax };
   };
+  LE.kinetics.init = function () {
+  const run = document.getElementById("mm_run");
+  const fit = document.getElementById("mm_fit");
+
+  if (!run || !fit) {
+    console.warn("Kinetics lab not in DOM yet");
+    return;
+  }
+
+  run.onclick = LE.kinetics.runLab;
+  fit.onclick = LE.kinetics.fitLab;
+
+  console.log("Kinetics lab initialized");
+};
 
   // ---------- Parameter fitting (frontend-safe) ----------
   LE.kinetics.fit = function (data) {
@@ -130,12 +144,4 @@ window.LabEngine = {
       <strong>Estimated Km:</strong> ${fit.Km.toFixed(1)} µM
     `;
   };
-
-  // ---------- Event hooks ----------
-  document.addEventListener("DOMContentLoaded", () => {
-    if (window.mm_run) {
-      mm_run.addEventListener("click", LE.kinetics.runLab);
-      mm_fit.addEventListener("click", LE.kinetics.fitLab);
-    }
-  });
 })();

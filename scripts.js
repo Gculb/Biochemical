@@ -75,6 +75,9 @@
                         }
                     }, 50);
                 }
+                if (id === 'lab') {
+                    LabEngine.kinetics.init();
+                }
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
 
