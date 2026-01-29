@@ -1,4 +1,17 @@
+        const sectionCache = {};
 
+        function snapshotSections() {
+            document.querySelectorAll('.section').forEach(section => {
+                if (section.classList.contains('active')) return;
+
+                sectionCache[section.id] = section.innerHTML;
+                section.innerHTML = "";                
+                section.dataset.lazy = "true";
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', snapshotSections);
+        
         function toggleCard(card) {
             const keyPoints = card.querySelector(".key-points");
             const icon = card.querySelector(".expand-icon");
@@ -9,6 +22,23 @@
             icon.textContent = isOpen ? "▼" : "▲";
         }
 
+    function ensureSectionLoaded(section) {
+        if (section.dataset.lazy !== "true") return;
+
+        section.innerHTML = sectionCache[section.id] || "";
+        delete sectionCache[section.id];
+        section.dataset.lazy = "false";
+
+
+        section.querySelectorAll("script").forEach(old => {
+            const s = document.createElement("script");
+            if (old.src) s.src = old.src;
+            if (!old.src) s.textContent = old.textContent;
+            document.head.appendChild(s);
+            old.remove();
+        });
+}
+
         function show(id) {
             try {
                 const section = document.getElementById(id);
@@ -17,14 +47,14 @@
                     return;
                 }
 
-               
-                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                section.classList.add('active');
+            ensureSectionLoaded(section);
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            section.classList.add('active');
 
                 
-                const clickedTab = Array.from(document.querySelectorAll('.tab')).find(tab =>
-                    tab.getAttribute('onclick')?.includes(`'${id}'`)
+            const clickedTab = Array.from(document.querySelectorAll('.tab')).find(tab =>
+                tab.getAttribute('onclick')?.includes(`'${id}'`)
                 );
                 if (clickedTab) {
                     clickedTab.classList.add('active');
