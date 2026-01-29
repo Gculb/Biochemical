@@ -3,6 +3,7 @@
         function snapshotSections() {
             document.querySelectorAll('.section').forEach(section => {
                 if (section.classList.contains('active')) return;
+                 if (section.querySelector("script[data-global]")) return;
 
                 sectionCache[section.id] = section.innerHTML;
                 section.innerHTML = "";                
@@ -75,7 +76,7 @@
                         }
                     }, 50);
                 }
-                if (id === 'lab') {
+                if (id === 'lab' && window.LabEngine?.kinetics) {
                     LabEngine.kinetics.init();
                 }
 
