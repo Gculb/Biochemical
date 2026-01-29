@@ -78,38 +78,88 @@ window.LabEngine = {
     return best;
   };
 
+  function debounce(fn, wait = 120) {
+  let t = null;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn(...args), wait);
+  };
+}
+
   // ---------- Plotting ----------
-  let mmChart = null;
+LE.kinetics._chart = null;
+LE.kinetics._resizeObserver = null;
 
-  LE.kinetics.plot = function (data) {
-    const ctx = document.getElementById("mm_chart").getContext("2d");
+LE.kinetics.plot = function (data) {
+  const canvas = document.getElementById("mm_chart");
+  const container = document.getElementById("mm_chart_container");
 
-    if (mmChart) {
-      mmChart.data.datasets[0].data =
-        data.map(d => ({ x: d.S, y: d.v }));
-      mmChart.update();
-      return;
-    }
+  if (!canvas || !container) {
+    console.warn("Chart container or canvas missing");
+    return;
+  }
 
-    mmChart = new Chart(ctx, {
-      type: "scatter",
-      data: {
-        datasets: [{
-          label: "Initial velocity (v₀)",
-          data: data.map(d => ({ x: d.S, y: d.v })),
-          showLine: true,
-          tension: 0.2,
-          pointRadius: 3
-        }]
-      },
-      options: {
-        scales: {
-          x: { title: { display: true, text: "[S] (µM)" } },
-          y: { title: { display: true, text: "v₀ (µM·s⁻¹)" } }
+  const ctx = canvas.getContext("2d");
+
+  // ----- Update existing chart -----
+  if (LE.kinetics._chart) {
+    LE.kinetics._chart.data.datasets[0].data =
+      data.map(d => ({ x: d.S, y: d.v }));
+    LE.kinetics._chart.update("none");
+    return;
+  }
+
+  // ----- Create chart -----
+  LE.kinetics._chart = new Chart(ctx, {
+    type: "scatter",
+    data: {
+      datasets: [{
+        label: "Initial velocity (v₀)",
+        data: data.map(d => ({ x: d.S, y: d.v })),
+        showLine: true,
+        tension: 0.2,
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      scales: {
+        x: {
+          type: "linear",
+          title: { display: true, text: "[S] (µM)" }
+        },
+        y: {
+          title: { display: true, text: "v₀ (µM·s⁻¹)" }
         }
       }
+    }
+  });
+
+  // ----- Prevent mouse wheel scroll from affecting page -----
+  canvas.addEventListener("wheel", e => e.preventDefault(), { passive: false });
+
+  // ----- Resize observer (mobile-safe, no resize loops) -----
+  if (window.ResizeObserver) {
+    if (LE.kinetics._resizeObserver) {
+      LE.kinetics._resizeObserver.disconnect();
+    }
+
+    let resizeTimer = null;
+
+    LE.kinetics._resizeObserver = new ResizeObserver(() => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (LE.kinetics._chart) {
+          LE.kinetics._chart.resize();
+        }
+      }, 120);
     });
-  };
+
+    LE.kinetics._resizeObserver.observe(container);
+  }
+};
 
   // ---------- UI Controller ----------
   LE.kinetics.runLab = function () {
