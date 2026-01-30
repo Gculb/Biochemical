@@ -11,7 +11,16 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', snapshotSections);
+        document.addEventListener('DOMContentLoaded', () => {
+            snapshotSections();
+
+            const last = localStorage.getItem("lastActiveSection");
+            if (last && document.getElementById(last)) {
+                show(last);
+            } else {
+                show('home'); 
+            }
+        });
         
         function toggleCard(card) {
             const keyPoints = card.querySelector(".key-points");
@@ -52,7 +61,7 @@
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
             section.classList.add('active');
-
+            localStorage.setItem('lastSection', id);
                 
             const clickedTab = Array.from(document.querySelectorAll('.tab')).find(tab =>
                 tab.getAttribute('onclick')?.includes(`'${id}'`)
