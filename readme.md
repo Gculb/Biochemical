@@ -43,6 +43,8 @@ Deployment: GitHub Pages (static hosting)
 
 Architecture Notes
 
+Lazy loading was implemented to load DOM changes when needed rather than loading everything at once
+
 The application follows a single-page, event-driven architecture using vanilla JavaScript.
 
 UI state (active tabs, expanded cards, viewer controls) is managed through DOM manipulation and CSS class toggling.
@@ -55,13 +57,17 @@ LocalStorage was chosen to provide lightweight persistence without backend compl
 
 Live Demo
 
-biochemistry.grantculbertson.dev
+https://gculb.github.io/Biochemical/
 
 Motivation
 
 This project was created to combine scientific domain knowledge with interactive software development, demonstrating how visualization and thoughtful UI design can enhance learning in technically complex subjects.
 
-Future Improvements 
+Future Improvements
+
+fix more mobile error
+
+add a footer of any kind
 
 Data-driven rendering of course content from JSON
 
