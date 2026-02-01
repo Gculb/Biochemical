@@ -1,0 +1,332 @@
+[
+{
+"id": 1,
+"title": "Buffer System Calculation",
+"difficulty": "Medium",
+"category": "General Chemistry",
+"question": "A buffer solution contains 0.50 M acetic acid (CH₃COOH) and 0.30 M sodium acetate (CH₃COONa). The pKa of acetic acid is 4.76. Calculate the pH of this buffer solution.",
+"hint": "Use the Henderson–Hasselbalch equation: pH = pKa + log([A⁻]/[HA]) and plug in the ratio 0.30/0.50.",
+"answer": "pH = 4.54",
+"solution": "Use the Henderson–Hasselbalch equation: pH = pKa + log([A⁻]/[HA]). pH = 4.76 + log(0.30/0.50) = 4.76 + log(0.6) = 4.76 + (-0.22) = 4.54."
+},
+{
+"id": 2,
+"title": "Stoichiometry",
+"difficulty": "Easy",
+"category": "General Chemistry",
+"question": "How many molecules of water are produced when 2 moles of hydrogen gas react completely with oxygen gas according to the balanced equation: 2H₂ + O₂ → 2H₂O?",
+"hint": "Use the stoichiometric mole ratio (2 mol H₂ → 2 mol H₂O) and multiply moles of H₂O by Avogadro's number (6.022×10²³).",
+"answer": "1.2044 × 10^24 molecules",
+"solution": "From the balanced equation 2H₂ → 2H₂O, 2 moles H₂ produce 2 moles H₂O. 1 mole = 6.022 × 10^23 molecules. Therefore 2 moles = 2 × 6.022 × 10^23 = 1.2044 × 10^24 molecules."
+},
+{
+"id": 3,
+"title": "ATP Yield from Glucose",
+"difficulty": "Hard",
+"category": "Biochemistry I",
+"question": "Calculate the total ATP yield from the complete oxidation of one molecule of glucose through glycolysis, the citric acid cycle, and oxidative phosphorylation. Assume the malate-aspartate shuttle.",
+"hint": "Count ATP, NADH, and FADH₂ produced at each stage; convert NADH→2.5 ATP and FADH₂→1.5 ATP (P/O ratios) and sum.",
+"answer": "~30–32 ATP per glucose",
+"solution": "Detailed breakdown (assuming malate–aspartate shuttle and P/O ratios NADH→2.5 ATP, FADH2→1.5 ATP): Glycolysis: 2 ATP (substrate-level) + 2 NADH → 5 ATP. Pyruvate→Acetyl-CoA (×2): 2 NADH → 5 ATP. Citric acid cycle (×2): 6 NADH → 15 ATP, 2 FADH2 → 3 ATP, 2 GTP → 2 ATP. Total = 2 + 5 + 5 + 15 + 3 + 2 = 32 ATP. Actual yield may vary (30–32) due to shuttle efficiency and proton leak."
+},
+{
+"id": 4,
+"title": "Free Energy and Equilibrium",
+"difficulty": "Hard",
+"category": "Physical Chemistry",
+"question": "For a reaction at 298 K, the equilibrium constant Keq = 2.5 × 10^4. Calculate ΔG° for this reaction. (R = 8.314 J/mol·K)",
+"hint": "Use ΔG° = −RT ln(Keq). Compute ln(2.5×10⁴) first, then multiply by −RT.",
+"answer": "ΔG° = −25.2 kJ/mol",
+"solution": "Use ΔG° = −RT ln(Keq). ΔG° = −(8.314 J·mol⁻¹·K⁻¹)(298 K) × ln(2.5 × 10^4) = −2477.6 × 10.127 ≈ −25,088 J/mol = −25.2 kJ/mol."
+},
+{
+"id": 5,
+"title": "Stereochemistry",
+"difficulty": "Medium",
+"category": "Organic Chemistry",
+"question": "How many stereoisomers are possible for a molecule with 3 chiral centers?",
+"hint": "Use the maximum formula 2ⁿ where n is number of chiral centers; check for meso forms which reduce the count.",
+"answer": "8 stereoisomers",
+"solution": "Maximum stereoisomers = 2^n where n is the number of chiral centers. For n = 3: 2^3 = 8. (Note: the actual number may be less if meso forms are present.)"
+},
+{
+"id": 6,
+"title": "Amino Acid at Physiological pH",
+"difficulty": "Easy",
+"category": "Biochemistry I",
+"question": "Glycine has pKa₁ = 2.34 (carboxyl group) and pKa₂ = 9.60 (amino group). What is the predominant form of glycine at pH 7.4 (physiological pH)?",
+"hint": "Compare pH to each pKa: if pH > pKa the group is deprotonated; if pH < pKa it's protonated.",
+"answer": "Zwitterion form (⁺H₃N-CH₂-COO⁻)",
+"solution": "At pH 7.4: pH > pKa₁ (2.34) so the carboxyl group is deprotonated (COO⁻). pH < pKa₂ (9.60) so the amino group is protonated (NH₃⁺). Result: ⁺H₃N-CH₂-COO⁻ (zwitterion)."
+},
+{
+"id": 7,
+"title": "Michaelis–Menten Kinetics",
+"difficulty": "Medium",
+"category": "Biochemistry II",
+"question": "An enzyme has a Km of 2.0 mM and a Vmax of 100 μmol/min. Calculate the reaction velocity when the substrate concentration is 6.0 mM.",
+"hint": "Use v = (Vmax × [S]) / (Km + [S]). Plug in Vmax=100, Km=2.0, [S]=6.0.",
+"answer": "v = 75 μmol/min",
+"solution": "Use v = (Vmax × [S]) / (Km + [S]). v = (100 × 6.0) / (2.0 + 6.0) = 600 / 8 = 75 μmol/min. At [S] = 3×Km, velocity is 75% of Vmax."
+},
+{
+"id": 8,
+"title": "β-Oxidation Energy Yield",
+"difficulty": "Hard",
+"category": "Biochemistry II",
+"question": "Calculate the total ATP yield from the complete oxidation of palmitic acid (16:0). Include β-oxidation and the citric acid cycle.",
+"hint": "β-oxidation cycles = (n/2)−1 for even chain; count NADH/FADH₂ from cycles and NADH/FADH₂/GTP from CAC per acetyl-CoA; subtract activation cost (−2 ATP).",
+"answer": "106 ATP",
+"solution": "β-Oxidation (7 cycles for 16C): 7 FADH2 → 10.5 ATP (1.5 each), 7 NADH → 17.5 ATP (2.5 each). Produces 8 acetyl-CoA. Citric acid cycle (8 acetyl-CoA): 24 NADH → 60 ATP, 8 FADH2 → 12 ATP, 8 GTP → 8 ATP. Activation cost: −2 ATP. Total = 10.5 + 17.5 + 60 + 12 + 8 − 2 = 106 ATP."
+},
+{
+"id": 9,
+"title": "DNA Replication — Complementary Strand",
+"difficulty": "Easy",
+"category": "Genetics",
+"question": "A DNA strand has the sequence 5'-ATGCTAGC-3'. What is the sequence of the complementary strand?",
+"hint": "Pair bases A↔T and G↔C, then write the complementary sequence in the antiparallel (3'→5') direction.",
+"answer": "3'-TACGATCG-5'",
+"solution": "Base pairing: A↔T, G↔C. Complement of 5'-ATGCTAGC-3' is 3'-TACGATCG-5' (written antiparallel)."
+},
+{
+"id": 10,
+"title": "Translation",
+"difficulty": "Medium",
+"category": "Genetics",
+"question": "An mRNA sequence reads: 5'-AUGGCUAAAUAA-3'. What is the amino acid sequence of the resulting peptide? (AUG=Met, GCU=Ala, AAA=Lys, UAA=Stop)",
+"hint": "Translate codons sequentially from 5' until you hit a stop codon.",
+"answer": "Met-Ala-Lys",
+"solution": "Read codons 5'→3': AUG → Met (start), GCU → Ala, AAA → Lys, UAA → Stop (terminates translation). Peptide: Met-Ala-Lys."
+},
+{
+"id": 11,
+"title": "Signal Transduction",
+"difficulty": "Medium",
+"category": "Biochemistry II",
+"question": "A hormone binds to a GPCR that activates adenylyl cyclase. Describe the signaling cascade that follows and name the key molecules involved.",
+"hint": "Follow the chain: GPCR → heterotrimeric G protein (Gs) → adenylyl cyclase → cAMP → PKA → phosphorylation of targets.",
+"answer": "GPCR → Gs protein → Adenylyl cyclase → cAMP → PKA",
+"solution": "1) Hormone binds GPCR. 2) GPCR activates Gs (heterotrimeric G protein). 3) Gs activates adenylyl cyclase. 4) Adenylyl cyclase converts ATP → cAMP (second messenger). 5) cAMP activates protein kinase A (PKA). 6) PKA phosphorylates downstream targets; the cascade amplifies the signal."
+},
+{
+"id": 12,
+"title": "R/S Configuration",
+"difficulty": "Easy",
+"category": "Organic Chemistry",
+"question": "Determine the R/S configuration of the chiral center in the molecule with substituents NH2, COOH, CH2SH, and H. (Image: images/config_problem.png)",
+"image_url": "images/config_problem.png",
+"hint": "Assign CIP priorities by atomic number, orient the lowest-priority group away, then trace 1→2→3: clockwise = R, counterclockwise = S.",
+"answer": "R",
+"solution": "Assign priorities (highest to lowest) based on atomic number: NH2, COOH, CH2SH, H. Orient lowest priority (H) away and trace from highest → second → third. The path NH2 → COOH → CH2SH is clockwise, so configuration is R."
+},
+{
+"id": 13,
+"title": "Biochemistry — Electron Transport Chain",
+"difficulty": "Easy",
+"category": "Biochemistry I",
+"question": "During the electron transport chain, which compound acts as the final electron acceptor?",
+"hint": "What small diatomic molecule accepts electrons and combines with protons to form water?",
+"answer": "O₂",
+"solution": "Oxygen (O₂) accepts electrons at the end of the electron transport chain and combines with protons to form water (H₂O)."
+},
+{
+"id": 14,
+"title": "Metabolic Pathways — NADPH and Ribose-5-Phosphate",
+"difficulty": "Easy",
+"category": "Biochemistry I",
+"question": "Which metabolic pathway is primarily responsible for generating NADPH and ribose-5-phosphate in cells?",
+"hint": "This pathway has an oxidative phase producing NADPH and a non-oxidative phase producing pentoses.",
+"answer": "Pentose Phosphate Pathway",
+"solution": "The Pentose Phosphate Pathway (PPP) produces NADPH (for reductive biosynthesis) and ribose-5-phosphate (for nucleotide synthesis)."
+},
+{
+"id": 15,
+"title": "Metabolic Pathways — Key Regulatory Enzyme in Glycolysis",
+"difficulty": "Easy",
+"category": "Biochemistry I",
+"question": "Which enzyme is the key regulatory step in glycolysis?",
+"hint": "It's the enzyme that converts fructose-6-phosphate to fructose-1,6-bisphosphate and is allosterically regulated by ATP and AMP.",
+"answer": "Phosphofructokinase (PFK)",
+"solution": "Phosphofructokinase catalyzes fructose-6-phosphate → fructose-1,6-bisphosphate (the committed, highly regulated step) and is regulated by the cell's energy status."
+},
+{
+"id": 16,
+"title": "DNA Replication — Polymerase",
+"difficulty": "Easy",
+"category": "Genetics",
+"question": "During DNA replication, which enzyme is responsible for synthesizing the new DNA strand by adding nucleotides to the 3' end?",
+"hint": "This enzyme requires a primer and extends from a free 3'-OH.",
+"answer": "DNA polymerase",
+"solution": "DNA polymerase synthesizes the new strand by adding nucleotides to the free 3'-OH end; it ensures accurate replication of genetic material."
+},
+{
+"id": 17,
+"title": "DNA vs RNA",
+"difficulty": "Easy",
+"category": "General Biology",
+"question": "Which of the following nucleotides is found in RNA but not in DNA?",
+"hint": "It's the base that pairs with adenine in RNA and is structurally different from thymine (no methyl group).",
+"answer": "Uracil",
+"solution": "RNA contains uracil (U) instead of thymine (T), which is present in DNA."
+},
+{
+"id": 18,
+"title": "Cell Organelles — SER",
+"difficulty": "Easy",
+"category": "General Biology",
+"question": "What is the role of the Smooth Endoplasmic Reticulum (SER) in cells?",
+"hint": "Think lipid metabolism and detoxification — which ER is smooth and lacks ribosomes?",
+"answer": "Lipid synthesis and detoxification",
+"solution": "The SER is involved in lipid synthesis, carbohydrate metabolism, and detoxification of drugs and poisons."
+},
+{
+"id": 19,
+"title": "Cell Organelles — Golgi",
+"difficulty": "Easy",
+"category": "General Biology",
+"question": "What is the role of the Golgi apparatus in cells?",
+"hint": "It receives vesicles from the ER and modifies/sorts proteins for secretion or delivery to organelles.",
+"answer": "Protein modification and sorting",
+"solution": "The Golgi modifies, sorts, and packages proteins and lipids for secretion or delivery to organelles."
+},
+{
+"id": 20,
+"title": "Enzyme Kinetics — Overcome by Substrate Increase",
+"difficulty": "Easy",
+"category": "Biochemistry II",
+"question": "Which type of inhibition can be overcome by increasing substrate concentration?",
+"hint": "If adding more substrate outcompetes the inhibitor at the active site, which inhibition is that?",
+"answer": "Competitive inhibition",
+"solution": "Competitive inhibitors compete with substrate for the active site; adding more substrate outcompetes the inhibitor, restoring activity."
+},
+{
+"id": 21,
+"title": "Enzyme Kinetics — Inhibition That Decreases Vmax Only",
+"difficulty": "Easy",
+"category": "Biochemistry II",
+"question": "Given an enzyme that follows Michaelis–Menten kinetics, which type of inhibition decreases the Vmax but does not affect the Km?",
+"hint": "An inhibitor that binds to an allosteric site and reduces active enzyme population without changing substrate binding affinity.",
+"answer": "Non-competitive inhibition",
+"solution": "Non-competitive inhibitors bind an allosteric site and reduce the fraction of active enzyme, lowering Vmax while leaving Km (substrate affinity) unchanged."
+},
+{
+"id": 22,
+"title": "Physical Chemistry — First-Order Reaction (Integrated Rate Law)",
+"difficulty": "Hard",
+"category": "Physical Chemistry",
+"question": "A first-order reaction A → products follows −d[A]/dt = k[A] where k = 0.693 min⁻¹. (a) Derive the integrated rate law using separation of variables. (b) Determine the time required for [A] to decrease to 25% of initial value. (c) Show why the half-life is independent of [A]₀.",
+"hint": "Separate variables: −d[A]/[A] = k dt, integrate to get ln([A]₀/[A]) = kt; plug [A]=0.25[A]₀ for part (b).",
+"answer": "(a) ln([A]₀/[A]) = kt (b) t = ln(4)/0.693 ≈ 2.00 min (c) t₁/₂ = ln(2)/k, independent of [A]₀",
+"solution": "(a) Separate: −d[A]/[A] = k dt; integrate: ln([A]₀/[A]) = kt. (b) For [A] = 0.25[A]₀: ln(4) = kt → t = ln(4)/0.693 ≈ 2.00 min. (c) For half-life set [A] = 0.5[A]₀: ln(2) = kt₁/₂ → t₁/₂ = ln(2)/k, [A]₀ cancels so t₁/₂ is independent of initial concentration."
+},
+{
+"id": 23,
+"title": "Physical Chemistry — Helmholtz Free Energy and Pressure",
+"difficulty": "Hard",
+"category": "Physical Chemistry",
+"question": "For a real gas, the Helmholtz free energy is A(T,V) = −nRT ln(V − nb) − a(n²/V) with positive constants a and b. (a) Derive pressure as a function of V and T using the appropriate thermodynamic derivative. (b) Show it reduces to the van der Waals equation. (c) Determine the condition for mechanical instability by evaluating (∂P/∂V)_T.",
+"hint": "Use P = −(∂A/∂V)_T to get P = nRT/(V − nb) − a n²/V²; rearrange to the van der Waals form and differentiate for (∂P/∂V)_T.",
+"answer": "(a) P = nRT/(V − nb) − a n²/V² (b) Rearranged gives (P + a n²/V²)(V − nb) = nRT (van der Waals) (c) (∂P/∂V)_T = −nRT/(V − nb)² + 2a n²/V³; mechanical instability when this ≥ 0 (spinodal when = 0).",
+"solution": "(a) P = −(∂A/∂V)_T. Compute ∂A/∂V = −nRT/(V − nb) + a n²/V², so P = nRT/(V − nb) − a n²/V². (b) Multiply both sides: (P + a n²/V²)(V − nb) = nRT → van der Waals form. (c) Differentiate: (∂P/∂V)_T = −nRT/(V − nb)² + 2a n²/V³. Mechanical instability (spinodal) occurs when this derivative equals zero (changes sign)."
+},
+{
+"id": 24,
+"title": "Genetics — Simple Mendelian Cross",
+"difficulty": "Easy",
+"category": "Genetics",
+"question": "In a species where T (tall) is dominant over t (short), if two heterozygous tall plants (Tt × Tt) are crossed, what is the probability that their offspring will be short?",
+"hint": "Draw a Punnett square for Tt × Tt; count how many of the four equally likely genotypes are tt.",
+"answer": "1/4",
+"solution": "Punnett square for Tt × Tt gives genotypes TT, Tt, tT, tt (4 equally likely). Only tt is short → probability = 1/4."
+},
+{
+"id": 25,
+"title": "Genetics — tRNA vs mRNA",
+"difficulty": "Medium",
+"category": "Genetics",
+"question": "What makes tRNA different from mRNA in terms of structure and function?",
+"hint": "Think cloverleaf secondary structure, anticodon loop, and amino acid attachment for tRNA vs linear coding sequence for mRNA.",
+"answer": "tRNA is shorter and has a cloverleaf structure with anticodons; mRNA is longer and carries genetic information to ribosomes.",
+"solution": "tRNA (transfer RNA) is relatively short, folds into a cloverleaf secondary structure with an anticodon loop that pairs to mRNA codons and carries specific amino acids. mRNA (messenger RNA) is a linear, typically longer molecule that encodes the amino acid sequence of proteins and serves as the template for translation."
+},
+{
+"id": 26,
+"title": "Analytical Chemistry — Calibration Curve",
+"difficulty": "Medium",
+"category": "Analytical Chemistry",
+"question": "Given a calibration curve y = 2.5x + 0.5 (y = absorbance, x = concentration in mg/mL), what is the concentration of a sample with absorbance 3.0? With an R² of 0.98, how reliable is the calibration for predicting concentrations?",
+"hint": "Solve x = (y − intercept)/slope → x = (3.0 − 0.5)/2.5. R² = 0.98 implies a strong linear fit but check residuals for systematic deviations.",
+"answer": "Concentration = 1.0 mg/mL. R² = 0.98 indicates very high reliability.",
+"solution": "Plug y = 3.0: 3.0 = 2.5x + 0.5 → 2.5 = 2.5x → x = 1.0 mg/mL. R² = 0.98 implies the calibration explains 98% of variance in the data; it's a very good fit and reliable for predicting concentrations within the calibration range (but consider residuals and experimental error for exact uncertainty)."
+},
+{
+"practice_summary": {
+"General Chemistry": {
+"skills_practiced": [
+"Buffer pH calculations (Henderson–Hasselbalch)",
+"Stoichiometry and mole–molecule conversions"
+],
+"problem_ids": [1, 2]
+},
+"Biochemistry I": {
+"skills_practiced": [
+"Bioenergetics (ATP accounting)",
+"Amino acid protonation states",
+"Electron transport chain fundamentals",
+"Pentose phosphate pathway",
+"Glycolytic regulation"
+],
+"problem_ids": [3, 6, 13, 14, 15]
+},
+"Biochemistry II": {
+"skills_practiced": [
+"Enzyme kinetics (Michaelis–Menten)",
+"Signal transduction (GPCR → cAMP → PKA)",
+"Fatty acid β-oxidation ATP accounting",
+"Types of enzyme inhibition"
+],
+"problem_ids": [7, 8, 11, 20, 21]
+},
+"Physical Chemistry": {
+"skills_practiced": [
+"Thermodynamics (ΔG° and Keq)",
+"Reaction kinetics (first-order integrated law & half-life)",
+"Thermodynamic potentials → equations of state"
+],
+"problem_ids": [4, 22, 23]
+},
+"Organic Chemistry": {
+"skills_practiced": [
+"Stereochemistry counting (2^n rule, meso awareness)",
+"CIP priority and R/S determination"
+],
+"problem_ids": [5, 12]
+},
+"Genetics": {
+"skills_practiced": [
+"DNA base-pairing and antiparallel orientation",
+"Translation and codon reading",
+"DNA replication enzyme roles",
+"Mendelian crosses and probability",
+"RNA types and function (tRNA vs mRNA)"
+],
+"problem_ids": [9, 10, 16, 24, 25]
+},
+"General Biology": {
+"skills_practiced": [
+"Nucleic acid composition differences (uracil vs thymine)",
+"Organelle functions (SER, Golgi)"
+],
+"problem_ids": [17, 18, 19]
+},
+"Analytical Chemistry": {
+"skills_practiced": [
+"Calibration curve algebra and fit quality (R²)",
+"Error/residual consideration in quantitative assays"
+],
+"problem_ids": [26]
+}
+}
+}
+] 
