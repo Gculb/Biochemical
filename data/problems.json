@@ -375,7 +375,7 @@
     "title": "Western Blot Interpretation",
     "difficulty": "Hard",
     "category": "Biochemistry II",
-    "question": "A Western blot shows a protein band at a higher molecular weight than expected after treatment with a specific enzyme. Give a likely explanation.",
+    "question": "A Western blot shows a protein band at a higher molecular weight than expected after after treatment with a modifying enzyme or signaling stimulus. Give a likely explanation.",
     "hint": "Think post-translational modifications.",
     "answer": "Post-translational modification such as phosphorylation or glycosylation.",
     "solution": "An upward shift in molecular weight on a Western blot often indicates post-translational modification. Glycosylation, ubiquitination, or multiple phosphorylations can increase apparent molecular mass."
