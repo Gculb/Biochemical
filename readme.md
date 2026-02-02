@@ -1,3 +1,9 @@
+MOVING TO A DIFFERENT ARCHITECTURE. THIS PROJECT WILL NOT BE MAINTAINED HERE ANYMORE. 
+
+
+
+
+
 Biochemistry Degree Guide — Interactive Web Application
 Overview
 
