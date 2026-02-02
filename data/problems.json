@@ -261,72 +261,13 @@
 "solution": "Plug y = 3.0: 3.0 = 2.5x + 0.5 → 2.5 = 2.5x → x = 1.0 mg/mL. R² = 0.98 implies the calibration explains 98% of variance in the data; it's a very good fit and reliable for predicting concentrations within the calibration range (but consider residuals and experimental error for exact uncertainty)."
 },
 {
-"practice_summary": {
-"General Chemistry": {
-"skills_practiced": [
-"Buffer pH calculations (Henderson–Hasselbalch)",
-"Stoichiometry and mole–molecule conversions"
-],
-"problem_ids": [1, 2]
-},
-"Biochemistry I": {
-"skills_practiced": [
-"Bioenergetics (ATP accounting)",
-"Amino acid protonation states",
-"Electron transport chain fundamentals",
-"Pentose phosphate pathway",
-"Glycolytic regulation"
-],
-"problem_ids": [3, 6, 13, 14, 15]
-},
-"Biochemistry II": {
-"skills_practiced": [
-"Enzyme kinetics (Michaelis–Menten)",
-"Signal transduction (GPCR → cAMP → PKA)",
-"Fatty acid β-oxidation ATP accounting",
-"Types of enzyme inhibition"
-],
-"problem_ids": [7, 8, 11, 20, 21]
-},
-"Physical Chemistry": {
-"skills_practiced": [
-"Thermodynamics (ΔG° and Keq)",
-"Reaction kinetics (first-order integrated law & half-life)",
-"Thermodynamic potentials → equations of state"
-],
-"problem_ids": [4, 22, 23]
-},
-"Organic Chemistry": {
-"skills_practiced": [
-"Stereochemistry counting (2^n rule, meso awareness)",
-"CIP priority and R/S determination"
-],
-"problem_ids": [5, 12]
-},
-"Genetics": {
-"skills_practiced": [
-"DNA base-pairing and antiparallel orientation",
-"Translation and codon reading",
-"DNA replication enzyme roles",
-"Mendelian crosses and probability",
-"RNA types and function (tRNA vs mRNA)"
-],
-"problem_ids": [9, 10, 16, 24, 25]
-},
-"General Biology": {
-"skills_practiced": [
-"Nucleic acid composition differences (uracil vs thymine)",
-"Organelle functions (SER, Golgi)"
-],
-"problem_ids": [17, 18, 19]
-},
-"Analytical Chemistry": {
-"skills_practiced": [
-"Calibration curve algebra and fit quality (R²)",
-"Error/residual consideration in quantitative assays"
-],
-"problem_ids": [26]
-}
-}
-}
+"id": 27,
+"title": "Organic Chemistry — Nucleophilic Substitution",
+"difficulty": "Medium",
+"category": "Organic Chemistry",
+"question": "In an SN2 reaction, how does the structure of the alkyl halide affect the reaction rate? Compare primary, secondary, and tertiary alkyl halides.",
+"hint": "Consider steric hindrance: SN2 reactions proceed via backside attack, so less hindered substrates react faster.",
+"answer": "Primary > Secondary >> Tertiary in SN2 reaction rate.",
+"solution": "In SN2 reactions, the nucleophile attacks the electrophilic carbon from the opposite side of the leaving group. Primary alkyl halides have the least steric hindrance, allowing for faster nucleophilic attack, followed by secondary alkyl halides which have moderate hindrance. Tertiary alkyl halides are highly hindered, making SN2 reactions very slow or negligible. Thus, the order of reactivity is Primary > Secondary >> Tertiary."
+}   
 ] 
