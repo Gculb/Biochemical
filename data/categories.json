@@ -131,12 +131,26 @@
       ]
     },
     {
+      "id": "inorganic",
+      "title": "Inorganic Chemistry",
+      "icon": "fa-cubes-stacked",
+      "color": "#f97316",
+      "description": "Coordination compounds, crystal field theory, organometallics, and catalysis basics.",
+      "order": 9,
+      "topics": [
+        { "id": "coordination", "title": "Coordination Compounds & Nomenclature" },
+        { "id": "crystal-field", "title": "Crystal Field Theory" },
+        { "id": "organometallics", "title": "Organometallic Chemistry Basics" },
+        { "id": "catalysis", "title": "Catalysis & Reaction Mechanisms", "important": true }
+      ]
+    },
+    {
       "id": "biochem1",
       "title": "Biochemistry I",
       "icon": "fa-microscope",
       "color": "#e74c3c",
       "description": "Core metabolism and enzyme function: glycolysis, TCA, electron transport, Michaelis–Menten kinetics.",
-      "order": 9,
+      "order": 10,
       "topics": [
         { "id": "glycolysis", "title": "Glycolysis", "important": true },
         { "id": "tca", "title": "Citric Acid Cycle (TCA)" },
@@ -150,7 +164,7 @@
       "icon": "fa-vials",
       "color": "#9b59b6",
       "description": "Regulation, signaling, pathways, advanced lab techniques, and structural biology basics.",
-      "order": 10,
+      "order": 11,
       "topics": [
         { "id": "regulation", "title": "Pathway Regulation & Signaling" },
         { "id": "structural-bio", "title": "Structural Biology (PDB, protein folding)" },
@@ -163,7 +177,7 @@
       "icon": "fa-calculator",
       "color": "#6c5ce7",
       "description": "Partial derivatives, total differentials, integrals, DEs and approximations used in physical chemistry/stat mech.",
-      "order": 11,
+      "order": 12,
       "topics": [
         { "id": "partial-derivatives", "title": "Partial Derivatives & Thermo" },
         { "id": "differential-eq", "title": "Differential Equations & Rate Laws" },
@@ -176,7 +190,7 @@
       "icon": "fa-wave-square",
       "color": "#3498db",
       "description": "Quantum chemistry, statistical mechanics, thermodynamics and kinetics with math toolkit.",
-      "order": 12,
+      "order": 13,
       "topics": [
         { "id": "quantum", "title": "Quantum Chemistry & MO Theory" },
         { "id": "statmech", "title": "Statistical Mechanics" },
@@ -189,10 +203,24 @@
       "icon": "fa-leaf",
       "color": "#16a085",
       "description": "Cell structure, physiology, molecular biology basics relevant to biochemistry.",
-      "order": 13,
+      "order": 14,
       "topics": [
         { "id": "cell-bio", "title": "Cell Structure & Function" },
         { "id": "bioenergetics", "title": "Bioenergetics & Membranes" }
+      ]
+    },
+    {
+      "id": "molbio",
+      "title": "Molecular Biology",
+      "icon": "fa-helix",
+      "color": "#e67e22",
+      "description": "DNA/RNA structure, replication, transcription/translation, and recombinant DNA technology.",
+      "order": 15,
+      "topics": [
+        { "id": "dna-rna", "title": "DNA & RNA Structure" },
+        { "id": "replication", "title": "DNA Replication" },
+        { "id": "tx-translation", "title": "Transcription & Translation" },
+        { "id": "recombinant-dna", "title": "Recombinant DNA Technology", "important": true }
       ]
     },
     {
@@ -201,7 +229,7 @@
       "icon": "fa-bacteria",
       "color": "#27ae60",
       "description": "Bacterial structure, viral life cycles, antimicrobial mechanisms, and lab methods.",
-      "order": 14,
+      "order": 16,
       "topics": [
         { "id": "bacterial-structure", "title": "Bacterial Structure & Physiology" },
         { "id": "viruses", "title": "Viruses & Replication Cycles" },
@@ -214,7 +242,7 @@
       "icon": "fa-dna",
       "color": "#ff6b6b",
       "description": "DNA structure & replication, transcription/translation, molecular techniques and epigenetics.",
-      "order": 15,
+      "order": 17,
       "topics": [
         { "id": "dna-structure", "title": "DNA Structure & Replication", "important": true },
         { "id": "tx-translation", "title": "Transcription & Translation" },
@@ -228,7 +256,7 @@
       "icon": "fa-pen-to-square",
       "color": "#764ba2",
       "description": "Problem sets and worked solutions across modules (calcs, kinetics, titrations, genetics problems).",
-      "order": 16,
+      "order": 18,
       "topics": [
         { "id": "kinetics-problems", "title": "Enzyme Kinetics Practice" },
         { "id": "acid-base-problems", "title": "Acid–Base & Titration Problems" },
@@ -241,7 +269,7 @@
       "icon": "fa-laptop-code",
       "color": "#2bcbba",
       "description": "Interactive enzyme kinetics simulations, noise toggles, fitting Km & Vmax, and chart outputs.",
-      "order": 17,
+      "order": 19,
       "topics": [
         { "id": "enzyme-sim", "title": "Enzyme Kinetics Simulator", "important": true },
         { "id": "data-fit", "title": "Curve Fitting (Km & Vmax)" }
@@ -253,7 +281,7 @@
       "icon": "fa-circle-info",
       "color": "#95a5a6",
       "description": "Project description, technical focus, author & contributions.",
-      "order": 18,
+      "order": 20,
       "topics": [
         { "id": "author", "title": "Author & Technical Focus" },
         { "id": "why-project", "title": "Why This Project" }
@@ -265,12 +293,24 @@
       "icon": "fa-book",
       "color": "#4b6cb7",
       "description": "Collections of authoritative databases, visualization tools, virtual labs, and references.",
-      "order": 19,
+      "order": 21,
       "topics": [
         { "id": "databases", "title": "Databases & Molecular References" },
         { "id": "visualization", "title": "3D Visualization Tools (Mol*, NGL, PyMOL)" },
         { "id": "virtual-labs", "title": "Virtual Labs & Simulations" }
       ]
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "icon": "fa-book-open",
+      "color": "#8e44ad",
+      "description": "Key terms and definitions across biochemistry, chemistry, and molecular biology.",
+      "order": 22,
+      "topics": [
+        { "id": "terms", "title": "Key Terms & Definitions" }
+      ]
     }
+
   ]
 }
