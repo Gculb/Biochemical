@@ -297,7 +297,407 @@
 "category": "General Chemistry",
 "question": "A sample of gas occupies 2.0 L at 1.0 atm and 300 K. What volume will it occupy at 2.0 atm and 400 K? (Use the combined gas law: P1V1/T1 = P2V2/T2)",
 "hint": "Rearrange the combined gas law to solve for V2: V2 = (P1V1T2)/(P2T1).",
-"answer": "V2 = 1.5 L",
+"answer": "V2 = 1.33 L",
 "solution": "Using the combined gas law: V2 = (P1V1T2)/(P2T1) = (1.0 atm × 2.0 L × 400 K) / (2.0 atm × 300 K) = (800) / (600) = 1.33 L."
-}
-] 
+},
+{
+    "id": 31,
+    "title": "Allosteric Regulation — Sigmoidal Kinetics",
+    "difficulty": "Medium",
+    "category": "Biochemistry II",
+    "question": "An enzyme displays sigmoidal (S-shaped) kinetics instead of Michaelis–Menten behavior. What does this indicate about the enzyme, and how do allosteric activators affect its activity curve?",
+    "hint": "Think cooperativity and quaternary structure; compare hyperbolic vs sigmoidal curves.",
+    "answer": "The enzyme is allosteric and exhibits cooperativity; activators shift the curve left.",
+    "solution": "Sigmoidal kinetics indicate an allosteric enzyme with multiple subunits exhibiting cooperativity. Binding of substrate to one active site affects affinity at others. Allosteric activators stabilize the high-affinity (R) state, shifting the sigmoidal curve left and increasing activity at lower substrate concentrations."
+  },
+  {
+    "id": 32,
+    "title": "Glycolysis vs Gluconeogenesis Regulation",
+    "difficulty": "Hard",
+    "category": "Biochemistry I",
+    "question": "Name two enzymes that are reciprocally regulated between glycolysis and gluconeogenesis, and explain why this regulation is necessary.",
+    "hint": "Focus on irreversible steps and prevention of futile cycles.",
+    "answer": "PFK-1 vs fructose-1,6-bisphosphatase; pyruvate kinase vs pyruvate carboxylase/PEPCK.",
+    "solution": "PFK-1 (glycolysis) and fructose-1,6-bisphosphatase (gluconeogenesis) are reciprocally regulated to prevent futile cycling. Similarly, pyruvate kinase is inhibited when pyruvate carboxylase and PEPCK are active. This regulation ensures energy efficiency and directional control depending on metabolic state."
+  },
+  {
+    "id": 33,
+    "title": "Redox Carriers — NADH vs NADPH",
+    "difficulty": "Easy",
+    "category": "Biochemistry I",
+    "question": "Why do cells use NADH and NADPH for different purposes despite their similar structures?",
+    "hint": "One is primarily catabolic; the other anabolic.",
+    "answer": "NADH is used for ATP production; NADPH is used for biosynthesis and antioxidant defense.",
+    "solution": "NADH primarily donates electrons to the electron transport chain for ATP generation (catabolic processes). NADPH provides reducing power for anabolic reactions (fatty acid synthesis, nucleotide synthesis) and antioxidant defense (e.g., glutathione reduction). Separate pools allow independent regulation."
+  },
+  {
+    "id": 34,
+    "title": "Protein Structure — Disulfide Bonds",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "Where are disulfide bonds most commonly found: cytosolic proteins or secreted proteins? Explain why.",
+    "hint": "Consider cellular redox environments.",
+    "answer": "Secreted proteins",
+    "solution": "Disulfide bonds are most common in secreted and extracellular proteins because the extracellular environment and ER lumen are oxidizing. The cytosol is reducing, which disfavors disulfide bond formation."
+  },
+  {
+    "id": 35,
+    "title": "Membrane Transport — GLUT vs SGLT",
+    "difficulty": "Medium",
+    "category": "Biochemistry II",
+    "question": "Compare GLUT transporters and SGLT transporters in terms of energy usage and mechanism.",
+    "hint": "Facilitated diffusion vs secondary active transport.",
+    "answer": "GLUT uses facilitated diffusion; SGLT uses secondary active transport with Na⁺.",
+    "solution": "GLUT transporters move glucose down its concentration gradient via facilitated diffusion and do not require energy. SGLT transporters couple glucose uptake to Na⁺ movement down its electrochemical gradient, making them secondary active transporters."
+  },
+  {
+    "id": 36,
+    "title": "ETC Inhibition — Cyanide Poisoning",
+    "difficulty": "Hard",
+    "category": "Biochemistry II",
+    "question": "Cyanide inhibits cytochrome c oxidase (Complex IV). Explain why this rapidly leads to death despite oxygen being present.",
+    "hint": "Think electron flow, proton gradient, and ATP synthesis.",
+    "answer": "Electron transport stops, ATP synthesis halts, causing cellular hypoxia.",
+    "solution": "Cyanide blocks electron transfer to oxygen at Complex IV, stopping the electron transport chain. This collapses the proton gradient, halts oxidative phosphorylation, and prevents ATP synthesis. Cells experience functional hypoxia despite normal oxygen levels, leading to rapid energy failure."
+  },
+  {
+    "id": 37,
+    "title": "Amino Acid Properties — pI Conceptual Trap",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "At its isoelectric point (pI), will an amino acid migrate in an electric field? Why or why not?",
+    "hint": "Net charge matters, not presence of charges.",
+    "answer": "No, it has zero net charge.",
+    "solution": "At the isoelectric point, an amino acid has equal positive and negative charges, resulting in zero net charge. Because migration in an electric field depends on net charge, the amino acid will not migrate."
+  },
+  {
+    "id": 38,
+    "title": "Western Blot Interpretation",
+    "difficulty": "Hard",
+    "category": "Biochemistry II",
+    "question": "A Western blot shows a protein band at a higher molecular weight than expected after treatment with a specific enzyme. Give a likely explanation.",
+    "hint": "Think post-translational modifications.",
+    "answer": "Post-translational modification such as phosphorylation or glycosylation.",
+    "solution": "An upward shift in molecular weight on a Western blot often indicates post-translational modification. Glycosylation, ubiquitination, or multiple phosphorylations can increase apparent molecular mass."
+  },
+  {
+    "id": 39,
+    "title": "Metabolic Integration — Fed State",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "In the fed state, which pathways are upregulated in the liver, and which hormone is primarily responsible?",
+    "hint": "High glucose, storage mode.",
+    "answer": "Glycolysis, glycogenesis, fatty acid synthesis; insulin.",
+    "solution": "In the fed state, insulin levels are high. Insulin promotes glycolysis, glycogen synthesis, and fatty acid synthesis in the liver while inhibiting gluconeogenesis and glycogen breakdown."
+  },
+  {
+    "id": 40,
+    "title": "Enzyme Specificity — Lock-and-Key vs Induced Fit",
+    "difficulty": "Easy",
+    "category": "Biochemistry I",
+    "question": "Which enzyme model better explains catalytic efficiency: lock-and-key or induced fit, and why?",
+    "hint": "Consider transition state stabilization.",
+    "answer": "Induced fit",
+    "solution": "The induced-fit model better explains catalysis because enzyme binding induces conformational changes that stabilize the transition state, lowering activation energy. The lock-and-key model does not account for this dynamic interaction."
+  },
+    {
+    "id": 41,
+    "title": "Biochemical Thermodynamics — ΔG vs ΔG°′",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "A reaction has a ΔG°′ of +5.7 kJ/mol but proceeds spontaneously in the cell. Explain how this is possible.",
+    "hint": "Consider actual metabolite concentrations and coupling.",
+    "answer": "Because ΔG depends on concentrations, not just ΔG°′.",
+    "solution": "ΔG = ΔG°′ + RT ln Q. Even if ΔG°′ is positive, a reaction can proceed spontaneously if the reaction quotient Q is kept low (products removed) or if the reaction is coupled to a highly exergonic process such as ATP hydrolysis."
+  },
+  {
+    "id": 42,
+    "title": "Enzyme Catalysis — Mechanistic Strategies",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "Name three common strategies enzymes use to lower activation energy.",
+    "hint": "Think chemistry, not pathways.",
+    "answer": "General acid–base catalysis, covalent catalysis, metal ion catalysis.",
+    "solution": "Enzymes lower activation energy through strategies including general acid–base catalysis (proton transfer), covalent catalysis (temporary covalent enzyme–substrate intermediate), metal ion catalysis (stabilization of negative charges), and transition state stabilization."
+  },
+  {
+    "id": 43,
+    "title": "Lineweaver–Burk Plot Interpretation",
+    "difficulty": "Hard",
+    "category": "Biochemistry II",
+    "question": "On a Lineweaver–Burk plot, how does competitive inhibition change the slope and intercepts?",
+    "hint": "Recall how Km and Vmax change.",
+    "answer": "Slope increases, y-intercept unchanged, x-intercept shifts right.",
+    "solution": "Competitive inhibition increases apparent Km without affecting Vmax. On a Lineweaver–Burk plot, this increases the slope (Km/Vmax), leaves the y-intercept (1/Vmax) unchanged, and shifts the x-intercept toward zero."
+  },
+  {
+    "id": 44,
+    "title": "Metabolic Compartmentalization",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "Why does fatty acid synthesis occur in the cytosol while β-oxidation occurs in the mitochondria?",
+    "hint": "Think regulation and futile cycles.",
+    "answer": "To prevent futile cycling and allow independent regulation.",
+    "solution": "Separating fatty acid synthesis (cytosol) from β-oxidation (mitochondria) prevents futile cycling and allows independent hormonal and energetic regulation of anabolic and catabolic pathways."
+  },
+  {
+    "id": 45,
+    "title": "Urea Cycle — Nitrogen Disposal",
+    "difficulty": "Hard",
+    "category": "Biochemistry I",
+    "question": "Why is ammonia converted to urea before excretion?",
+    "hint": "Compare toxicity and solubility.",
+    "answer": "Urea is far less toxic than ammonia.",
+    "solution": "Ammonia is highly toxic, especially to the brain. The urea cycle converts ammonia into urea, a far less toxic and water-soluble compound that can be safely transported in blood and excreted by the kidneys."
+  },
+  {
+    "id": 46,
+    "title": "Transamination Reactions",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "What is the role of pyridoxal phosphate (PLP) in amino acid metabolism?",
+    "hint": "Think vitamin B6 and nitrogen transfer.",
+    "answer": "PLP carries amino groups during transamination.",
+    "solution": "PLP (derived from vitamin B6) acts as a coenzyme that temporarily accepts and donates amino groups during transamination reactions, enabling the interconversion of amino acids and keto acids."
+  },
+  {
+    "id": 47,
+    "title": "Membrane Fluidity",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "How do unsaturated fatty acids affect membrane fluidity?",
+    "hint": "Consider packing efficiency.",
+    "answer": "They increase fluidity.",
+    "solution": "Unsaturated fatty acids introduce kinks into lipid tails, preventing tight packing and increasing membrane fluidity, especially at lower temperatures."
+  },
+  {
+    "id": 48,
+    "title": "Protein Folding — Chaperones",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "What is the role of molecular chaperones in protein folding?",
+    "hint": "They do not encode structure.",
+    "answer": "They prevent aggregation and assist proper folding.",
+    "solution": "Molecular chaperones help proteins fold correctly by preventing misfolding and aggregation, especially under stress conditions, but they do not determine the final structure."
+  },
+  {
+    "id": 49,
+    "title": "Protein Denaturation",
+    "difficulty": "Easy",
+    "category": "Biochemistry I",
+    "question": "Which levels of protein structure are disrupted by denaturation?",
+    "hint": "Think non-covalent interactions.",
+    "answer": "Secondary, tertiary, and quaternary structures.",
+    "solution": "Denaturation disrupts non-covalent interactions, affecting secondary, tertiary, and quaternary structure, while primary structure (peptide bonds) remains intact."
+  },
+  {
+    "id": 50,
+    "title": "Oxidative Stress — Glutathione",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "What role does glutathione play in protecting cells from oxidative damage?",
+    "hint": "Think redox buffering.",
+    "answer": "It reduces reactive oxygen species.",
+    "solution": "Glutathione acts as a major cellular antioxidant by donating electrons to reactive oxygen species, reducing them while glutathione itself becomes oxidized and is later regenerated using NADPH."
+  },
+  {
+    "id": 51,
+    "title": "Experimental Design — Enzyme Assays",
+    "difficulty": "Hard",
+    "category": "Biochemistry II",
+    "question": "Why must enzyme assays be performed under initial rate conditions?",
+    "hint": "Avoid reverse reactions and substrate depletion.",
+    "answer": "To ensure measured rates reflect enzyme kinetics.",
+    "solution": "Initial rate conditions minimize substrate depletion, product inhibition, and reverse reactions, ensuring the measured velocity accurately reflects intrinsic enzyme kinetics."
+  },
+  {
+    "id": 52,
+    "title": "Signal Amplification",
+    "difficulty": "Easy",
+    "category": "Biochemistry II",
+    "question": "Why do signaling cascades allow signal amplification?",
+    "hint": "One activates many.",
+    "answer": "Each step activates multiple downstream molecules.",
+    "solution": "Signal amplification occurs because one activated receptor or enzyme can activate many downstream molecules, allowing a small signal to produce a large cellular response."
+  },
+  {
+    "id": 53,
+    "title": "ATP as Energy Currency",
+    "difficulty": "Medium",
+    "category": "Biochemistry I",
+    "question": "Why is ATP hydrolysis highly exergonic?",
+    "hint": "Stability of products.",
+    "answer": "Products are more stable due to resonance and hydration.",
+    "solution": "ATP hydrolysis is exergonic because ADP and inorganic phosphate are more stable than ATP due to increased resonance stabilization, reduced electrostatic repulsion, and better hydration."
+  },
+  {
+    "id": 54,
+    "title": "Metabolic Flux Control",
+    "difficulty": "Hard",
+    "category": "Biochemistry I",
+    "question": "Why do small changes in enzyme activity sometimes have little effect on pathway output?",
+    "hint": "Control is distributed.",
+    "answer": "Flux control is shared across multiple enzymes.",
+    "solution": "Metabolic control analysis shows that flux control is distributed across multiple enzymes rather than dominated by a single step. Therefore, altering one enzyme often has limited effect unless it has a high control coefficient."
+  },
+  {
+    "id": 55,
+    "title": "Coupled Transport",
+    "difficulty": "Medium",
+    "category": "Biochemistry II",
+    "question": "How does the proton gradient drive ATP synthesis?",
+    "hint": "Chemiosmotic theory.",
+    "answer": "Proton flow through ATP synthase drives rotation.",
+    "solution": "The proton gradient across the inner mitochondrial membrane stores potential energy. Proton flow through ATP synthase drives conformational changes that catalyze ATP formation from ADP and Pi."
+  },
+  {
+    "id": 56,
+    "title": "Physics — Diffusion Time Scale",
+    "difficulty": "Medium",
+    "category": "Physics",
+    "question": "The average diffusion time is approximated by t ≈ x²/(2D). If a small molecule diffuses 10 μm in cytoplasm with D = 10⁻¹⁰ m²/s, estimate the diffusion time.",
+    "hint": "Convert micrometers to meters before squaring.",
+    "answer": "≈ 0.5 seconds",
+    "solution": "Convert distance: 10 μm = 1×10⁻⁵ m. t ≈ (1×10⁻⁵ m)² / (2×10⁻¹⁰ m²/s) = 1×10⁻¹⁰ / 2×10⁻¹⁰ = 0.5 s. Diffusion is fast at cellular scales."
+  },
+  {
+    "id": 57,
+    "title": "Physics — Electric Potential Energy",
+    "difficulty": "Easy",
+    "category": "Physics",
+    "question": "What happens to the electric potential energy of a positive ion as it moves down its electrochemical gradient?",
+    "hint": "Movement toward lower potential reduces stored energy.",
+    "answer": "It decreases",
+    "solution": "As a positive ion moves down its electrochemical gradient, electric potential energy is converted into kinetic or chemical work, so potential energy decreases."
+  },
+  {
+    "id": 58,
+    "title": "Mathematics — Logarithmic Relationships",
+    "difficulty": "Easy",
+    "category": "Mathematics",
+    "question": "If log₁₀(x) = −3, what is the value of x?",
+    "hint": "Rewrite in exponential form.",
+    "answer": "0.001",
+    "solution": "log₁₀(x) = −3 → x = 10⁻³ = 0.001."
+  },
+  {
+    "id": 59,
+    "title": "Mathematics — Linearization of Exponentials",
+    "difficulty": "Medium",
+    "category": "Mathematics",
+    "question": "Why is taking the natural logarithm useful when analyzing exponential growth or decay data?",
+    "hint": "Think straight lines.",
+    "answer": "It linearizes exponential relationships.",
+    "solution": "Taking the natural logarithm converts exponential relationships into linear ones, allowing slope and intercept extraction using linear regression."
+  },
+  {
+    "id": 60,
+    "title": "Statistics — Standard Deviation Meaning",
+    "difficulty": "Easy",
+    "category": "Statistics",
+    "question": "What does a larger standard deviation indicate about a dataset?",
+    "hint": "Think spread.",
+    "answer": "Greater variability",
+    "solution": "A larger standard deviation indicates that data points are more widely spread around the mean, reflecting greater variability."
+  },
+  {
+    "id": 61,
+    "title": "Statistics — Correlation vs Causation",
+    "difficulty": "Medium",
+    "category": "Statistics",
+    "question": "A strong correlation is observed between variable A and variable B. Why does this not necessarily imply causation?",
+    "hint": "Consider confounders.",
+    "answer": "Correlation does not prove causality.",
+    "solution": "Correlation may arise from confounding variables, reverse causation, or coincidence. Controlled experiments are required to establish causation."
+  },
+  {
+    "id": 62,
+    "title": "Cell Biology — Cytoskeleton Function",
+    "difficulty": "Easy",
+    "category": "Cell Biology",
+    "question": "Which cytoskeletal component is primarily responsible for intracellular transport via motor proteins?",
+    "hint": "Think kinesin and dynein.",
+    "answer": "Microtubules",
+    "solution": "Microtubules serve as tracks for kinesin and dynein motor proteins, enabling directed intracellular transport."
+  },
+  {
+    "id": 63,
+    "title": "Cell Biology — Cell Cycle Checkpoints",
+    "difficulty": "Medium",
+    "category": "Cell Biology",
+    "question": "What is the primary role of cell cycle checkpoints?",
+    "hint": "Prevent propagation of errors.",
+    "answer": "Ensure conditions are favorable before progression.",
+    "solution": "Cell cycle checkpoints verify DNA integrity, replication completion, and spindle attachment before allowing progression, preventing transmission of damaged DNA."
+  },
+  {
+    "id": 64,
+    "title": "Molecular Biology — Transcription Regulation",
+    "difficulty": "Medium",
+    "category": "Molecular Biology",
+    "question": "How do transcription factors increase gene expression in eukaryotes?",
+    "hint": "Recruitment matters.",
+    "answer": "They recruit RNA polymerase and coactivators.",
+    "solution": "Transcription factors bind regulatory DNA sequences and recruit RNA polymerase II and coactivators, increasing transcription initiation efficiency."
+  },
+  {
+    "id": 65,
+    "title": "Immunology — Antibody Structure",
+    "difficulty": "Easy",
+    "category": "Immunology",
+    "question": "Which region of an antibody determines antigen specificity?",
+    "hint": "Variable vs constant regions.",
+    "answer": "Variable region",
+    "solution": "The variable regions of the heavy and light chains form the antigen-binding site and determine specificity."
+  },
+  {
+    "id": 66,
+    "title": "Immunology — Innate vs Adaptive Immunity",
+    "difficulty": "Medium",
+    "category": "Immunology",
+    "question": "Name one key difference between innate and adaptive immunity.",
+    "hint": "Speed vs specificity.",
+    "answer": "Adaptive immunity is antigen-specific and has memory.",
+    "solution": "Innate immunity is rapid and nonspecific, while adaptive immunity is slower, highly specific, and generates immunological memory."
+  },
+  {
+    "id": 67,
+    "title": "Neurobiology — Action Potential Propagation",
+    "difficulty": "Medium",
+    "category": "Neurobiology",
+    "question": "Why does myelination increase the speed of action potential conduction?",
+    "hint": "Saltatory conduction.",
+    "answer": "It reduces ion leakage and allows saltatory conduction.",
+    "solution": "Myelin insulates axons, forcing action potentials to jump between nodes of Ranvier (saltatory conduction), greatly increasing conduction speed."
+  },
+  {
+    "id": 68,
+    "title": "Neurobiology — Neurotransmitter Release",
+    "difficulty": "Medium",
+    "category": "Neurobiology",
+    "question": "What directly triggers neurotransmitter release at a synapse?",
+    "hint": "Think calcium.",
+    "answer": "Ca²⁺ influx",
+    "solution": "Arrival of an action potential opens voltage-gated Ca²⁺ channels, and Ca²⁺ influx triggers vesicle fusion and neurotransmitter release."
+  },
+  {
+    "id": 69,
+    "title": "Analytical Chemistry — Beer–Lambert Law Assumptions",
+    "difficulty": "Medium",
+    "category": "Analytical Chemistry",
+    "question": "List one condition under which the Beer–Lambert law breaks down.",
+    "hint": "High concentration effects.",
+    "answer": "At high solute concentrations",
+    "solution": "Beer–Lambert law breaks down at high concentrations due to molecular interactions, stray light, or deviations from linear absorbance–concentration behavior."
+  },
+  {
+    "id": 70,
+    "title": "Inorganic Chemistry — Coordination Number",
+    "difficulty": "Medium",
+    "category": "Inorganic Chemistry",
+    "question": "What does the coordination number of a metal complex describe?",
+    "hint": "Count attachments.",
+    "answer": "The number of ligands directly bonded to the metal.",
+    "solution": "The coordination number refers to how many ligand donor atoms are directly bonded to the central metal ion in a coordination complex."
+  }
+]
