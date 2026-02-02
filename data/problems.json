@@ -269,5 +269,35 @@
 "hint": "Consider steric hindrance: SN2 reactions proceed via backside attack, so less hindered substrates react faster.",
 "answer": "Primary > Secondary >> Tertiary in SN2 reaction rate.",
 "solution": "In SN2 reactions, the nucleophile attacks the electrophilic carbon from the opposite side of the leaving group. Primary alkyl halides have the least steric hindrance, allowing for faster nucleophilic attack, followed by secondary alkyl halides which have moderate hindrance. Tertiary alkyl halides are highly hindered, making SN2 reactions very slow or negligible. Thus, the order of reactivity is Primary > Secondary >> Tertiary."
-}   
+},
+{
+"id": 28,
+"title": "Organic Chemistry — IR Spectroscopy",
+"difficulty": "Medium",
+"category": "Organic Chemistry",
+"question": "In an IR spectrum, a strong absorption is observed around 1700 cm⁻¹. What functional group is likely present in the molecule?",
+"hint": "Consider common functional groups with characteristic C=O stretching frequencies.",
+"answer": "Carbonyl group (C=O)",
+"solution": "A strong absorption around 1700 cm⁻¹ in an IR spectrum is characteristic of the C=O stretching vibration found in carbonyl-containing functional groups such as aldehydes, ketones, carboxylic acids, and esters."
+},
+{
+"id": 29,
+"title": "Physical Chemistry — Colligative Properties",
+"difficulty": "Medium",
+"category": "Physical Chemistry",
+"question": "How does the addition of a non-volatile solute affect the boiling point of a solvent? Calculate the boiling point elevation for 1 mol of NaCl dissolved in 1 kg of water (Kb for water = 0.512 °C·kg/mol).",
+"hint": "Use the boiling point elevation formula ΔTb = iKb m, where i is the van't Hoff factor (2 for NaCl) and m is molality.",
+"answer": "ΔTb = 1.024 °C; New boiling point = 101.024 °C",
+"solution": "For NaCl, i = 2 (dissociates into Na⁺ and Cl⁻). Molality m = 1 mol / 1 kg = 1 mol/kg. ΔTb = iKb m = 2 × 0.512 °C·kg/mol × 1 mol/kg = 1.024 °C. Normal boiling point of water is 100 °C, so new boiling point = 100 + 1.024 = 101.024 °C."
+},
+{
+"id": 30,
+"title": "General Chemistry — Gas Laws",
+"difficulty": "Easy",
+"category": "General Chemistry",
+"question": "A sample of gas occupies 2.0 L at 1.0 atm and 300 K. What volume will it occupy at 2.0 atm and 400 K? (Use the combined gas law: P1V1/T1 = P2V2/T2)",
+"hint": "Rearrange the combined gas law to solve for V2: V2 = (P1V1T2)/(P2T1).",
+"answer": "V2 = 1.5 L",
+"solution": "Using the combined gas law: V2 = (P1V1T2)/(P2T1) = (1.0 atm × 2.0 L × 400 K) / (2.0 atm × 300 K) = (800) / (600) = 1.33 L."
+}
 ] 
