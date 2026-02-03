@@ -39,6 +39,36 @@
           "title": "Acid–Base Chemistry",
           "description": "pH, pKa, buffers and titration essentials for biological systems.",
           "keyPoints": ["pH = −log[H⁺]", "Buffers = weak acid + conjugate base", "Titration curves & equivalence point"]
+        },
+        {
+          "id": "redox-reactions",
+          "title": "Redox Reactions",
+          "description": "Electron transfer processes and their role in metabolism.",
+          "keyPoints": ["Oxidation = loss of electrons", "Reduction = gain of electrons", "Redox couples and standard reduction potentials"]
+        },
+        {
+          "id": "stoichiometry",
+          "title": "Stoichiometry & Limiting Reagents",
+          "description": "Quantitative relationships in chemical reactions for yield calculations.",
+          "keyPoints": ["Mole ratios from balanced equations", "Identify limiting reagent to calculate theoretical yield"]
+        },
+        {
+          "id": "gas-laws",
+          "title": "Gas Laws",
+          "description": "Relationships between pressure, volume, temperature and moles of gas.",
+          "keyPoints": ["PV = nRT", "Combined gas law for changing conditions", "Partial pressures & Dalton's law"]
+        },
+        {
+          "id": "solutions",
+          "title": "Solutions & Concentrations",
+          "description": "Calculating molarity, molality and preparing solutions.",
+          "keyPoints": ["Molarity = moles/L", "Molality = moles/kg solvent", "Dilution calculations M1V1 = M2V2"]
+        },
+        {
+          "id": "thermochemistry",
+          "title": "Thermochemistry",
+          "description": "Enthalpy, entropy and their role in reaction energetics.",
+          "keyPoints": ["ΔH = heat change at constant pressure", "ΔS = change in disorder", "Exothermic vs endothermic reactions"]
         }
       ]
     },
@@ -81,6 +111,30 @@
           "title": "Lenses",
           "description": "Optics basics and lens equation for image formation.",
           "keyPoints": ["1/f = 1/do + 1/di", "Magnification M = −di/do", "Ray diagram construction"]
+        },
+        {
+          "id": "fluids",
+          "title": "Fluids",
+          "description": "Fluid statics and dynamics principles for biological contexts.",
+          "keyPoints": ["Density ρ = m/V", "Pressure P = F/A", "Buoyancy & Archimedes' principle", "Continuity equation & Bernoulli's principle"]
+        },
+        {
+          "id": "electricity-magnetism",
+          "title": "Electricity & Magnetism",
+          "description": "Electrostatics, circuits and magnetic fields relevant to biophysics.",
+          "keyPoints": ["Coulomb's law", "Electric field E = F/q", "Magnetic force F = qvB", "Biological applications (e.g., nerve impulses)"]
+        },
+        {
+          "id": "modern-physics",
+          "title": "Modern Physics",
+          "description": "Quantum mechanics and relativity basics for understanding atomic and subatomic phenomena.",
+          "keyPoints": ["Photoelectric effect & quantization", "Heisenberg uncertainty principle", "Special relativity time dilation & length contraction"]
+        },
+        {
+          "id": "statics-dynamics",
+          "title": "Statics & Dynamics",
+          "description": "Equilibrium conditions and motion analysis for biological systems.",
+          "keyPoints": ["Static equilibrium (ΣF = 0)", "Dynamic motion equations", "Torque and rotational equilibrium"]
         }
       ]
     },
@@ -139,6 +193,42 @@
       ]
     },
     {
+        "sectionId": "calculus",
+        "sectionTitle": "Calculus",
+        "items": [
+            {
+                "id": "derivatives",
+                "title": "Derivatives",
+                "description": "Rates of change and slopes of functions for modeling biological processes.",
+                "keyPoints": ["Definition of derivative", "Common derivatives (polynomial, exponential, logarithmic)", "Chain rule for composite functions"]
+            },
+            {
+                "id": "integrals",
+                "title": "Integrals",
+                "description": "Area under curves and accumulation functions in biology.",
+                "keyPoints": ["Definite vs indefinite integrals", "Common integrals", "Integration by parts and substitution"]
+            },
+            {
+                "id": "differential-equations",
+                "title": "Differential Equations",
+                "description": "Modeling dynamic systems like population growth or enzyme kinetics.",
+                "keyPoints": ["First-order linear ODEs", "Separable equations", "Exponential growth/decay solutions"]
+            },
+            {
+                "id": "multivariable-calculus",
+                "title": "Multivariable Calculus",
+                "description": "Functions of multiple variables and partial derivatives for complex biological systems.",
+                "keyPoints": ["Partial derivatives", "Gradient vectors", "Multiple integrals for volume and probability"]
+            },
+            {
+                    "id": "limits",
+                    "title": "Limits",
+                    "description": "Understanding behavior of functions as inputs approach specific values, important for continuity and defining derivatives.",
+                    "keyPoints": ["Limit definition", "Evaluating limits (direct substitution, factoring, rationalizing)", "Limits at infinity and asymptotic behavior"]
+            }
+            ]
+    },
+    {
       "sectionId": "genchemlab",
       "sectionTitle": "General Chemistry Lab",
       "items": [
@@ -193,8 +283,8 @@
       ]
     },
     {
-      "sectionId": "microbio-genbio",
-      "sectionTitle": "Microbiology / General Biology",
+      "sectionId": "microbio",
+      "sectionTitle": "Microbiology",
       "items": [
         {
           "id": "immune-system",
@@ -213,8 +303,80 @@
           "title": "Viruses",
           "description": "Capsid/envelope structure and replication strategies.",
           "keyPoints": ["Lytic vs lysogenic cycles", "Entry and replication targets", "Antiviral strategy classes"]
+        },
+        {
+          "id": "antibiotics",
+          "title": "Antibiotics & Resistance",
+          "description": "Mechanisms of action and resistance in bacteria.",
+          "keyPoints": ["Cell wall synthesis inhibitors", "Protein synthesis inhibitors", "Resistance mechanisms (enzymatic, efflux, target modification)"]
+        },
+        {
+          "id": "microbial-metabolism",
+          "title": "Microbial Metabolism",
+          "description": "Aerobic vs anaerobic respiration and fermentation pathways.",
+          "keyPoints": ["Glycolysis, TCA cycle, ETC", "Fermentation types (lactic acid, alcohol)", "Microbial metabolic diversity"]
         }
       ]
+    },
+    {
+        "sectionId": "organic",
+        "sectionTitle": "Organic Chemistry",
+        "items": [
+            {
+            "id": "functional-groups",
+            "title": "Functional Groups & Reactivity",
+            "description": "Key functional groups and their chemical behavior.",
+            "keyPoints": ["Alcohols, amines, carboxylic acids", "Nucleophiles vs electrophiles", "Reactivity trends (e.g., acidity, basicity)"]
+            },
+            {
+            "id": "stereochemistry",
+            "title": "Stereochemistry",
+            "description": "Chirality, enantiomers, diastereomers and their biological implications.",
+            "keyPoints": ["Chiral centers and R/S configuration", "Enantiomer vs diastereomer", "Stereochemistry's role in drug activity"]
+            },
+            {
+            "id": "reaction-mechanisms",
+            "title": "Reaction Mechanisms",
+            "description": "Common organic reaction types and their stepwise mechanisms.",
+            "keyPoints": ["SN1 vs SN2", "E1 vs E2", "Addition, elimination, substitution reactions"]
+            },
+            {
+            "id": "spectroscopy-organic",
+            "title": "Spectroscopy for Organic Compounds",
+            "description": "Using IR, NMR and MS to identify organic structures.",
+            "keyPoints": ["IR for functional groups", "NMR for carbon/hydrogen environments", "MS for molecular weight and fragmentation patterns"]
+            }
+        ]
+    },
+        {
+        "sectionId": "organiclab",
+        "sectionTitle": "Organic Chemistry Lab",
+        "items": [
+            {
+            "id": "extraction",
+            "title": "Extraction & Purification",
+            "description": "Techniques for isolating and purifying organic compounds.",
+            "keyPoints": ["Liquid-liquid extraction", "Chromatography basics", "Recrystallization principles"]
+            },
+            {
+            "id": "synthesis",
+            "title": "Synthesis & Retrosynthesis",
+            "description": "Planning and executing multi-step organic syntheses.",
+            "keyPoints": ["Retrosynthetic analysis", "Protecting groups", "Common reagents and conditions"]
+            },
+            {
+            "id": "green-chemistry",
+            "title": "Green Chemistry Principles",
+            "description": "Sustainable practices in organic synthesis and lab work.",
+            "keyPoints": ["Atom economy", "Use of safer solvents/reagents", "Energy-efficient reactions"]
+            },
+            {
+            "id": "spectroscopy-lab",
+            "title": "Spectroscopy in Organic Lab",
+            "description": "Using IR, NMR and MS to identify and characterize organic compounds in lab settings.",
+            "keyPoints": ["IR for functional groups", "NMR for carbon/hydrogen environments", "MS for molecular weight and fragmentation patterns"]
+            }
+        ]
     },
     {
       "sectionId": "analytical",
@@ -283,6 +445,36 @@
         ]
     },
     {
+        "sectionId": "Biochem Lab",
+        "sectionTitle": "Biochemistry Lab",
+        "items": [
+            {
+                "id": "protein-purification",
+                "title": "Protein Purification & Analysis",
+                "description": "Techniques for isolating and characterizing proteins.",
+                "keyPoints": ["Chromatography methods", "SDS-PAGE for size estimation", "Western blotting for specific detection"]
+            },
+            {
+                "id": "enzyme-assays",
+                "title": "Enzyme Assays & Kinetics",
+                "description": "Measuring enzyme activity and determining kinetic parameters.",
+                "keyPoints": ["Initial rate measurements", "Michaelis–Menten plots", "Lineweaver–Burk plots for Km and Vmax"]
+            },
+            {
+                "id": "nucleic-acid-techniques",
+                "title": "Nucleic Acid Techniques",
+                "description": "Methods for DNA/RNA analysis and manipulation.",
+                "keyPoints": ["Gel electrophoresis for size separation", "PCR for amplification", "Spectrophotometry for quantification"]
+            },
+            {
+                "id": "cell-culture",
+                "title": "Cell Culture Techniques",
+                "description": "Basics of growing and maintaining cells in vitro.",
+                "keyPoints": ["Sterile technique", "Media composition", "Passaging and cryopreservation"]
+            }
+        ]
+    },
+    {
         "sectionId": "Biochemistry I",
         "sectionTitle": "Biochemistry I",
         "items": [
@@ -333,7 +525,55 @@
             "title": "Metabolism Overview",
             "description": "Catabolic vs anabolic pathways and energy currency.",
             "keyPoints": ["Catabolism breaks down molecules for energy", "Anabolism builds complex molecules", "ATP is the main energy currency"]
-          }
+          },
+          {
+            "id": "cell-signaling",
+            "title": "Cell Signaling Pathways",
+            "description": "Key signaling pathways and their components.",
+            "keyPoints": ["GPCRs, RTKs, ion channels", "Second messengers (cAMP, Ca²⁺)", "MAPK, PI3K/Akt pathways"]
+        }
+        ]
+    },
+    {
+        "sectionId": "Physical Chemistry",
+        "sectionTitle": "Physical Chemistry",
+        "items": [
+          {
+            "id": "thermodynamics",
+            "title": "Thermodynamics",
+            "description": "Laws of thermodynamics and their applications.",
+            "keyPoints": ["First and Second Laws", "Entropy and enthalpy", "Gibbs free energy and spontaneity"]
+          },
+          {
+            "id": "kinetics",
+            "title": "Chemical Kinetics",
+            "description": "Reaction rates, mechanisms and factors affecting them.",
+            "keyPoints": ["Rate laws and order of reaction", "Activation energy and catalysts", "Temperature effects (Arrhenius equation)"]
+          },
+          {
+            "id": "quantum-chemistry",
+            "title": "Quantum Chemistry",
+            "description": "Fundamental principles of quantum mechanics in chemistry.",
+            "keyPoints": ["Wave-particle duality", "Schrödinger equation basics", "Atomic orbitals and electron configurations"]
+          },
+          {
+            "id": "statistical-mechanics",
+            "title": "Statistical Mechanics",
+            "description": "Connecting microscopic states to macroscopic properties.",
+            "keyPoints": ["Boltzmann distribution", "Partition function", "Ensemble theory"]
+          },
+          {
+            "id": "surface-chemistry",
+            "title": "Surface Chemistry",
+            "description": "Phenomena at interfaces and their applications.",
+            "keyPoints": ["Adsorption isotherms", "Catalysis at surfaces", "Colloids and emulsions"]
+          },
+            {
+                "id": "electrochemistry",
+                "title": "Electrochemistry",
+                "description": "Redox reactions, electrochemical cells and applications.",
+                "keyPoints": ["Galvanic vs electrolytic cells", "Standard reduction potentials", "Nernst equation for non-standard conditions"]
+            }
         ]
     }
   ]
