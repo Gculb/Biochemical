@@ -163,15 +163,9 @@
       ]
     },
     {
-      "sectionId": "biochem",
-      "sectionTitle": "Biochemistry & Molecular Biology",
+      "sectionId": "molbio",
+      "sectionTitle": "Molecular Biology",
       "items": [
-        {
-          "id": "enzyme-kinetics",
-          "title": "Enzyme Kinetics & Catalysis",
-          "description": "Michaelis–Menten behavior and inhibition types.",
-          "keyPoints": ["Km and Vmax", "Competitive/non-competitive/uncompetitive inhibitors", "Allosteric regulation & cooperativity"]
-        },
         {
           "id": "oxidative-phosphorylation",
           "title": "Oxidative Phosphorylation",
@@ -249,8 +243,98 @@
           "title": "Molecular Orbital Theory (MO theory)",
           "description": "Bonding/antibonding MOs and bond order concepts.",
           "keyPoints": ["Constructive vs destructive AO combinations", "Bond order calculation", "Homonuclear vs heteronuclear diatomics"]
+        },
+        {
+          "id": "colligative-properties",
+          "title": "Colligative Properties",
+          "description": "Properties that depend on solute particle number, not identity.",
+          "keyPoints": ["Vapor pressure lowering", "Boiling point elevation", "Freezing point depression", "Osmotic pressure"]
         }
       ]
+    },
+    {
+        "sectionId": "Inorganic Chemistry",
+        "sectionTitle": "Inorganic Chemistry",
+        "items": [
+          {
+            "id": "coordination-compounds",
+            "title": "Coordination Compounds",
+            "description": "Ligand types, coordination numbers and isomerism.",
+            "keyPoints": ["Monodentate vs polydentate ligands", "Common coordination numbers (4, 6)", "Geometric and optical isomers"]
+          },
+          {
+            "id": "transition-metals",
+            "title": "Transition Metals",
+            "description": "Variable oxidation states, colored complexes and catalytic properties.",
+            "keyPoints": ["d-block elements with variable oxidation states", "Color arises from d-d transitions", "Catalytic activity due to variable oxidation states"]
+          },
+            {
+                "id": "main-group-elements",
+                "title": "Main Group Elements",
+                "description": "Group 1, 2, 13–18 element properties and common compounds.",
+                "keyPoints": ["Alkali and alkaline earth metals", "Group 13–18 trends", "Common oxidation states and compounds"]
+            },
+            {
+                "id": "acid-base-theory",
+                "title": "Acid–Base Theory (Inorganic)",
+                "description": "Lewis and Brønsted–Lowry acid/base concepts in inorganic chemistry.",
+                "keyPoints": ["Brønsted–Lowry: proton donors/acceptors", "Lewis: electron pair donors/acceptors", "Inorganic acid/base examples"]
+            }
+        ]
+    },
+    {
+        "sectionId": "Biochemistry I",
+        "sectionTitle": "Biochemistry I",
+        "items": [
+          {
+          "id": "enzyme-kinetics",
+          "title": "Enzyme Kinetics & Catalysis",
+          "description": "Michaelis–Menten behavior and inhibition types.",
+          "keyPoints": ["Km and Vmax", "Competitive/non-competitive/uncompetitive inhibitors", "Allosteric regulation & cooperativity"]
+          },
+          {
+            "id": "protein-structure",
+            "title": "Protein Structure & Folding",
+            "description": "Levels of protein structure and folding principles.",
+            "keyPoints": ["Primary, secondary, tertiary, quaternary", "Hydrophobic effect drives folding", "Chaperones assist folding"]
+          },
+          {
+            "id": "enzyme-inhibition",
+            "title": "Enzyme Inhibition",
+            "description": "Types of inhibition and their effects on kinetics.",
+            "keyPoints": ["Competitive, non-competitive, uncompetitive", "Effects on Km and Vmax", "Reversible vs irreversible"]
+          },
+          {
+            "id": "lipids-membranes",
+            "title": "Lipids & Membranes",
+            "description": "Membrane structure, fluidity and transport mechanisms.",
+            "keyPoints": ["Phospholipid bilayer", "Cholesterol modulates fluidity", "Passive vs active transport"]
+          }
+        ]
+    },
+    {
+        "sectionId": "Biochemistry II",
+        "sectionTitle": "Biochemistry II",
+        "items": [
+          {
+            "id": "carbohydrates",
+            "title": "Carbohydrates",
+            "description": "Monosaccharides, disaccharides and polysaccharides structure and function.",
+            "keyPoints": ["Glucose is a common monosaccharide", "Glycosidic bonds link sugars", "Polysaccharides for energy storage and structure"]
+          },
+          {
+            "id": "nucleic-acids",
+            "title": "Nucleic Acids",
+            "description": "DNA/RNA structure, replication and transcription essentials.",
+            "keyPoints": ["Double helix structure of DNA", "Base pairing rules", "Central dogma: DNA → RNA → Protein"]
+          },
+          {
+            "id": "metabolism-overview",
+            "title": "Metabolism Overview",
+            "description": "Catabolic vs anabolic pathways and energy currency.",
+            "keyPoints": ["Catabolism breaks down molecules for energy", "Anabolism builds complex molecules", "ATP is the main energy currency"]
+          }
+        ]
     }
   ]
 }
