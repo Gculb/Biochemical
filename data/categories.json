@@ -237,12 +237,29 @@
       ]
     },
     {
+      "id": "bioinformatics",
+      "title": "Bioinformatics",
+      "icon": "fa-code",
+      "color": "#1abc9c",
+      "description": "Sequence analysis, alignments, and structure databases.",
+      "order": 17,
+      "topics": [
+        { "id": "blast", "title": "BLAST & Sequence Alignment" },
+        { "id": "databases", "title": "GenBank, UniProt, PDB" },
+        { "id": "msa", "title": "Multiple Sequence Alignment (Clustal, MUSCLE)" },
+        { "id": "phylogenetics", "title": "Phylogenetics & Evolutionary Trees" },
+        { "id": "motifs", "title": "Motifs, Domains & HMMs" },
+        { "id": "structure-pred", "title": "Protein Structure Prediction (AlphaFold)" },
+        { "id": "variant-analysis", "title": "Variant Calling & Annotation" }
+      ]
+    },
+    {
       "id": "genetics",
       "title": "Genetics",
       "icon": "fa-dna",
       "color": "#ff6b6b",
       "description": "DNA structure & replication, transcription/translation, molecular techniques and epigenetics.",
-      "order": 17,
+      "order": 18,
       "topics": [
         { "id": "dna-structure", "title": "DNA Structure & Replication", "important": true },
         { "id": "tx-translation", "title": "Transcription & Translation" },
@@ -256,7 +273,7 @@
       "icon": "fa-pen-to-square",
       "color": "#764ba2",
       "description": "Problem sets and worked solutions across modules (calcs, kinetics, titrations, genetics problems).",
-      "order": 18,
+      "order": 19,
       "topics": [
         { "id": "kinetics-problems", "title": "Enzyme Kinetics Practice" },
         { "id": "acid-base-problems", "title": "Acid–Base & Titration Problems" },
@@ -269,7 +286,7 @@
       "icon": "fa-laptop-code",
       "color": "#2bcbba",
       "description": "Interactive enzyme kinetics simulations, noise toggles, fitting Km & Vmax, and chart outputs.",
-      "order": 19,
+      "order": 20,
       "topics": [
         { "id": "enzyme-sim", "title": "Enzyme Kinetics Simulator", "important": true },
         { "id": "data-fit", "title": "Curve Fitting (Km & Vmax)" }
@@ -281,7 +298,7 @@
       "icon": "fa-circle-info",
       "color": "#95a5a6",
       "description": "Project description, technical focus, author & contributions.",
-      "order": 20,
+      "order": 21,
       "topics": [
         { "id": "author", "title": "Author & Technical Focus" },
         { "id": "why-project", "title": "Why This Project" }
@@ -293,7 +310,7 @@
       "icon": "fa-book",
       "color": "#4b6cb7",
       "description": "Collections of authoritative databases, visualization tools, virtual labs, and references.",
-      "order": 21,
+      "order": 22,
       "topics": [
         { "id": "databases", "title": "Databases & Molecular References" },
         { "id": "visualization", "title": "3D Visualization Tools (Mol*, NGL, PyMOL)" },
@@ -306,9 +323,21 @@
       "icon": "fa-book-open",
       "color": "#8e44ad",
       "description": "Key terms and definitions across biochemistry, chemistry, and molecular biology.",
-      "order": 22,
+      "order": 23,
       "topics": [
         { "id": "terms", "title": "Key Terms & Definitions" }
+      ]
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "icon": "fa-envelope",
+      "color": "#27ae60",
+      "description": "Get in touch for questions, feedback, or support.",
+      "order": 24,
+      "topics": [
+        { "id": "general", "title": "General Inquiries" },
+        { "id": "feedback", "title": "Feedback" }
       ]
     }
 
