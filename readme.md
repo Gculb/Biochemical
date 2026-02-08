@@ -1,6 +1,8 @@
 MOVING TO A DIFFERENT ARCHITECTURE. THIS PROJECT WILL NOT BE MAINTAINED HERE ANYMORE. 
 
+**NEW PROJECT SPACE**
 
+https://github.com/Gculb/BiochemReact 
 
 
 
@@ -61,13 +63,14 @@ On page load, the Three.js scene and selected molecule are initialized before an
 
 LocalStorage was chosen to provide lightweight persistence without backend complexity.
 
-Live Demo
+**Live Demo**
 
 https://gculb.github.io/Biochemical/
 
 Motivation
 
 This project was created to combine scientific domain knowledge with interactive software development, demonstrating how visualization and thoughtful UI design can enhance learning in technically complex subjects.
+
 
 Future Improvements
 
